@@ -1,5 +1,7 @@
 import { world, system, BlockPermutation } from '@minecraft/server'
 
+let rpgCoreDetected = false;
+
 world.afterEvents.worldLoad.subscribe(() => {
     for (const [key, value] of Object.entries(trinkets)) {
         const payload = {};
@@ -7,7 +9,42 @@ world.afterEvents.worldLoad.subscribe(() => {
 
         system.sendScriptEvent("dorios:register_stat_data", JSON.stringify(payload));
     }
+
+    system.runTimeout(() => {
+        if (!rpgCoreDetected) {
+            world.sendMessage(
+                "§c[Dorios Trinkets] Required dependency missing: Dorios RPG Core.\n" +
+                "§7Please download it from §eCurseForge §7or §eMCPEDL§7."
+            );
+            system.runTimeout(() => {
+                if (!rpgCoreDetected) {
+                    world.sendMessage(
+                        "§c[Dorios Trinkets] Required dependency missing: Dorios RPG Core.\n" +
+                        "§7Please download it from §eCurseForge §7or §eMCPEDL§7."
+                    );
+                }
+            }, 3600);
+        }
+    }, 300);
 })
+
+system.afterEvents.scriptEventReceive.subscribe(e => {
+    if (e.id !== "dorios:stat_data_registered" || rpgCoreDetected) return;
+
+    try {
+        const data = JSON.parse(e.message);
+        if (data?.registered == true) {
+            rpgCoreDetected = true;
+            system.runTimeout(() => {
+
+                world.sendMessage(
+                    "§a[Dorios Trinkets] Dorios RPG Core initialized successfully."
+                );
+            }, 300);
+        }
+    } catch { }
+});
+
 
 const trinkets = {
     head: {
