@@ -4,8 +4,8 @@
 		"description": {
 			"identifier": "dorios:blood_chestplate",
 			"menu_category": {
-				"category": "equipment",
-				"group": "itemGroup.name.chestplate"
+				"category": "none"
+				// "group": "itemGroup.name.chestplate"
 			}
 		},
 		"components": {

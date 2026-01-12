@@ -4,8 +4,8 @@
 		"description": {
 			"identifier": "dorios:blood_helmet",
 			"menu_category": {
-				"category": "equipment",
-				"group": "itemGroup.name.helmet"
+				"category": "none"
+				// "group": "itemGroup.name.helmet"
 			}
 		},
 		"components": {

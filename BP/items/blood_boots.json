@@ -4,8 +4,8 @@
 		"description": {
 			"identifier": "dorios:blood_boots",
 			"menu_category": {
-				"category": "equipment",
-				"group": "itemGroup.name.boots"
+				"category": "none"
+				// "group": "itemGroup.name.boots"
 			}
 		},
 		"components": {

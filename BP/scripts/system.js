@@ -18,13 +18,15 @@ world.afterEvents.worldLoad.subscribe(() => {
         if (count >= 1000) count = 0
 
         for (const player of players) {
-            const blocks = {
-                head: player.dimension.getBlock(player.getHeadLocation()),
-                feet: player.dimension.getBlock(player.location)
-            }
+            let blocks = {}
+            try {
+                blocks = {
+                    head: player.dimension.getBlock(player.getHeadLocation()),
+                    feet: player.dimension.getBlock(player.location)
+                }
+            } catch { continue }
             const isInLava = blocks.feet?.typeId.includes('lava') &&
                 blocks.head.typeId.includes('lava')
-
 
             if (player.hasTag("dorios:idle_bloom")) {
                 const vel = player.getVelocity()
@@ -79,7 +81,7 @@ world.afterEvents.worldLoad.subscribe(() => {
 
 
             if (count % 20 != 0) continue
-
+            // world.sendMessage(`${player.dimension.getBiome(player.location).id}`)
             const rushSeconds = player.getDynamicProperty("dorios:rush_of_fear_time")
             if (rushSeconds > 0) player.setDynamicProperty("dorios:rush_of_fear_time", rushSeconds - 1)
 
@@ -282,3 +284,4 @@ function repair(player, targets) {
         }
     }
 }
+

@@ -4,8 +4,8 @@
 		"description": {
 			"identifier": "dorios:blood_leggings",
 			"menu_category": {
-				"category": "equipment",
-				"group": "itemGroup.name.leggings"
+				"category": "none"
+				// "group": "itemGroup.name.leggings"
 			}
 		},
 		"components": {

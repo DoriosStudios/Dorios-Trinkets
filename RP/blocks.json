@@ -27,13 +27,5 @@
 	"dorios:lava_flow_2": {
 		"sound": "stone",
 		"textures": "dorios_lava_solid_2"
-	},
-	"dorios:sunken_relic_crate": {
-		"sound": "stone",
-		"textures": "dorios_sunken_relic_crate"
-	},
-	"dorios:blazed_crate": {
-		"sound": "stone",
-		"textures": "dorios_blazed_crate"
 	}
 }
