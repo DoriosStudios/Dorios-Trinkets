@@ -1,0 +1,20 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "dorios:scroll"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"ingredients": [
+			{
+				"item": "paper"
+			}
+		],
+		"result": {
+			"item": "dorios:scroll"
+		},
+		"priority": 0
+	}
+}

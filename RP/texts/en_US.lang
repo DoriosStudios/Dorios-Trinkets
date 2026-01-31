@@ -3,6 +3,10 @@ item.dorios:scroll=Scroll \nEquip or Remove your trinkets with this
 item.dorios:empty_ring=Empty Ring \nCrafting material
 item.dorios:heavy_empty_ring=Heavy Empty Ring \nCrafting material
 
+item.dorios:scroll=§rScroll\n§7- Opens the trinket inventory.
+item.dorios:stats_scroll=§rStats Scroll\n§7- Use to view your current stats.
+item.dorios:recover_scroll=§rRecover Scroll\n§7- Recovers your equipped trinkets.
+
 
 item.dorios:purity_blossom=Purity Blossom \n§6Slot: §eCharm \n§6Tier: §9Apprentice \n§fA mystical flower that grants immunity to toxins. \n Immunity
 

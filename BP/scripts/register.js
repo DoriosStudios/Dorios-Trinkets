@@ -1188,7 +1188,6 @@ const trinkets = {
             passives: {
                 regeneration: 1
             },
-            immunities: ['Regeneration'],
             loot: {
                 biomes: [
                     { biome: "minecraft:jungle", chance: 0.20 },

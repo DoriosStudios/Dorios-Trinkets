@@ -1,0 +1,6310 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "minecraft:player",
+			"spawn_category": "creature",
+			"is_spawnable": false,
+			"is_summonable": false
+		},
+		"component_groups": {
+			"bf:kb": {
+				"minecraft:knockback_resistance": {
+					"value": 0
+				}
+			},
+			"bf:swim": {
+				"minecraft:underwater_movement": {
+					"value": 0.08
+				}
+			},
+			"bf:swim_off": {
+				"minecraft:underwater_movement": {
+					"value": 0.02
+				}
+			},
+			"bf:shield": {
+				"minecraft:movement": {
+					"value": 0.08
+				}
+			},
+			"bf:shield_off": {
+				"minecraft:movement": {
+					"value": 0.1
+				}
+			},
+			"minecraft:mask0": {
+				"minecraft:type_family": {
+					"family": [
+						"player"
+					]
+				},
+				"minecraft:hurt_on_condition": {
+					"damage_conditions": [
+						{
+							"filters": {
+								"test": "in_lava",
+								"value": true
+							},
+							"cause": "lava",
+							"damage_per_tick": 1
+						}
+					]
+				},
+				"minecraft:scale": {
+					"value": 1.0
+				}
+			},
+			"minecraft:breath_normal": {
+				"minecraft:breathable": {
+					"breathes_air": true,
+					"breathes_water": false,
+					"breathes_solids": false,
+					"total_supply": 15,
+					"suffocate_time": -1,
+					"inhale_time": 3.75,
+					"generates_bubbles": false
+				}
+			},
+			"minecraft:mask1": {
+				"minecraft:type_family": {
+					"family": [
+						"player",
+						"enderman"
+					]
+				},
+				"minecraft:hurt_on_condition": {
+					"damage_conditions": [
+						{
+							"filters": {
+								"test": "in_lava",
+								"value": true
+							},
+							"cause": "lava",
+							"damage_per_tick": 2
+						}
+					]
+				},
+				"minecraft:scale": {
+					"value": 1.1
+				}
+			},
+			"minecraft:mask2": {
+				"minecraft:type_family": {
+					"family": [
+						"player",
+						"fox"
+					]
+				},
+				"minecraft:hurt_on_condition": {
+					"damage_conditions": [
+						{
+							"filters": {
+								"test": "in_lava",
+								"value": true
+							},
+							"cause": "lava",
+							"damage_per_tick": 1
+						}
+					]
+				},
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"on_damage": {
+								"filters": {
+									"test": "is_block",
+									"subject": "block",
+									"value": "minecraft:sweet_berry_bush"
+								}
+							},
+							"deals_damage": false
+						}
+					]
+				},
+				"minecraft:scale": {
+					"value": 0.7
+				}
+			},
+			"minecraft:mask3": {
+				"minecraft:type_family": {
+					"family": [
+						"player",
+						"blaze"
+					]
+				},
+				"minecraft:hurt_on_condition": {
+					"damage_conditions": [
+						{
+							"filters": {
+								"test": "in_contact_with_water",
+								"value": true
+							},
+							"cause": "drowning",
+							"damage_per_tick": 1
+						}
+					]
+				},
+				"minecraft:scale": {
+					"value": 1.0
+				}
+			},
+			"minecraft:mask4": {
+				"minecraft:type_family": {
+					"family": [
+						"player"
+					]
+				},
+				"minecraft:hurt_on_condition": {
+					"damage_conditions": [
+						{
+							"filters": {
+								"test": "in_lava",
+								"value": true
+							},
+							"cause": "lava",
+							"damage_per_tick": 1
+						}
+					]
+				},
+				"minecraft:scale": {
+					"value": 1.2
+				}
+			},
+			"minecraft:mask5": {
+				"minecraft:type_family": {
+					"family": [
+						"player",
+						"axolotl"
+					]
+				},
+				"minecraft:hurt_on_condition": {
+					"damage_conditions": [
+						{
+							"filters": {
+								"test": "in_lava",
+								"value": true
+							},
+							"cause": "lava",
+							"damage_per_tick": 1
+						}
+					]
+				},
+				"minecraft:breathable": {
+					"breathes_air": false,
+					"breathes_water": true,
+					"breathes_solids": false,
+					"total_supply": 15,
+					"suffocate_time": -1,
+					"inhale_time": 3.75,
+					"generates_bubbles": false
+				},
+				"minecraft:scale": {
+					"value": 1.0
+				}
+			},
+			"minecraft:mask6": {
+				"minecraft:type_family": {
+					"family": [
+						"fox"
+					]
+				},
+				"minecraft:hurt_on_condition": {
+					"damage_conditions": [
+						{
+							"filters": {
+								"test": "in_lava",
+								"value": true
+							},
+							"cause": "lava",
+							"damage_per_tick": 1
+						}
+					]
+				},
+				"minecraft:scale": {
+					"value": 0.9
+				}
+			},
+			"minecraft:mask7": {
+				"minecraft:type_family": {
+					"family": [
+						"player"
+					]
+				},
+				"minecraft:hurt_on_condition": {
+					"damage_conditions": [
+						{
+							"filters": {
+								"test": "in_lava",
+								"value": true
+							},
+							"cause": "lava",
+							"damage_per_tick": 1
+						}
+					]
+				},
+				"minecraft:scale": {
+					"value": 0.5
+				}
+			},
+			"minecraft:mask8": {
+				"minecraft:type_family": {
+					"family": [
+						"player",
+						"undead",
+						"monster",
+						"endermite",
+						"fox",
+						"wither_skeleton"
+					]
+				},
+				"minecraft:hurt_on_condition": {
+					"damage_conditions": [
+						{
+							"filters": {
+								"test": "in_lava",
+								"value": true
+							},
+							"cause": "lava",
+							"damage_per_tick": 1
+						}
+					]
+				},
+				"minecraft:scale": {
+					"value": 1.2
+				}
+			},
+			"minecraft:mask9": {
+				"minecraft:type_family": {
+					"family": [
+						"player",
+						"undead"
+					]
+				},
+				"minecraft:hurt_on_condition": {
+					"damage_conditions": [
+						{
+							"filters": {
+								"test": "in_lava",
+								"value": true
+							},
+							"cause": "lava",
+							"damage_per_tick": 1
+						}
+					]
+				},
+				"minecraft:scale": {
+					"value": 1.1
+				}
+			},
+			"minecraft:mask10": {
+				"minecraft:type_family": {
+					"family": [
+						"player",
+						"cat",
+						"ocelot"
+					]
+				},
+				"minecraft:hurt_on_condition": {
+					"damage_conditions": [
+						{
+							"filters": {
+								"test": "in_lava",
+								"value": true
+							},
+							"cause": "lava",
+							"damage_per_tick": 1
+						}
+					]
+				},
+				"minecraft:scale": {
+					"value": 0.75
+				}
+			},
+			"minecraft:mask11": {
+				"minecraft:type_family": {
+					"family": [
+						"player",
+						"wither"
+					]
+				},
+				"minecraft:hurt_on_condition": {
+					"damage_conditions": [
+						{
+							"filters": {
+								"test": "in_lava",
+								"value": true
+							},
+							"cause": "lava",
+							"damage_per_tick": 1
+						}
+					]
+				},
+				"minecraft:scale": {
+					"value": 1.3
+				}
+			},
+			"player:rat_mask": {
+				"minecraft:variant": {
+					"value": 71
+				},
+				"minecraft:type_family": {
+					"family": [
+						"player",
+						"rat_mask"
+					]
+				},
+				"minecraft:hurt_on_condition": {
+					"damage_conditions": [
+						{
+							"filters": {
+								"test": "in_lava",
+								"value": true
+							},
+							"cause": "lava",
+							"damage_per_tick": 1
+						}
+					]
+				},
+				"minecraft:scale": {
+					"value": 1
+				}
+			},
+			"minecraft:burns": {
+				"minecraft:burns_in_daylight": {}
+			},
+			"minecraft:mask1_utils": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "void",
+							"deals_damage": false
+						}
+					]
+				}
+			},
+			"minecraft:fire_inmunity": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "fire",
+							"deals_damage": false
+						},
+						{
+							"cause": "fire_tick",
+							"deals_damage": false
+						},
+						{
+							"cause": "lava",
+							"deals_damage": false
+						}
+					]
+				}
+			},
+			"minecraft:mask9_timer": {
+				"minecraft:timer": {
+					"time": [
+						300,
+						300
+					],
+					"time_down_event": {
+						"event": "minecraft:mask9_timer_off"
+					},
+					"looping": true
+				}
+			},
+			"minecraft:exhaustion_normal": {
+				"minecraft:exhaustion_values": {
+					"heal": 6,
+					"jump": 0.05,
+					"sprint_jump": 0.2,
+					"mine": 0.005,
+					"attack": 0.1,
+					"damage": 0.1,
+					"walk": 0.0,
+					"sprint": 0.1,
+					"swim": 0.01
+				}
+			},
+			"minecraft:exhaustion_cat": {
+				"minecraft:exhaustion_values": {
+					"heal": 7,
+					"jump": 0.01,
+					"sprint_jump": 0.2,
+					"mine": 0.05,
+					"attack": 0.5,
+					"damage": 0.5,
+					"walk": 0.0,
+					"sprint": 0.01,
+					"swim": 1
+				}
+			},
+			"minecraft:float_on_water": {
+				"minecraft:buoyant": {
+					"base_buoyancy": 1.0,
+					"apply_gravity": false,
+					"simulate_waves": true,
+					"liquid_blocks": [
+						"minecraft:water",
+						"minecraft:flowing_water"
+					]
+				}
+			},
+			"minecraft:add_raid_omen": {
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "raid_omen",
+							"duration": 30,
+							"display_on_screen_animation": true
+						}
+					],
+					"remove_effects": "bad_omen"
+				},
+				"minecraft:timer": {
+					"time": [
+						0,
+						0
+					],
+					"looping": false,
+					"time_down_event": {
+						"event": "minecraft:clear_add_raid_omen",
+						"target": "self"
+					}
+				}
+			},
+			"minecraft:clear_raid_omen_spell_effect": {
+				"minecraft:spell_effects": {}
+			},
+			"minecraft:raid_trigger": {
+				"minecraft:raid_trigger": {
+					"triggered_event": {
+						"event": "minecraft:remove_raid_trigger",
+						"target": "self"
+					}
+				}
+			},
+			"minecraft:stealth": {
+				"minecraft:type_family": {
+					"family": [
+						"stealth"
+					]
+				},
+				"minecraft:scale": {
+					"value": 0.01
+				}
+			},
+			"minecraft:reset": {
+				"minecraft:type_family": {
+					"family": [
+						"player"
+					]
+				},
+				"minecraft:scale": {
+					"value": 1
+				}
+			},
+			"minecraft:health2": {
+				"minecraft:health": {
+					"max": 2
+				}
+			},
+			"minecraft:health4": {
+				"minecraft:health": {
+					"max": 4
+				}
+			},
+			"minecraft:health6": {
+				"minecraft:health": {
+					"max": 6
+				}
+			},
+			"minecraft:health8": {
+				"minecraft:health": {
+					"max": 8
+				}
+			},
+			"minecraft:health10": {
+				"minecraft:health": {
+					"max": 10
+				}
+			},
+			"minecraft:health12": {
+				"minecraft:health": {
+					"max": 12
+				}
+			},
+			"minecraft:health14": {
+				"minecraft:health": {
+					"max": 14
+				}
+			},
+			"minecraft:health16": {
+				"minecraft:health": {
+					"max": 16
+				}
+			},
+			"minecraft:health18": {
+				"minecraft:health": {
+					"max": 18
+				}
+			},
+			"minecraft:health20": {
+				"minecraft:health": {
+					"max": 20
+				}
+			},
+			"minecraft:health22": {
+				"minecraft:health": {
+					"max": 22
+				}
+			},
+			"minecraft:health24": {
+				"minecraft:health": {
+					"max": 24
+				}
+			},
+			"minecraft:health26": {
+				"minecraft:health": {
+					"max": 26
+				}
+			},
+			"minecraft:health28": {
+				"minecraft:health": {
+					"max": 28
+				}
+			},
+			"minecraft:health30": {
+				"minecraft:health": {
+					"max": 30
+				}
+			},
+			"minecraft:health32": {
+				"minecraft:health": {
+					"max": 32
+				}
+			},
+			"minecraft:health34": {
+				"minecraft:health": {
+					"max": 34
+				}
+			},
+			"minecraft:health36": {
+				"minecraft:health": {
+					"max": 36
+				}
+			},
+			"minecraft:health38": {
+				"minecraft:health": {
+					"max": 38
+				}
+			},
+			"minecraft:health40": {
+				"minecraft:health": {
+					"max": 40
+				}
+			},
+			"minecraft:health42": {
+				"minecraft:health": {
+					"max": 42
+				}
+			},
+			"minecraft:health44": {
+				"minecraft:health": {
+					"max": 44
+				}
+			},
+			"minecraft:health46": {
+				"minecraft:health": {
+					"max": 46
+				}
+			},
+			"minecraft:health48": {
+				"minecraft:health": {
+					"max": 48
+				}
+			},
+			"minecraft:health50": {
+				"minecraft:health": {
+					"max": 50
+				}
+			},
+			"minecraft:health52": {
+				"minecraft:health": {
+					"max": 52
+				}
+			},
+			"minecraft:health54": {
+				"minecraft:health": {
+					"max": 54
+				}
+			},
+			"minecraft:health56": {
+				"minecraft:health": {
+					"max": 56
+				}
+			},
+			"minecraft:health58": {
+				"minecraft:health": {
+					"max": 58
+				}
+			},
+			"minecraft:health60": {
+				"minecraft:health": {
+					"max": 60
+				}
+			},
+			"minecraft:health62": {
+				"minecraft:health": {
+					"max": 62
+				}
+			},
+			"minecraft:health64": {
+				"minecraft:health": {
+					"max": 64
+				}
+			},
+			"minecraft:health66": {
+				"minecraft:health": {
+					"max": 66
+				}
+			},
+			"minecraft:health68": {
+				"minecraft:health": {
+					"max": 68
+				}
+			},
+			"minecraft:health70": {
+				"minecraft:health": {
+					"max": 70
+				}
+			},
+			"minecraft:health72": {
+				"minecraft:health": {
+					"max": 72
+				}
+			},
+			"minecraft:health74": {
+				"minecraft:health": {
+					"max": 74
+				}
+			},
+			"minecraft:health76": {
+				"minecraft:health": {
+					"max": 76
+				}
+			},
+			"minecraft:health78": {
+				"minecraft:health": {
+					"max": 78
+				}
+			},
+			"minecraft:health80": {
+				"minecraft:health": {
+					"max": 80
+				}
+			},
+			"minecraft:health82": {
+				"minecraft:health": {
+					"max": 82
+				}
+			},
+			"minecraft:health84": {
+				"minecraft:health": {
+					"max": 84
+				}
+			},
+			"minecraft:health86": {
+				"minecraft:health": {
+					"max": 86
+				}
+			},
+			"minecraft:health88": {
+				"minecraft:health": {
+					"max": 88
+				}
+			},
+			"minecraft:health90": {
+				"minecraft:health": {
+					"max": 90
+				}
+			},
+			"minecraft:health92": {
+				"minecraft:health": {
+					"max": 92
+				}
+			},
+			"minecraft:health94": {
+				"minecraft:health": {
+					"max": 94
+				}
+			},
+			"minecraft:health96": {
+				"minecraft:health": {
+					"max": 96
+				}
+			},
+			"minecraft:health98": {
+				"minecraft:health": {
+					"max": 98
+				}
+			},
+			"minecraft:health100": {
+				"minecraft:health": {
+					"max": 100
+				}
+			},
+			"minecraft:knockback0": {
+				"minecraft:knockback_resistance": {
+					"value": 0.0
+				}
+			},
+			"minecraft:knockback1": {
+				"minecraft:knockback_resistance": {
+					"value": 0.01
+				}
+			},
+			"minecraft:knockback2": {
+				"minecraft:knockback_resistance": {
+					"value": 0.02
+				}
+			},
+			"minecraft:knockback3": {
+				"minecraft:knockback_resistance": {
+					"value": 0.03
+				}
+			},
+			"minecraft:knockback4": {
+				"minecraft:knockback_resistance": {
+					"value": 0.04
+				}
+			},
+			"minecraft:knockback5": {
+				"minecraft:knockback_resistance": {
+					"value": 0.05
+				}
+			},
+			"minecraft:knockback6": {
+				"minecraft:knockback_resistance": {
+					"value": 0.06
+				}
+			},
+			"minecraft:knockback7": {
+				"minecraft:knockback_resistance": {
+					"value": 0.07
+				}
+			},
+			"minecraft:knockback8": {
+				"minecraft:knockback_resistance": {
+					"value": 0.08
+				}
+			},
+			"minecraft:knockback9": {
+				"minecraft:knockback_resistance": {
+					"value": 0.09
+				}
+			},
+			"minecraft:knockback10": {
+				"minecraft:knockback_resistance": {
+					"value": 0.1
+				}
+			},
+			"minecraft:knockback11": {
+				"minecraft:knockback_resistance": {
+					"value": 0.11
+				}
+			},
+			"minecraft:knockback12": {
+				"minecraft:knockback_resistance": {
+					"value": 0.12
+				}
+			},
+			"minecraft:knockback13": {
+				"minecraft:knockback_resistance": {
+					"value": 0.13
+				}
+			},
+			"minecraft:knockback14": {
+				"minecraft:knockback_resistance": {
+					"value": 0.14
+				}
+			},
+			"minecraft:knockback15": {
+				"minecraft:knockback_resistance": {
+					"value": 0.15
+				}
+			},
+			"minecraft:knockback16": {
+				"minecraft:knockback_resistance": {
+					"value": 0.16
+				}
+			},
+			"minecraft:knockback17": {
+				"minecraft:knockback_resistance": {
+					"value": 0.17
+				}
+			},
+			"minecraft:knockback18": {
+				"minecraft:knockback_resistance": {
+					"value": 0.18
+				}
+			},
+			"minecraft:knockback19": {
+				"minecraft:knockback_resistance": {
+					"value": 0.19
+				}
+			},
+			"minecraft:knockback20": {
+				"minecraft:knockback_resistance": {
+					"value": 0.2
+				}
+			},
+			"minecraft:knockback21": {
+				"minecraft:knockback_resistance": {
+					"value": 0.21
+				}
+			},
+			"minecraft:knockback22": {
+				"minecraft:knockback_resistance": {
+					"value": 0.22
+				}
+			},
+			"minecraft:knockback23": {
+				"minecraft:knockback_resistance": {
+					"value": 0.23
+				}
+			},
+			"minecraft:knockback24": {
+				"minecraft:knockback_resistance": {
+					"value": 0.24
+				}
+			},
+			"minecraft:knockback25": {
+				"minecraft:knockback_resistance": {
+					"value": 0.25
+				}
+			},
+			"minecraft:knockback26": {
+				"minecraft:knockback_resistance": {
+					"value": 0.26
+				}
+			},
+			"minecraft:knockback27": {
+				"minecraft:knockback_resistance": {
+					"value": 0.27
+				}
+			},
+			"minecraft:knockback28": {
+				"minecraft:knockback_resistance": {
+					"value": 0.28
+				}
+			},
+			"minecraft:knockback29": {
+				"minecraft:knockback_resistance": {
+					"value": 0.29
+				}
+			},
+			"minecraft:knockback30": {
+				"minecraft:knockback_resistance": {
+					"value": 0.3
+				}
+			},
+			"minecraft:knockback31": {
+				"minecraft:knockback_resistance": {
+					"value": 0.31
+				}
+			},
+			"minecraft:knockback32": {
+				"minecraft:knockback_resistance": {
+					"value": 0.32
+				}
+			},
+			"minecraft:knockback33": {
+				"minecraft:knockback_resistance": {
+					"value": 0.33
+				}
+			},
+			"minecraft:knockback34": {
+				"minecraft:knockback_resistance": {
+					"value": 0.34
+				}
+			},
+			"minecraft:knockback35": {
+				"minecraft:knockback_resistance": {
+					"value": 0.35
+				}
+			},
+			"minecraft:knockback36": {
+				"minecraft:knockback_resistance": {
+					"value": 0.36
+				}
+			},
+			"minecraft:knockback37": {
+				"minecraft:knockback_resistance": {
+					"value": 0.37
+				}
+			},
+			"minecraft:knockback38": {
+				"minecraft:knockback_resistance": {
+					"value": 0.38
+				}
+			},
+			"minecraft:knockback39": {
+				"minecraft:knockback_resistance": {
+					"value": 0.39
+				}
+			},
+			"minecraft:knockback40": {
+				"minecraft:knockback_resistance": {
+					"value": 0.4
+				}
+			},
+			"minecraft:knockback41": {
+				"minecraft:knockback_resistance": {
+					"value": 0.41
+				}
+			},
+			"minecraft:knockback42": {
+				"minecraft:knockback_resistance": {
+					"value": 0.42
+				}
+			},
+			"minecraft:knockback43": {
+				"minecraft:knockback_resistance": {
+					"value": 0.43
+				}
+			},
+			"minecraft:knockback44": {
+				"minecraft:knockback_resistance": {
+					"value": 0.44
+				}
+			},
+			"minecraft:knockback45": {
+				"minecraft:knockback_resistance": {
+					"value": 0.45
+				}
+			},
+			"minecraft:knockback46": {
+				"minecraft:knockback_resistance": {
+					"value": 0.46
+				}
+			},
+			"minecraft:knockback47": {
+				"minecraft:knockback_resistance": {
+					"value": 0.47
+				}
+			},
+			"minecraft:knockback48": {
+				"minecraft:knockback_resistance": {
+					"value": 0.48
+				}
+			},
+			"minecraft:knockback49": {
+				"minecraft:knockback_resistance": {
+					"value": 0.49
+				}
+			},
+			"minecraft:knockback50": {
+				"minecraft:knockback_resistance": {
+					"value": 0.5
+				}
+			},
+			"minecraft:knockback51": {
+				"minecraft:knockback_resistance": {
+					"value": 0.51
+				}
+			},
+			"minecraft:knockback52": {
+				"minecraft:knockback_resistance": {
+					"value": 0.52
+				}
+			},
+			"minecraft:knockback53": {
+				"minecraft:knockback_resistance": {
+					"value": 0.53
+				}
+			},
+			"minecraft:knockback54": {
+				"minecraft:knockback_resistance": {
+					"value": 0.54
+				}
+			},
+			"minecraft:knockback55": {
+				"minecraft:knockback_resistance": {
+					"value": 0.55
+				}
+			},
+			"minecraft:knockback56": {
+				"minecraft:knockback_resistance": {
+					"value": 0.56
+				}
+			},
+			"minecraft:knockback57": {
+				"minecraft:knockback_resistance": {
+					"value": 0.57
+				}
+			},
+			"minecraft:knockback58": {
+				"minecraft:knockback_resistance": {
+					"value": 0.58
+				}
+			},
+			"minecraft:knockback59": {
+				"minecraft:knockback_resistance": {
+					"value": 0.59
+				}
+			},
+			"minecraft:knockback60": {
+				"minecraft:knockback_resistance": {
+					"value": 0.6
+				}
+			},
+			"minecraft:knockback61": {
+				"minecraft:knockback_resistance": {
+					"value": 0.61
+				}
+			},
+			"minecraft:knockback62": {
+				"minecraft:knockback_resistance": {
+					"value": 0.62
+				}
+			},
+			"minecraft:knockback63": {
+				"minecraft:knockback_resistance": {
+					"value": 0.63
+				}
+			},
+			"minecraft:knockback64": {
+				"minecraft:knockback_resistance": {
+					"value": 0.64
+				}
+			},
+			"minecraft:knockback65": {
+				"minecraft:knockback_resistance": {
+					"value": 0.65
+				}
+			},
+			"minecraft:knockback66": {
+				"minecraft:knockback_resistance": {
+					"value": 0.66
+				}
+			},
+			"minecraft:knockback67": {
+				"minecraft:knockback_resistance": {
+					"value": 0.67
+				}
+			},
+			"minecraft:knockback68": {
+				"minecraft:knockback_resistance": {
+					"value": 0.68
+				}
+			},
+			"minecraft:knockback69": {
+				"minecraft:knockback_resistance": {
+					"value": 0.69
+				}
+			},
+			"minecraft:knockback70": {
+				"minecraft:knockback_resistance": {
+					"value": 0.7
+				}
+			},
+			"minecraft:knockback71": {
+				"minecraft:knockback_resistance": {
+					"value": 0.71
+				}
+			},
+			"minecraft:knockback72": {
+				"minecraft:knockback_resistance": {
+					"value": 0.72
+				}
+			},
+			"minecraft:knockback73": {
+				"minecraft:knockback_resistance": {
+					"value": 0.73
+				}
+			},
+			"minecraft:knockback74": {
+				"minecraft:knockback_resistance": {
+					"value": 0.74
+				}
+			},
+			"minecraft:knockback75": {
+				"minecraft:knockback_resistance": {
+					"value": 0.75
+				}
+			},
+			"minecraft:knockback76": {
+				"minecraft:knockback_resistance": {
+					"value": 0.76
+				}
+			},
+			"minecraft:knockback77": {
+				"minecraft:knockback_resistance": {
+					"value": 0.77
+				}
+			},
+			"minecraft:knockback78": {
+				"minecraft:knockback_resistance": {
+					"value": 0.78
+				}
+			},
+			"minecraft:knockback79": {
+				"minecraft:knockback_resistance": {
+					"value": 0.79
+				}
+			},
+			"minecraft:knockback80": {
+				"minecraft:knockback_resistance": {
+					"value": 0.8
+				}
+			},
+			"minecraft:knockback81": {
+				"minecraft:knockback_resistance": {
+					"value": 0.81
+				}
+			},
+			"minecraft:knockback82": {
+				"minecraft:knockback_resistance": {
+					"value": 0.82
+				}
+			},
+			"minecraft:knockback83": {
+				"minecraft:knockback_resistance": {
+					"value": 0.83
+				}
+			},
+			"minecraft:knockback84": {
+				"minecraft:knockback_resistance": {
+					"value": 0.84
+				}
+			},
+			"minecraft:knockback85": {
+				"minecraft:knockback_resistance": {
+					"value": 0.85
+				}
+			},
+			"minecraft:knockback86": {
+				"minecraft:knockback_resistance": {
+					"value": 0.86
+				}
+			},
+			"minecraft:knockback87": {
+				"minecraft:knockback_resistance": {
+					"value": 0.87
+				}
+			},
+			"minecraft:knockback88": {
+				"minecraft:knockback_resistance": {
+					"value": 0.88
+				}
+			},
+			"minecraft:knockback89": {
+				"minecraft:knockback_resistance": {
+					"value": 0.89
+				}
+			},
+			"minecraft:knockback90": {
+				"minecraft:knockback_resistance": {
+					"value": 0.9
+				}
+			},
+			"minecraft:knockback91": {
+				"minecraft:knockback_resistance": {
+					"value": 0.91
+				}
+			},
+			"minecraft:knockback92": {
+				"minecraft:knockback_resistance": {
+					"value": 0.92
+				}
+			},
+			"minecraft:knockback93": {
+				"minecraft:knockback_resistance": {
+					"value": 0.93
+				}
+			},
+			"minecraft:knockback94": {
+				"minecraft:knockback_resistance": {
+					"value": 0.94
+				}
+			},
+			"minecraft:knockback95": {
+				"minecraft:knockback_resistance": {
+					"value": 0.95
+				}
+			},
+			"minecraft:knockback96": {
+				"minecraft:knockback_resistance": {
+					"value": 0.96
+				}
+			},
+			"minecraft:knockback97": {
+				"minecraft:knockback_resistance": {
+					"value": 0.97
+				}
+			},
+			"minecraft:knockback98": {
+				"minecraft:knockback_resistance": {
+					"value": 0.98
+				}
+			},
+			"minecraft:knockback99": {
+				"minecraft:knockback_resistance": {
+					"value": 0.99
+				}
+			},
+			"minecraft:knockback100": {
+				"minecraft:knockback_resistance": {
+					"value": 1.0
+				}
+			},
+			"minecraft:damageReduction-100": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 2.0
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-99": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.99
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-98": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.98
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-97": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.97
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-96": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.96
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-95": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.95
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-94": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.94
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-93": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.93
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-92": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.92
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-91": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.91
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-90": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.9
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-89": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.89
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-88": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.88
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-87": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.87
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-86": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.86
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-85": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.85
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-84": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.84
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-83": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.83
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-82": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.82
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-81": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.81
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-80": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.8
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-79": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.79
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-78": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.78
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-77": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.77
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-76": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.76
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-75": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.75
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-74": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.74
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-73": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.73
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-72": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.72
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-71": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.71
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-70": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.7
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-69": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.69
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-68": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.68
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-67": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.67
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-66": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.66
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-65": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.65
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-64": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.64
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-63": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.63
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-62": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.62
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-61": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.61
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-60": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.6
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-59": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.59
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-58": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.58
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-57": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.57
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-56": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.56
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-55": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.55
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-54": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.54
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-53": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.53
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-52": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.52
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-51": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.51
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-50": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.5
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-49": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.49
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-48": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.48
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-47": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.47
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-46": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.46
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-45": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.45
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-44": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.44
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-43": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.43
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-42": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.42
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-41": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.41
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-40": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.4
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-39": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.39
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-38": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.38
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-37": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.37
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-36": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.36
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-35": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.35
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-34": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.34
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-33": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.33
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-32": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.32
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-31": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.31
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-30": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.3
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-29": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.29
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-28": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.28
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-27": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.27
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-26": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.26
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-25": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.25
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-24": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.24
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-23": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.23
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-22": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.22
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-21": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.21
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-20": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.2
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-19": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.19
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-18": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.18
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-17": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.17
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-16": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.16
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-15": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.15
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-14": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.14
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-13": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.13
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-12": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.12
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-11": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.11
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-10": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.1
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-9": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.09
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-8": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.08
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-7": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.07
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-6": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.06
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-5": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.05
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-4": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.04
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-3": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.03
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-2": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.02
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction-1": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.01
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction0": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.0
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction1": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.99
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction2": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.98
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction3": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.97
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction4": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.96
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction5": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.95
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction6": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.94
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction7": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.93
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction8": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.92
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction9": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.91
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction10": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.9
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction11": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.89
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction12": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.88
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction13": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.87
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction14": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.86
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction15": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.85
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction16": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.84
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction17": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.83
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction18": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.82
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction19": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.81
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction20": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.8
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction21": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.79
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction22": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.78
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction23": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.77
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction24": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.76
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction25": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.75
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction26": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.74
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction27": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.73
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction28": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.72
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction29": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.71
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction30": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.7
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction31": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.69
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction32": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.68
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction33": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.67
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction34": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.66
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction35": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.65
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction36": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.64
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction37": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.63
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction38": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.62
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction39": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.61
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction40": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.6
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction41": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.59
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction42": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.58
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction43": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.57
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction44": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.56
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction45": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.55
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction46": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.54
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction47": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.53
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction48": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.52
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction49": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.51
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction50": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.5
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction51": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.49
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction52": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.48
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction53": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.47
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction54": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.46
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction55": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.45
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction56": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.44
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction57": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.43
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction58": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.42
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction59": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.41
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction60": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.4
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction61": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.39
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction62": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.38
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction63": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.37
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction64": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.36
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction65": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.35
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction66": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.34
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction67": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.33
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction68": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.32
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction69": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.31
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction70": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.3
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction71": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.29
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction72": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.28
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction73": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.27
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction74": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.26
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction75": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.25
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction76": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.24
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction77": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.23
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction78": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.22
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction79": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.21
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction80": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.2
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction81": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.19
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction82": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.18
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction83": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.17
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction84": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.16
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction85": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.15
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction86": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.14
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction87": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.13
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction88": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.12
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction89": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.11
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction90": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.1
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction91": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.09
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction92": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.08
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction93": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.07
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction94": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.06
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction95": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.05
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction96": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.04
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction97": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.03
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction98": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.02
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction99": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.01
+						}
+					]
+				}
+			},
+			"minecraft:damageReduction100": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.0
+						}
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:experience_reward": {
+				"on_death": "Math.Min(query.player_level * 7, 100)"
+			},
+			"minecraft:type_family": {
+				"family": [
+					"player"
+				]
+			},
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:loot": {
+				"table": "loot_tables/empty.json"
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.8
+			},
+			"minecraft:can_climb": {},
+			"minecraft:movement": {
+				"value": 0.1
+			},
+			"minecraft:health": {
+				"value": 20,
+				"max": 20
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:attack": {
+				"damage": 1
+			},
+			"minecraft:exhaustion_values": {
+				"heal": 6,
+				"jump": 0.05,
+				"sprint_jump": 0.2,
+				"mine": 0.005,
+				"attack": 0.1,
+				"damage": 0.1,
+				"walk": 0,
+				"sprint": 0.1,
+				"swim": 0.01
+			},
+			"minecraft:player.saturation": {
+				"value": 5,
+				"max": 20
+			},
+			"minecraft:player.exhaustion": {
+				"value": 0,
+				"max": 20
+			},
+			"minecraft:player.level": {
+				"value": 0,
+				"max": 24791
+			},
+			"minecraft:player.experience": {
+				"value": 0,
+				"max": 1
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": -1,
+				"inhale_time": 3.75,
+				"generates_bubbles": false
+			},
+			"minecraft:nameable": {
+				"always_show": true,
+				"allow_name_tag_renaming": false
+			},
+			"minecraft:physics": {
+				"push_towards_closest_space": true
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:insomnia": {
+				"days_until_insomnia": 3
+			},
+			"minecraft:rideable": {
+				"seat_count": 2,
+				"family_types": [
+					"parrot_tame"
+				],
+				"pull_in_entities": true,
+				"seats": [
+					{
+						"position": [
+							0.4,
+							-0.2,
+							-0.1
+						],
+						"min_rider_count": 0,
+						"max_rider_count": 0,
+						"lock_rider_rotation": 0
+					},
+					{
+						"position": [
+							-0.4,
+							-0.2,
+							-0.1
+						],
+						"min_rider_count": 1,
+						"max_rider_count": 2,
+						"lock_rider_rotation": 0
+					}
+				]
+			},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:block_climber": {},
+			"minecraft:environment_sensor": {
+				"triggers": {
+					"filters": {
+						"all_of": [
+							{
+								"test": "has_mob_effect",
+								"subject": "self",
+								"value": "bad_omen"
+							},
+							{
+								"test": "is_in_village",
+								"subject": "self",
+								"value": true
+							}
+						]
+					},
+					"event": "minecraft:gain_raid_omen"
+				}
+			}
+		},
+		"events": {
+			"minecraft:event_mask0": {
+				"add": {
+					"component_groups": [
+						"minecraft:mask0"
+					]
+				}
+			},
+			"minecraft:event_mask1": {
+				"add": {
+					"component_groups": [
+						"minecraft:mask1"
+					]
+				}
+			},
+			"minecraft:event_mask2": {
+				"add": {
+					"component_groups": [
+						"minecraft:mask2"
+					]
+				}
+			},
+			"minecraft:event_mask3": {
+				"add": {
+					"component_groups": [
+						"minecraft:mask3"
+					]
+				}
+			},
+			"minecraft:event_mask4": {
+				"add": {
+					"component_groups": [
+						"minecraft:mask4"
+					]
+				}
+			},
+			"minecraft:event_mask5": {
+				"add": {
+					"component_groups": [
+						"minecraft:mask5"
+					]
+				}
+			},
+			"minecraft:event_mask6": {
+				"add": {
+					"component_groups": [
+						"minecraft:mask6"
+					]
+				}
+			},
+			"minecraft:event_mask7": {
+				"add": {
+					"component_groups": [
+						"minecraft:mask7"
+					]
+				}
+			},
+			"minecraft:event_mask8": {
+				"add": {
+					"component_groups": [
+						"minecraft:mask8"
+					]
+				}
+			},
+			"minecraft:event_mask9": {
+				"add": {
+					"component_groups": [
+						"minecraft:mask9"
+					]
+				}
+			},
+			"minecraft:event_mask10": {
+				"add": {
+					"component_groups": [
+						"minecraft:mask10"
+					]
+				}
+			},
+			"minecraft:event_mask11": {
+				"add": {
+					"component_groups": [
+						"minecraft:mask11"
+					]
+				}
+			},
+			"minecraft:event_rat_mask": {
+				"add": {
+					"component_groups": [
+						"player:rat_mask"
+					]
+				}
+			},
+			"minecraft:event_rat_mask_remove": {
+				"remove": {
+					"component_groups": [
+						"player:rat_mask"
+					]
+				}
+			},
+			"minecraft:event_burns_on": {
+				"add": {
+					"component_groups": [
+						"minecraft:burns"
+					]
+				}
+			},
+			"minecraft:event_burns_off": {
+				"remove": {
+					"component_groups": [
+						"minecraft:burns"
+					]
+				}
+			},
+			"minecraft:event_mask1_utils_on": {
+				"add": {
+					"component_groups": [
+						"minecraft:mask1_utils"
+					]
+				}
+			},
+			"minecraft:event_mask1_utils_off": {
+				"remove": {
+					"component_groups": [
+						"minecraft:mask1_utils"
+					]
+				}
+			},
+			"minecraft:fire_inmunity_on": {
+				"add": {
+					"component_groups": [
+						"minecraft:fire_inmunity"
+					]
+				}
+			},
+			"minecraft:fire_inmunity_off": {
+				"remove": {
+					"component_groups": [
+						"minecraft:fire_inmunity"
+					]
+				}
+			},
+			"minecraft:mask9_timer_off": {
+				"remove": {
+					"component_groups": [
+						"minecraft:mask9_timer"
+					]
+				},
+				"sequence": [
+					{
+						"queue_command": {
+							"command": [
+								"tag @s remove mask9_cooldown"
+							]
+						}
+					},
+					{
+						"queue_command": {
+							"command": [
+								"tag @s add mask9_ready"
+							]
+						}
+					}
+				]
+			},
+			"minecraft:mask9_timer_on": {
+				"add": {
+					"component_groups": [
+						"minecraft:mask9_timer"
+					]
+				}
+			},
+			"minecraft:event_exhaustion_normal": {
+				"add": {
+					"component_groups": [
+						"minecraft:exhaustion_normal"
+					]
+				}
+			},
+			"minecraft:event_exhaustion_cat": {
+				"add": {
+					"component_groups": [
+						"minecraft:exhaustion_cat"
+					]
+				}
+			},
+			"minecraft:event_float_on_water_on": {
+				"add": {
+					"component_groups": [
+						"minecraft:float_on_water"
+					]
+				}
+			},
+			"minecraft:event_float_on_water_off": {
+				"remove": {
+					"component_groups": [
+						"minecraft:float_on_water"
+					]
+				}
+			},
+			"minecraft:light_level": {
+				"sequence": [
+					{
+						"filters": {
+							"test": "light_level",
+							"value": 15
+						},
+						"queue_command": {
+							"command": [
+								"tag @s remove light_off"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "light_level",
+							"value": 14
+						},
+						"queue_command": {
+							"command": [
+								"tag @s remove light_off"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "light_level",
+							"value": 13
+						},
+						"queue_command": {
+							"command": [
+								"tag @s remove light_off"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "light_level",
+							"value": 12
+						},
+						"queue_command": {
+							"command": [
+								"tag @s remove light_off"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "light_level",
+							"value": 11
+						},
+						"queue_command": {
+							"command": [
+								"tag @s remove light_off"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "light_level",
+							"value": 10
+						},
+						"queue_command": {
+							"command": [
+								"tag @s remove light_off"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "light_level",
+							"value": 9
+						},
+						"queue_command": {
+							"command": [
+								"tag @s remove light_off"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "light_level",
+							"value": 8
+						},
+						"queue_command": {
+							"command": [
+								"tag @s remove light_off"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "light_level",
+							"value": 7
+						},
+						"queue_command": {
+							"command": [
+								"tag @s remove light_off"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "light_level",
+							"value": 6
+						},
+						"queue_command": {
+							"command": [
+								"tag @s remove light_off"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "light_level",
+							"value": 5
+						},
+						"queue_command": {
+							"command": [
+								"tag @s add light_off"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "light_level",
+							"value": 4
+						},
+						"queue_command": {
+							"command": [
+								"tag @s add light_off"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "light_level",
+							"value": 3
+						},
+						"queue_command": {
+							"command": [
+								"tag @s add light_off"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "light_level",
+							"value": 2
+						},
+						"queue_command": {
+							"command": [
+								"tag @s add light_off"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "light_level",
+							"value": 1
+						},
+						"queue_command": {
+							"command": [
+								"tag @s add light_off"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "light_level",
+							"value": 0
+						},
+						"queue_command": {
+							"command": [
+								"tag @s add light_off"
+							]
+						}
+					}
+				]
+			},
+			"minecraft:gain_raid_omen": {
+				"add": {
+					"component_groups": [
+						"minecraft:add_raid_omen"
+					]
+				}
+			},
+			"minecraft:clear_add_raid_omen": {
+				"remove": {
+					"component_groups": [
+						"minecraft:add_raid_omen"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"minecraft:clear_raid_omen_spell_effect"
+					]
+				}
+			},
+			"minecraft:trigger_raid": {
+				"add": {
+					"component_groups": [
+						"minecraft:raid_trigger"
+					]
+				}
+			},
+			"minecraft:remove_raid_trigger": {
+				"remove": {
+					"component_groups": [
+						"minecraft:raid_trigger"
+					]
+				}
+			},
+			"minecraft:stealth": {
+				"add": {
+					"component_groups": [
+						"minecraft:stealth"
+					]
+				}
+			},
+			"minecraft:reset": {
+				"add": {
+					"component_groups": [
+						"minecraft:reset"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"minecraft:stealth"
+					]
+				}
+			},
+			"minecraft:health2": {
+				"add": {
+					"component_groups": [
+						"minecraft:health2"
+					]
+				}
+			},
+			"minecraft:health4": {
+				"add": {
+					"component_groups": [
+						"minecraft:health4"
+					]
+				}
+			},
+			"minecraft:health6": {
+				"add": {
+					"component_groups": [
+						"minecraft:health6"
+					]
+				}
+			},
+			"minecraft:health8": {
+				"add": {
+					"component_groups": [
+						"minecraft:health8"
+					]
+				}
+			},
+			"minecraft:health10": {
+				"add": {
+					"component_groups": [
+						"minecraft:health10"
+					]
+				}
+			},
+			"minecraft:health12": {
+				"add": {
+					"component_groups": [
+						"minecraft:health12"
+					]
+				}
+			},
+			"minecraft:health14": {
+				"add": {
+					"component_groups": [
+						"minecraft:health14"
+					]
+				}
+			},
+			"minecraft:health16": {
+				"add": {
+					"component_groups": [
+						"minecraft:health16"
+					]
+				}
+			},
+			"minecraft:health18": {
+				"add": {
+					"component_groups": [
+						"minecraft:health18"
+					]
+				}
+			},
+			"minecraft:health20": {
+				"add": {
+					"component_groups": [
+						"minecraft:health20"
+					]
+				}
+			},
+			"minecraft:health22": {
+				"add": {
+					"component_groups": [
+						"minecraft:health22"
+					]
+				}
+			},
+			"minecraft:health24": {
+				"add": {
+					"component_groups": [
+						"minecraft:health24"
+					]
+				}
+			},
+			"minecraft:health26": {
+				"add": {
+					"component_groups": [
+						"minecraft:health26"
+					]
+				}
+			},
+			"minecraft:health28": {
+				"add": {
+					"component_groups": [
+						"minecraft:health28"
+					]
+				}
+			},
+			"minecraft:health30": {
+				"add": {
+					"component_groups": [
+						"minecraft:health30"
+					]
+				}
+			},
+			"minecraft:health32": {
+				"add": {
+					"component_groups": [
+						"minecraft:health32"
+					]
+				}
+			},
+			"minecraft:health34": {
+				"add": {
+					"component_groups": [
+						"minecraft:health34"
+					]
+				}
+			},
+			"minecraft:health36": {
+				"add": {
+					"component_groups": [
+						"minecraft:health36"
+					]
+				}
+			},
+			"minecraft:health38": {
+				"add": {
+					"component_groups": [
+						"minecraft:health38"
+					]
+				}
+			},
+			"minecraft:health40": {
+				"add": {
+					"component_groups": [
+						"minecraft:health40"
+					]
+				}
+			},
+			"minecraft:health42": {
+				"add": {
+					"component_groups": [
+						"minecraft:health42"
+					]
+				}
+			},
+			"minecraft:health44": {
+				"add": {
+					"component_groups": [
+						"minecraft:health44"
+					]
+				}
+			},
+			"minecraft:health46": {
+				"add": {
+					"component_groups": [
+						"minecraft:health46"
+					]
+				}
+			},
+			"minecraft:health48": {
+				"add": {
+					"component_groups": [
+						"minecraft:health48"
+					]
+				}
+			},
+			"minecraft:health50": {
+				"add": {
+					"component_groups": [
+						"minecraft:health50"
+					]
+				}
+			},
+			"minecraft:health52": {
+				"add": {
+					"component_groups": [
+						"minecraft:health52"
+					]
+				}
+			},
+			"minecraft:health54": {
+				"add": {
+					"component_groups": [
+						"minecraft:health54"
+					]
+				}
+			},
+			"minecraft:health56": {
+				"add": {
+					"component_groups": [
+						"minecraft:health56"
+					]
+				}
+			},
+			"minecraft:health58": {
+				"add": {
+					"component_groups": [
+						"minecraft:health58"
+					]
+				}
+			},
+			"minecraft:health60": {
+				"add": {
+					"component_groups": [
+						"minecraft:health60"
+					]
+				}
+			},
+			"minecraft:health62": {
+				"add": {
+					"component_groups": [
+						"minecraft:health62"
+					]
+				}
+			},
+			"minecraft:health64": {
+				"add": {
+					"component_groups": [
+						"minecraft:health64"
+					]
+				}
+			},
+			"minecraft:health66": {
+				"add": {
+					"component_groups": [
+						"minecraft:health66"
+					]
+				}
+			},
+			"minecraft:health68": {
+				"add": {
+					"component_groups": [
+						"minecraft:health68"
+					]
+				}
+			},
+			"minecraft:health70": {
+				"add": {
+					"component_groups": [
+						"minecraft:health70"
+					]
+				}
+			},
+			"minecraft:health72": {
+				"add": {
+					"component_groups": [
+						"minecraft:health72"
+					]
+				}
+			},
+			"minecraft:health74": {
+				"add": {
+					"component_groups": [
+						"minecraft:health74"
+					]
+				}
+			},
+			"minecraft:health76": {
+				"add": {
+					"component_groups": [
+						"minecraft:health76"
+					]
+				}
+			},
+			"minecraft:health78": {
+				"add": {
+					"component_groups": [
+						"minecraft:health78"
+					]
+				}
+			},
+			"minecraft:health80": {
+				"add": {
+					"component_groups": [
+						"minecraft:health80"
+					]
+				}
+			},
+			"minecraft:health82": {
+				"add": {
+					"component_groups": [
+						"minecraft:health82"
+					]
+				}
+			},
+			"minecraft:health84": {
+				"add": {
+					"component_groups": [
+						"minecraft:health84"
+					]
+				}
+			},
+			"minecraft:health86": {
+				"add": {
+					"component_groups": [
+						"minecraft:health86"
+					]
+				}
+			},
+			"minecraft:health88": {
+				"add": {
+					"component_groups": [
+						"minecraft:health88"
+					]
+				}
+			},
+			"minecraft:health90": {
+				"add": {
+					"component_groups": [
+						"minecraft:health90"
+					]
+				}
+			},
+			"minecraft:health92": {
+				"add": {
+					"component_groups": [
+						"minecraft:health92"
+					]
+				}
+			},
+			"minecraft:health94": {
+				"add": {
+					"component_groups": [
+						"minecraft:health94"
+					]
+				}
+			},
+			"minecraft:health96": {
+				"add": {
+					"component_groups": [
+						"minecraft:health96"
+					]
+				}
+			},
+			"minecraft:health98": {
+				"add": {
+					"component_groups": [
+						"minecraft:health98"
+					]
+				}
+			},
+			"minecraft:health100": {
+				"add": {
+					"component_groups": [
+						"minecraft:health100"
+					]
+				}
+			},
+			"minecraft:knockbackRes0": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback0"
+					]
+				}
+			},
+			"minecraft:knockbackRes1": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback1"
+					]
+				}
+			},
+			"minecraft:knockbackRes2": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback2"
+					]
+				}
+			},
+			"minecraft:knockbackRes3": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback3"
+					]
+				}
+			},
+			"minecraft:knockbackRes4": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback4"
+					]
+				}
+			},
+			"minecraft:knockbackRes5": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback5"
+					]
+				}
+			},
+			"minecraft:knockbackRes6": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback6"
+					]
+				}
+			},
+			"minecraft:knockbackRes7": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback7"
+					]
+				}
+			},
+			"minecraft:knockbackRes8": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback8"
+					]
+				}
+			},
+			"minecraft:knockbackRes9": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback9"
+					]
+				}
+			},
+			"minecraft:knockbackRes10": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback10"
+					]
+				}
+			},
+			"minecraft:knockbackRes11": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback11"
+					]
+				}
+			},
+			"minecraft:knockbackRes12": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback12"
+					]
+				}
+			},
+			"minecraft:knockbackRes13": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback13"
+					]
+				}
+			},
+			"minecraft:knockbackRes14": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback14"
+					]
+				}
+			},
+			"minecraft:knockbackRes15": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback15"
+					]
+				}
+			},
+			"minecraft:knockbackRes16": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback16"
+					]
+				}
+			},
+			"minecraft:knockbackRes17": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback17"
+					]
+				}
+			},
+			"minecraft:knockbackRes18": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback18"
+					]
+				}
+			},
+			"minecraft:knockbackRes19": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback19"
+					]
+				}
+			},
+			"minecraft:knockbackRes20": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback20"
+					]
+				}
+			},
+			"minecraft:knockbackRes21": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback21"
+					]
+				}
+			},
+			"minecraft:knockbackRes22": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback22"
+					]
+				}
+			},
+			"minecraft:knockbackRes23": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback23"
+					]
+				}
+			},
+			"minecraft:knockbackRes24": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback24"
+					]
+				}
+			},
+			"minecraft:knockbackRes25": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback25"
+					]
+				}
+			},
+			"minecraft:knockbackRes26": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback26"
+					]
+				}
+			},
+			"minecraft:knockbackRes27": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback27"
+					]
+				}
+			},
+			"minecraft:knockbackRes28": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback28"
+					]
+				}
+			},
+			"minecraft:knockbackRes29": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback29"
+					]
+				}
+			},
+			"minecraft:knockbackRes30": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback30"
+					]
+				}
+			},
+			"minecraft:knockbackRes31": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback31"
+					]
+				}
+			},
+			"minecraft:knockbackRes32": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback32"
+					]
+				}
+			},
+			"minecraft:knockbackRes33": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback33"
+					]
+				}
+			},
+			"minecraft:knockbackRes34": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback34"
+					]
+				}
+			},
+			"minecraft:knockbackRes35": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback35"
+					]
+				}
+			},
+			"minecraft:knockbackRes36": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback36"
+					]
+				}
+			},
+			"minecraft:knockbackRes37": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback37"
+					]
+				}
+			},
+			"minecraft:knockbackRes38": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback38"
+					]
+				}
+			},
+			"minecraft:knockbackRes39": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback39"
+					]
+				}
+			},
+			"minecraft:knockbackRes40": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback40"
+					]
+				}
+			},
+			"minecraft:knockbackRes41": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback41"
+					]
+				}
+			},
+			"minecraft:knockbackRes42": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback42"
+					]
+				}
+			},
+			"minecraft:knockbackRes43": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback43"
+					]
+				}
+			},
+			"minecraft:knockbackRes44": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback44"
+					]
+				}
+			},
+			"minecraft:knockbackRes45": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback45"
+					]
+				}
+			},
+			"minecraft:knockbackRes46": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback46"
+					]
+				}
+			},
+			"minecraft:knockbackRes47": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback47"
+					]
+				}
+			},
+			"minecraft:knockbackRes48": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback48"
+					]
+				}
+			},
+			"minecraft:knockbackRes49": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback49"
+					]
+				}
+			},
+			"minecraft:knockbackRes50": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback50"
+					]
+				}
+			},
+			"minecraft:knockbackRes51": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback51"
+					]
+				}
+			},
+			"minecraft:knockbackRes52": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback52"
+					]
+				}
+			},
+			"minecraft:knockbackRes53": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback53"
+					]
+				}
+			},
+			"minecraft:knockbackRes54": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback54"
+					]
+				}
+			},
+			"minecraft:knockbackRes55": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback55"
+					]
+				}
+			},
+			"minecraft:knockbackRes56": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback56"
+					]
+				}
+			},
+			"minecraft:knockbackRes57": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback57"
+					]
+				}
+			},
+			"minecraft:knockbackRes58": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback58"
+					]
+				}
+			},
+			"minecraft:knockbackRes59": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback59"
+					]
+				}
+			},
+			"minecraft:knockbackRes60": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback60"
+					]
+				}
+			},
+			"minecraft:knockbackRes61": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback61"
+					]
+				}
+			},
+			"minecraft:knockbackRes62": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback62"
+					]
+				}
+			},
+			"minecraft:knockbackRes63": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback63"
+					]
+				}
+			},
+			"minecraft:knockbackRes64": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback64"
+					]
+				}
+			},
+			"minecraft:knockbackRes65": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback65"
+					]
+				}
+			},
+			"minecraft:knockbackRes66": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback66"
+					]
+				}
+			},
+			"minecraft:knockbackRes67": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback67"
+					]
+				}
+			},
+			"minecraft:knockbackRes68": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback68"
+					]
+				}
+			},
+			"minecraft:knockbackRes69": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback69"
+					]
+				}
+			},
+			"minecraft:knockbackRes70": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback70"
+					]
+				}
+			},
+			"minecraft:knockbackRes71": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback71"
+					]
+				}
+			},
+			"minecraft:knockbackRes72": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback72"
+					]
+				}
+			},
+			"minecraft:knockbackRes73": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback73"
+					]
+				}
+			},
+			"minecraft:knockbackRes74": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback74"
+					]
+				}
+			},
+			"minecraft:knockbackRes75": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback75"
+					]
+				}
+			},
+			"minecraft:knockbackRes76": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback76"
+					]
+				}
+			},
+			"minecraft:knockbackRes77": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback77"
+					]
+				}
+			},
+			"minecraft:knockbackRes78": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback78"
+					]
+				}
+			},
+			"minecraft:knockbackRes79": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback79"
+					]
+				}
+			},
+			"minecraft:knockbackRes80": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback80"
+					]
+				}
+			},
+			"minecraft:knockbackRes81": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback81"
+					]
+				}
+			},
+			"minecraft:knockbackRes82": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback82"
+					]
+				}
+			},
+			"minecraft:knockbackRes83": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback83"
+					]
+				}
+			},
+			"minecraft:knockbackRes84": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback84"
+					]
+				}
+			},
+			"minecraft:knockbackRes85": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback85"
+					]
+				}
+			},
+			"minecraft:knockbackRes86": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback86"
+					]
+				}
+			},
+			"minecraft:knockbackRes87": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback87"
+					]
+				}
+			},
+			"minecraft:knockbackRes88": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback88"
+					]
+				}
+			},
+			"minecraft:knockbackRes89": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback89"
+					]
+				}
+			},
+			"minecraft:knockbackRes90": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback90"
+					]
+				}
+			},
+			"minecraft:knockbackRes91": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback91"
+					]
+				}
+			},
+			"minecraft:knockbackRes92": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback92"
+					]
+				}
+			},
+			"minecraft:knockbackRes93": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback93"
+					]
+				}
+			},
+			"minecraft:knockbackRes94": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback94"
+					]
+				}
+			},
+			"minecraft:knockbackRes95": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback95"
+					]
+				}
+			},
+			"minecraft:knockbackRes96": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback96"
+					]
+				}
+			},
+			"minecraft:knockbackRes97": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback97"
+					]
+				}
+			},
+			"minecraft:knockbackRes98": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback98"
+					]
+				}
+			},
+			"minecraft:knockbackRes99": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback99"
+					]
+				}
+			},
+			"minecraft:knockbackRes100": {
+				"add": {
+					"component_groups": [
+						"minecraft:knockback100"
+					]
+				}
+			},
+			"minecraft:damageReduction-100": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-100"
+					]
+				}
+			},
+			"minecraft:damageReduction-99": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-99"
+					]
+				}
+			},
+			"minecraft:damageReduction-98": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-98"
+					]
+				}
+			},
+			"minecraft:damageReduction-97": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-97"
+					]
+				}
+			},
+			"minecraft:damageReduction-96": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-96"
+					]
+				}
+			},
+			"minecraft:damageReduction-95": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-95"
+					]
+				}
+			},
+			"minecraft:damageReduction-94": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-94"
+					]
+				}
+			},
+			"minecraft:damageReduction-93": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-93"
+					]
+				}
+			},
+			"minecraft:damageReduction-92": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-92"
+					]
+				}
+			},
+			"minecraft:damageReduction-91": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-91"
+					]
+				}
+			},
+			"minecraft:damageReduction-90": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-90"
+					]
+				}
+			},
+			"minecraft:damageReduction-89": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-89"
+					]
+				}
+			},
+			"minecraft:damageReduction-88": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-88"
+					]
+				}
+			},
+			"minecraft:damageReduction-87": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-87"
+					]
+				}
+			},
+			"minecraft:damageReduction-86": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-86"
+					]
+				}
+			},
+			"minecraft:damageReduction-85": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-85"
+					]
+				}
+			},
+			"minecraft:damageReduction-84": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-84"
+					]
+				}
+			},
+			"minecraft:damageReduction-83": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-83"
+					]
+				}
+			},
+			"minecraft:damageReduction-82": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-82"
+					]
+				}
+			},
+			"minecraft:damageReduction-81": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-81"
+					]
+				}
+			},
+			"minecraft:damageReduction-80": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-80"
+					]
+				}
+			},
+			"minecraft:damageReduction-79": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-79"
+					]
+				}
+			},
+			"minecraft:damageReduction-78": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-78"
+					]
+				}
+			},
+			"minecraft:damageReduction-77": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-77"
+					]
+				}
+			},
+			"minecraft:damageReduction-76": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-76"
+					]
+				}
+			},
+			"minecraft:damageReduction-75": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-75"
+					]
+				}
+			},
+			"minecraft:damageReduction-74": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-74"
+					]
+				}
+			},
+			"minecraft:damageReduction-73": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-73"
+					]
+				}
+			},
+			"minecraft:damageReduction-72": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-72"
+					]
+				}
+			},
+			"minecraft:damageReduction-71": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-71"
+					]
+				}
+			},
+			"minecraft:damageReduction-70": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-70"
+					]
+				}
+			},
+			"minecraft:damageReduction-69": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-69"
+					]
+				}
+			},
+			"minecraft:damageReduction-68": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-68"
+					]
+				}
+			},
+			"minecraft:damageReduction-67": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-67"
+					]
+				}
+			},
+			"minecraft:damageReduction-66": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-66"
+					]
+				}
+			},
+			"minecraft:damageReduction-65": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-65"
+					]
+				}
+			},
+			"minecraft:damageReduction-64": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-64"
+					]
+				}
+			},
+			"minecraft:damageReduction-63": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-63"
+					]
+				}
+			},
+			"minecraft:damageReduction-62": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-62"
+					]
+				}
+			},
+			"minecraft:damageReduction-61": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-61"
+					]
+				}
+			},
+			"minecraft:damageReduction-60": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-60"
+					]
+				}
+			},
+			"minecraft:damageReduction-59": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-59"
+					]
+				}
+			},
+			"minecraft:damageReduction-58": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-58"
+					]
+				}
+			},
+			"minecraft:damageReduction-57": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-57"
+					]
+				}
+			},
+			"minecraft:damageReduction-56": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-56"
+					]
+				}
+			},
+			"minecraft:damageReduction-55": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-55"
+					]
+				}
+			},
+			"minecraft:damageReduction-54": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-54"
+					]
+				}
+			},
+			"minecraft:damageReduction-53": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-53"
+					]
+				}
+			},
+			"minecraft:damageReduction-52": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-52"
+					]
+				}
+			},
+			"minecraft:damageReduction-51": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-51"
+					]
+				}
+			},
+			"minecraft:damageReduction-50": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-50"
+					]
+				}
+			},
+			"minecraft:damageReduction-49": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-49"
+					]
+				}
+			},
+			"minecraft:damageReduction-48": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-48"
+					]
+				}
+			},
+			"minecraft:damageReduction-47": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-47"
+					]
+				}
+			},
+			"minecraft:damageReduction-46": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-46"
+					]
+				}
+			},
+			"minecraft:damageReduction-45": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-45"
+					]
+				}
+			},
+			"minecraft:damageReduction-44": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-44"
+					]
+				}
+			},
+			"minecraft:damageReduction-43": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-43"
+					]
+				}
+			},
+			"minecraft:damageReduction-42": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-42"
+					]
+				}
+			},
+			"minecraft:damageReduction-41": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-41"
+					]
+				}
+			},
+			"minecraft:damageReduction-40": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-40"
+					]
+				}
+			},
+			"minecraft:damageReduction-39": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-39"
+					]
+				}
+			},
+			"minecraft:damageReduction-38": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-38"
+					]
+				}
+			},
+			"minecraft:damageReduction-37": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-37"
+					]
+				}
+			},
+			"minecraft:damageReduction-36": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-36"
+					]
+				}
+			},
+			"minecraft:damageReduction-35": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-35"
+					]
+				}
+			},
+			"minecraft:damageReduction-34": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-34"
+					]
+				}
+			},
+			"minecraft:damageReduction-33": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-33"
+					]
+				}
+			},
+			"minecraft:damageReduction-32": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-32"
+					]
+				}
+			},
+			"minecraft:damageReduction-31": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-31"
+					]
+				}
+			},
+			"minecraft:damageReduction-30": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-30"
+					]
+				}
+			},
+			"minecraft:damageReduction-29": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-29"
+					]
+				}
+			},
+			"minecraft:damageReduction-28": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-28"
+					]
+				}
+			},
+			"minecraft:damageReduction-27": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-27"
+					]
+				}
+			},
+			"minecraft:damageReduction-26": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-26"
+					]
+				}
+			},
+			"minecraft:damageReduction-25": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-25"
+					]
+				}
+			},
+			"minecraft:damageReduction-24": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-24"
+					]
+				}
+			},
+			"minecraft:damageReduction-23": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-23"
+					]
+				}
+			},
+			"minecraft:damageReduction-22": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-22"
+					]
+				}
+			},
+			"minecraft:damageReduction-21": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-21"
+					]
+				}
+			},
+			"minecraft:damageReduction-20": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-20"
+					]
+				}
+			},
+			"minecraft:damageReduction-19": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-19"
+					]
+				}
+			},
+			"minecraft:damageReduction-18": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-18"
+					]
+				}
+			},
+			"minecraft:damageReduction-17": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-17"
+					]
+				}
+			},
+			"minecraft:damageReduction-16": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-16"
+					]
+				}
+			},
+			"minecraft:damageReduction-15": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-15"
+					]
+				}
+			},
+			"minecraft:damageReduction-14": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-14"
+					]
+				}
+			},
+			"minecraft:damageReduction-13": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-13"
+					]
+				}
+			},
+			"minecraft:damageReduction-12": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-12"
+					]
+				}
+			},
+			"minecraft:damageReduction-11": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-11"
+					]
+				}
+			},
+			"minecraft:damageReduction-10": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-10"
+					]
+				}
+			},
+			"minecraft:damageReduction-9": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-9"
+					]
+				}
+			},
+			"minecraft:damageReduction-8": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-8"
+					]
+				}
+			},
+			"minecraft:damageReduction-7": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-7"
+					]
+				}
+			},
+			"minecraft:damageReduction-6": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-6"
+					]
+				}
+			},
+			"minecraft:damageReduction-5": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-5"
+					]
+				}
+			},
+			"minecraft:damageReduction-4": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-4"
+					]
+				}
+			},
+			"minecraft:damageReduction-3": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-3"
+					]
+				}
+			},
+			"minecraft:damageReduction-2": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-2"
+					]
+				}
+			},
+			"minecraft:damageReduction-1": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction-1"
+					]
+				}
+			},
+			"minecraft:damageReduction0": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction0"
+					]
+				}
+			},
+			"minecraft:damageReduction1": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction1"
+					]
+				}
+			},
+			"minecraft:damageReduction2": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction2"
+					]
+				}
+			},
+			"minecraft:damageReduction3": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction3"
+					]
+				}
+			},
+			"minecraft:damageReduction4": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction4"
+					]
+				}
+			},
+			"minecraft:damageReduction5": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction5"
+					]
+				}
+			},
+			"minecraft:damageReduction6": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction6"
+					]
+				}
+			},
+			"minecraft:damageReduction7": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction7"
+					]
+				}
+			},
+			"minecraft:damageReduction8": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction8"
+					]
+				}
+			},
+			"minecraft:damageReduction9": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction9"
+					]
+				}
+			},
+			"minecraft:damageReduction10": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction10"
+					]
+				}
+			},
+			"minecraft:damageReduction11": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction11"
+					]
+				}
+			},
+			"minecraft:damageReduction12": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction12"
+					]
+				}
+			},
+			"minecraft:damageReduction13": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction13"
+					]
+				}
+			},
+			"minecraft:damageReduction14": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction14"
+					]
+				}
+			},
+			"minecraft:damageReduction15": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction15"
+					]
+				}
+			},
+			"minecraft:damageReduction16": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction16"
+					]
+				}
+			},
+			"minecraft:damageReduction17": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction17"
+					]
+				}
+			},
+			"minecraft:damageReduction18": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction18"
+					]
+				}
+			},
+			"minecraft:damageReduction19": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction19"
+					]
+				}
+			},
+			"minecraft:damageReduction20": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction20"
+					]
+				}
+			},
+			"minecraft:damageReduction21": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction21"
+					]
+				}
+			},
+			"minecraft:damageReduction22": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction22"
+					]
+				}
+			},
+			"minecraft:damageReduction23": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction23"
+					]
+				}
+			},
+			"minecraft:damageReduction24": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction24"
+					]
+				}
+			},
+			"minecraft:damageReduction25": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction25"
+					]
+				}
+			},
+			"minecraft:damageReduction26": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction26"
+					]
+				}
+			},
+			"minecraft:damageReduction27": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction27"
+					]
+				}
+			},
+			"minecraft:damageReduction28": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction28"
+					]
+				}
+			},
+			"minecraft:damageReduction29": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction29"
+					]
+				}
+			},
+			"minecraft:damageReduction30": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction30"
+					]
+				}
+			},
+			"minecraft:damageReduction31": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction31"
+					]
+				}
+			},
+			"minecraft:damageReduction32": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction32"
+					]
+				}
+			},
+			"minecraft:damageReduction33": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction33"
+					]
+				}
+			},
+			"minecraft:damageReduction34": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction34"
+					]
+				}
+			},
+			"minecraft:damageReduction35": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction35"
+					]
+				}
+			},
+			"minecraft:damageReduction36": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction36"
+					]
+				}
+			},
+			"minecraft:damageReduction37": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction37"
+					]
+				}
+			},
+			"minecraft:damageReduction38": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction38"
+					]
+				}
+			},
+			"minecraft:damageReduction39": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction39"
+					]
+				}
+			},
+			"minecraft:damageReduction40": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction40"
+					]
+				}
+			},
+			"minecraft:damageReduction41": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction41"
+					]
+				}
+			},
+			"minecraft:damageReduction42": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction42"
+					]
+				}
+			},
+			"minecraft:damageReduction43": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction43"
+					]
+				}
+			},
+			"minecraft:damageReduction44": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction44"
+					]
+				}
+			},
+			"minecraft:damageReduction45": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction45"
+					]
+				}
+			},
+			"minecraft:damageReduction46": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction46"
+					]
+				}
+			},
+			"minecraft:damageReduction47": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction47"
+					]
+				}
+			},
+			"minecraft:damageReduction48": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction48"
+					]
+				}
+			},
+			"minecraft:damageReduction49": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction49"
+					]
+				}
+			},
+			"minecraft:damageReduction50": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction50"
+					]
+				}
+			},
+			"minecraft:damageReduction51": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction51"
+					]
+				}
+			},
+			"minecraft:damageReduction52": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction52"
+					]
+				}
+			},
+			"minecraft:damageReduction53": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction53"
+					]
+				}
+			},
+			"minecraft:damageReduction54": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction54"
+					]
+				}
+			},
+			"minecraft:damageReduction55": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction55"
+					]
+				}
+			},
+			"minecraft:damageReduction56": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction56"
+					]
+				}
+			},
+			"minecraft:damageReduction57": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction57"
+					]
+				}
+			},
+			"minecraft:damageReduction58": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction58"
+					]
+				}
+			},
+			"minecraft:damageReduction59": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction59"
+					]
+				}
+			},
+			"minecraft:damageReduction60": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction60"
+					]
+				}
+			},
+			"minecraft:damageReduction61": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction61"
+					]
+				}
+			},
+			"minecraft:damageReduction62": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction62"
+					]
+				}
+			},
+			"minecraft:damageReduction63": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction63"
+					]
+				}
+			},
+			"minecraft:damageReduction64": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction64"
+					]
+				}
+			},
+			"minecraft:damageReduction65": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction65"
+					]
+				}
+			},
+			"minecraft:damageReduction66": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction66"
+					]
+				}
+			},
+			"minecraft:damageReduction67": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction67"
+					]
+				}
+			},
+			"minecraft:damageReduction68": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction68"
+					]
+				}
+			},
+			"minecraft:damageReduction69": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction69"
+					]
+				}
+			},
+			"minecraft:damageReduction70": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction70"
+					]
+				}
+			},
+			"minecraft:damageReduction71": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction71"
+					]
+				}
+			},
+			"minecraft:damageReduction72": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction72"
+					]
+				}
+			},
+			"minecraft:damageReduction73": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction73"
+					]
+				}
+			},
+			"minecraft:damageReduction74": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction74"
+					]
+				}
+			},
+			"minecraft:damageReduction75": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction75"
+					]
+				}
+			},
+			"minecraft:damageReduction76": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction76"
+					]
+				}
+			},
+			"minecraft:damageReduction77": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction77"
+					]
+				}
+			},
+			"minecraft:damageReduction78": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction78"
+					]
+				}
+			},
+			"minecraft:damageReduction79": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction79"
+					]
+				}
+			},
+			"minecraft:damageReduction80": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction80"
+					]
+				}
+			},
+			"minecraft:damageReduction81": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction81"
+					]
+				}
+			},
+			"minecraft:damageReduction82": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction82"
+					]
+				}
+			},
+			"minecraft:damageReduction83": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction83"
+					]
+				}
+			},
+			"minecraft:damageReduction84": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction84"
+					]
+				}
+			},
+			"minecraft:damageReduction85": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction85"
+					]
+				}
+			},
+			"minecraft:damageReduction86": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction86"
+					]
+				}
+			},
+			"minecraft:damageReduction87": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction87"
+					]
+				}
+			},
+			"minecraft:damageReduction88": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction88"
+					]
+				}
+			},
+			"minecraft:damageReduction89": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction89"
+					]
+				}
+			},
+			"minecraft:damageReduction90": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction90"
+					]
+				}
+			},
+			"minecraft:damageReduction91": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction91"
+					]
+				}
+			},
+			"minecraft:damageReduction92": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction92"
+					]
+				}
+			},
+			"minecraft:damageReduction93": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction93"
+					]
+				}
+			},
+			"minecraft:damageReduction94": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction94"
+					]
+				}
+			},
+			"minecraft:damageReduction95": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction95"
+					]
+				}
+			},
+			"minecraft:damageReduction96": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction96"
+					]
+				}
+			},
+			"minecraft:damageReduction97": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction97"
+					]
+				}
+			},
+			"minecraft:damageReduction98": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction98"
+					]
+				}
+			},
+			"minecraft:damageReduction99": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction99"
+					]
+				}
+			},
+			"minecraft:damageReduction100": {
+				"add": {
+					"component_groups": [
+						"minecraft:damageReduction100"
+					]
+				}
+			}
+		}
+	}
+}
