@@ -1,6 +1,7 @@
-{
+	{
 	"format_version": 2,
 	"metadata": {
+		"product_type": "addon",
 		"authors": [
 			"Dorios Studios"
 		]
@@ -15,8 +16,8 @@
 		],
 		"uuid": "2b7e4961-39bb-47ca-a06d-aa03dd15c007",
 		"version": [
-			1,
 			2,
+			0,
 			0
 		]
 	},
@@ -25,8 +26,8 @@
 			"type": "resources",
 			"uuid": "8950c808-410c-4481-b23f-da6e25d9b894",
 			"version": [
-				1,
 				2,
+				0,
 				0
 			]
 		}
@@ -35,8 +36,8 @@
 		{
 			"uuid": "36e708a5-830f-425f-bbda-3f7031fe5428",
 			"version": [
-				1,
 				2,
+				0,
 				0
 			]
 		}
