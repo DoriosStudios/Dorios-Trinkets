@@ -3,11 +3,8 @@ import { world, system, BlockPermutation } from '@minecraft/server'
 let rpgCoreDetected = false;
 
 world.afterEvents.worldLoad.subscribe(() => {
-    for (const [key, value] of Object.entries(trinkets)) {
-        const payload = {};
-        payload[key] = value;
-
-        system.sendScriptEvent("dorios:register_stat_data", JSON.stringify(payload));
+    for (const value of Object.values(trinkets)) {
+        system.sendScriptEvent("dorios:register_stat_data", JSON.stringify(value));
     }
 
     system.runTimeout(() => {
