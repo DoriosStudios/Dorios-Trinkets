@@ -8,7 +8,8 @@
 			}
 		},
 		"components": {
-			"minecraft:icon": "dorios_stats_scroll"
+			"minecraft:icon": "dorios_stats_scroll",
+			"minecraft:max_stack_size": 1
 		}
 	}
 }
