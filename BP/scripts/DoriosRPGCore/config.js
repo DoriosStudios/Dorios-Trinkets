@@ -1,10 +1,3 @@
-import { updatePlayerStats } from './stats_manager.js'
-import { displayStats } from './stats_manager.js'
-import { clearGlobalImmuneEffects } from './trinkets_inv.js'
-import { ChestLootInjector, MobLootInjector } from './loot_injector.js'
-import { world, system } from "@minecraft/server";
-import { printJson } from '../DoriosLib/messages/index.js'
-
 export let data = {};
 
 export const vanillaStats = [
@@ -12,7 +5,7 @@ export const vanillaStats = [
     ["waterSpeed", "underwater_movement", 0.02],
     ["lavaSpeed", "lava_movement", 0.01]
 ]
-export const vanillaEventStats = ["health", "knockbackRes", "damageReduction"]
+export const vanillaEventStats = ["health", "knockbackRes"]
 export const manaBarFrames = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''];
 
 export const slots = {
@@ -38,7 +31,7 @@ export const statsConfig = {
     attackMulti: { default: 0 },
     knockback: { default: 0 },
     knockbackRes: { default: 0, min: 0, max: 100, scale: 1 }, // Scale 1: 1,2,3,...
-    damageReduction: { default: 0, min: -100, max: 100, scale: 1 }, // Scale 1: 1,2,3,... (Negative means it receives more damage -100 => x2)
+    damageReduction: { default: 0 },
     speed: { default: 100 },
     waterSpeed: { default: 100 },
     lavaSpeed: { default: 100 },
@@ -86,7 +79,7 @@ export const statTexts = {
         attackMulti: value => `§7- Attack Multiplier: §f${value}%%`,
         knockback: value => `§7- Knockback: §f${value}`,
         knockbackRes: value => `§7- Knockback Resistance: §f${value}%%`,
-        damageReduction: value => `§7- Damage Reduction: §f${value}%%`,
+        damageReduction: { default: 0 },
         speed: value => `§7- Movement Speed: §f${value}%%`,
         waterSpeed: value => `§7- Water Speed: §f${value}%%`,
         lavaSpeed: value => `§7- Lava Speed: §f${value}%%`,
@@ -110,59 +103,3 @@ export const statTexts = {
     }
 };
 
-export const scriptEventsHandler = {
-    "dorios:register_stat_data": e => {
-        try {
-            const payload = JSON.parse(e.message);
-            const newData = payload
-
-            if (!newData || typeof newData !== "object") {
-                console.warn("[Dorios RPG Core] Invalid payload format:", e.message);
-                return;
-            }
-
-            for (const [id, config] of Object.entries(newData)) {
-                if (!config || typeof config !== "object") {
-                    console.warn(`[Dorios RPG Core] Skipping invalid config for '${id}':`, config);
-                    continue;
-                }
-
-                data[id] = config;
-
-                if (config.loot) {
-                    ChestLootInjector.registerTrinketLoot(id, config)
-                }
-
-                if (config.drops) {
-                    MobLootInjector.registerTrinketDrop(id, config)
-                }
-            }
-
-            system.sendScriptEvent(
-                "dorios:stat_data_registered",
-                JSON.stringify({ registered: true })
-            );
-        } catch (err) {
-            system.sendScriptEvent(
-                "dorios:stat_data_registered",
-                JSON.stringify({ registered: false })
-            );
-            console.warn("[Dorios RPG Core] JSON parse failed:", err, e.message);
-        }
-    },
-    "dorios:update_stats": e => {
-        updatePlayerStats(e.sourceEntity)
-    },
-    "dorios:update_effects": e => {
-        clearGlobalImmuneEffects(e.sourceEntity)
-    },
-    "dorios:print_data": e => {
-        printJson(e.sourceEntity, 'Data', data)
-    },
-    "dorios:display_stats": e => {
-        displayStats(e.sourceEntity)
-    },
-    "dorios:reset_chest_tracking": e => {
-        ChestLootInjector.resetChestTracking()
-    }
-}

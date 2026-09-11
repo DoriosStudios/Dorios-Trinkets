@@ -1,6 +1,6 @@
 import { system, world, ItemStack } from '@minecraft/server'
-import { updatePlayerStats, getStatCategory } from './stats_manager.js'
-import { trinketTick } from './trinkets_inv.js'
+import { updatePlayerStats, getStatCategory } from './statsManager.js'
+import { trinketTick } from './trinketsInv.js'
 import { manaBarFrames } from './config.js'
 import { getEquipment } from '../DoriosLib/entity/index.js'
 
@@ -18,7 +18,7 @@ world.afterEvents.playerLeave.subscribe(({ playerId }) => {
 
 world.afterEvents.worldLoad.subscribe(() => {
     system.runTimeout(() => {
-        world.getDimension('overworld').runCommand('scoreboard objectives add dorios:mana dummy Mana')
+        if (!world.scoreboard.getObjective('dorios:mana')) world.scoreboard.addObjective('dorios:mana', 'Mana');
         for (const player of world.getPlayers()) {
             const id = player.id;
             if (!intervalMap.has(id)) {
@@ -30,10 +30,10 @@ world.afterEvents.worldLoad.subscribe(() => {
 
 world.beforeEvents.effectAdd.subscribe(e => {
     const { effectType, entity } = e
-    if (entity.typeId != 'minecraft:player') return
+    if (!entity?.isValid || entity.typeId != 'minecraft:player') return
     const immunities = getStatCategory(entity, "immunities")
     immunities.forEach(effect => {
-        if (effectType.includes(effect)) e.cancel = true
+        if (effectType.replace('minecraft:', '') === effect.replace('minecraft:', '')) e.cancel = true
     })
 })
 
@@ -69,11 +69,15 @@ function manaDisplay(manaScore, player, stats) {
         } catch { return false }
     } else {
         player.runCommand('scoreboard players add @s dorios:mana 100')
-        world.getDimension('overworld').runCommand('scoreboard objectives add dorios:mana dummy Mana')
+        if (!world.scoreboard.getObjective('dorios:mana')) world.scoreboard.addObjective('dorios:mana', 'Mana');
     }
 }
 
 function updateData(player) {
+    if (!player?.isValid) return;
+    // Replace a persisted multiplier from older versions with the neutral sensor.
+    player.triggerEvent('minecraft:damageReduction0');
+    updatePlayerStats(player);
     const id = player.id;
     if (intervalMap.has(id)) return
     previousEquipmentMap.set(id, equipmentAndTagsString(player));

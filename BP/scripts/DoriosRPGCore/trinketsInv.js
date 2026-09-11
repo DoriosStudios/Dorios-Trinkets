@@ -7,7 +7,7 @@ import {
   stopPlayerTracking,
 } from "../DoriosLib/entity/index.js";
 import { data, slots } from "./config.js";
-import { getStatCategory, displayStats } from "./stats_manager.js";
+import { getStatCategory, displayStats } from "./statsManager.js";
 
 const trinketEntities = new Map();
 
@@ -38,6 +38,7 @@ world.afterEvents.playerLeave.subscribe(({ playerId }) => {
 });
 
 export function trinketTick(player) {
+  if (!player?.isValid) return;
   let mainHand = getEquipment(player, "Mainhand");
   if (!mainHand || mainHand?.typeId != "dorios:scroll") {
     removeInvEntity(player);
@@ -47,6 +48,7 @@ export function trinketTick(player) {
     const mainHandSlot = player.selectedSlotIndex;
 
     system.runTimeout(() => {
+      if (!player.isValid) return;
       if (getEquipment(player, "Mainhand")?.typeId == mainHand?.typeId) {
         mainHand.lockMode = "slot";
         player.getComponent("inventory").container.setItem(mainHandSlot, mainHand);
@@ -91,75 +93,47 @@ function loadEntityInv(player, entity) {
   }
 }
 
+function returnItem(player, item) {
+  const container = player.getComponent("inventory")?.container;
+  const remaining = container ? container.addItem(item) : item;
+  if (remaining) player.dimension.spawnItem(remaining, player.location);
+}
+
 function validateTrinketSlots(player, entity) {
   const container = entity.getComponent("inventory")?.container;
-  const playerInv = player.getComponent("inventory")?.container;
-  if (!container || !playerInv) return;
+  if (!container) return;
 
-  const currentTags = new Set(player.getTags());
-  const expectedTags = new Set();
-
-  for (const [_slotName, index] of Object.entries(slots)) {
-    const slot = container.getSlot(index);
-    const item = slot?.getItem();
+  for (const index of Object.values(slots)) {
+    const item = container.getItem(index);
     if (!item) continue;
+    const entry = data[item.typeId];
+    const target = slots[entry?.trinket];
+    const allowed = typeof entry?.condition !== "function" || entry.condition(player);
 
-    const id = item.typeId;
-    const entry = data[id];
-
-    const isTrinket = entry?.trinket;
-    const passesCondition = entry?.condition != undefined ? entry.condition(player) : true;
-    // Si no está en data, no es trinket, o falla condición → quitarlo
-    if (!entry || !isTrinket || !passesCondition) {
+    if (target === undefined || item.amount !== 1 || !allowed
+        || (target !== index && container.getItem(target))) {
       container.setItem(index);
-      if (playerInv.emptySlotsCount > 0) {
-        playerInv.addItem(item);
-      } else {
-        player.dimension.spawnItem(item, player.location);
-      }
+      returnItem(player, item);
       continue;
     }
-
-    const correctSlotKey = entry.trinket;
-    const correctIndex = slots[correctSlotKey];
-
-    expectedTags.add(id);
-
-    // Mover al slot correcto si está en otro
-    if (correctIndex !== index) {
-      const targetSlot = container.getSlot(correctIndex);
-      const occupied = targetSlot?.getItem();
-
-      if (!occupied) {
-        container.moveItem(index, correctIndex, container);
-      } else {
-        container.setItem(index);
-        if (playerInv.emptySlotsCount > 0) {
-          playerInv.addItem(item);
-        } else {
-          player.dimension.spawnItem(item, player.location);
-        }
-      }
-    }
-    clearGlobalImmuneEffects(player);
-    // Agregar el tag si aún no lo tiene
-    if (!currentTags.has(id)) {
-      player.addTag(id);
-    }
+    if (target !== index) container.moveItem(index, target, container);
   }
 
-  // Quitar tags de trinkets que ya no están o que fallan su condición
-  for (const tag of currentTags) {
-    if (isAuxiliaryTag(tag)) continue;
-
-    const entry = data[tag];
-    if (!entry?.trinket) continue;
-
-    const condition = typeof entry.condition === "function" ? entry.condition(player) : true;
-    if (!expectedTags.has(tag) || !condition) {
+  // Only the final contents grant tags, never items returned to the player.
+  const expectedTags = new Set();
+  for (const index of Object.values(slots)) {
+    const item = container.getItem(index);
+    if (item) expectedTags.add(item.typeId);
+  }
+  for (const tag of player.getTags()) {
+    if (!isAuxiliaryTag(tag) && data[tag]?.trinket && !expectedTags.has(tag)) {
       player.removeTag(tag);
     }
   }
+  for (const tag of expectedTags) {
+    if (!player.hasTag(tag)) player.addTag(tag);
+  }
+  clearGlobalImmuneEffects(player);
 }
 
 function summonInvEntity(player) {
@@ -205,10 +179,14 @@ function removeInvEntity(player) {
   if (cached && cached !== entity) stopPlayerTracking(cached);
   if (!entity) return;
   stopPlayerTracking(entity);
-  if (entity.isValid) entity.remove();
+  if (entity.isValid) {
+    validateTrinketSlots(player, entity);
+    entity.remove();
+  }
 }
 
 function tryEquipTrinket(player, item) {
+  if (!player?.isValid) return;
   const id = item?.typeId;
   if (!id || !data[id]) return;
 
@@ -216,17 +194,12 @@ function tryEquipTrinket(player, item) {
   const slot = entry?.trinket;
   if (!slot) return;
 
-  // Si hay una condición y no se cumple, tratar como si el slot estuviera lleno
-  if (typeof entry.condition === "function" && !entry.condition(player)) {
-    // Cancelar equipamiento y devolver el ítem
-    const inv = player.getComponent("inventory")?.container;
-    if (inv?.emptySlotsCount > 0) {
-      inv.addItem(item);
-    } else {
-      player.dimension.spawnItem(item, player.location);
-    }
-    return;
-  }
+  if (slots[slot] === undefined) return;
+  // itemUse has not consumed the item; a failed condition needs no refund.
+  if (typeof entry.condition === "function" && !entry.condition(player)) return;
+
+  // Reconcile a scroll closed by switching to this item before granting its tag.
+  removeInvEntity(player);
 
   // Revisar si ya tiene un trinket en ese slot (por tag)
   const tags = player.getTags();
@@ -240,13 +213,11 @@ function tryEquipTrinket(player, item) {
     }
   }
 
-  // Todo ok, se equipa
+  const held = player.getComponent("inventory")?.container?.getItem(player.selectedSlotIndex);
+  if (held?.typeId !== id) return;
+  if (!changeItemAmount(player, { slot: player.selectedSlotIndex, amount: -1 })) return;
   player.addTag(id);
   clearTrinketImmuneEffects(player, entry);
-  changeItemAmount(player, {
-    slot: player.selectedSlotIndex,
-    amount: -1,
-  });
 }
 
 /**
@@ -254,7 +225,7 @@ function tryEquipTrinket(player, item) {
  * @param {Entity} player - Entidad jugador.
  */
 export function clearGlobalImmuneEffects(player) {
-  if (!player || player.typeId !== "minecraft:player") return;
+  if (!player?.isValid || player.typeId !== "minecraft:player") return;
 
   const immunities = getStatCategory(player, "immunities");
   if (!Array.isArray(immunities)) return;
@@ -283,7 +254,7 @@ export function clearGlobalImmuneEffects(player) {
  * @param {object} entry - Objeto del trinket con propiedad `.immunities` como array de strings.
  */
 function clearTrinketImmuneEffects(player, entry) {
-  if (!player || player.typeId !== "minecraft:player") return;
+  if (!player?.isValid || player.typeId !== "minecraft:player") return;
   if (!Array.isArray(entry.immunities)) return;
 
   const effects = player.getEffects();
@@ -298,6 +269,8 @@ function clearTrinketImmuneEffects(player, entry) {
 }
 
 function unequipAllTrinkets(player) {
+  if (!player?.isValid) return;
+  removeInvEntity(player);
   const tags = player.getTags();
   const inv = player.getComponent("inventory")?.container;
   if (!inv) return;
@@ -315,12 +288,7 @@ function unequipAllTrinkets(player) {
       continue;
     }
 
-    if (inv.emptySlotsCount > 0) {
-      inv.addItem(item);
-    } else {
-      player.dimension.spawnItem(item, player.location);
-    }
-
+    returnItem(player, item);
     player.removeTag(tag);
   }
 }

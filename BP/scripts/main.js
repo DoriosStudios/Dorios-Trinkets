@@ -1,4 +1,4 @@
-import "./block_tick.js";
+import "./blockTick.js";
 import "./register.js";
 import "./system.js";
-import "./Core/main.js";
+import "./DoriosRPGCore/main.js";

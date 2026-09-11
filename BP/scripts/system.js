@@ -2,7 +2,7 @@ import { world, system, BlockPermutation } from '@minecraft/server'
 
 world.afterEvents.entityDie.subscribe(({ damageSource, deadEntity }) => {
     const player = damageSource.damagingEntity
-    if (player?.typeId != 'minecraft:player') return
+    if (!player?.isValid || player.typeId != 'minecraft:player') return
 
     if (player.hasTag("dorios:bloodbound_emblem")) {
         player.addEffect('strength', 100, { amplifier: 0 })
@@ -18,6 +18,10 @@ world.afterEvents.worldLoad.subscribe(() => {
         if (count >= 1000) count = 0
 
         for (const player of players) {
+            if (!player.isValid) continue;
+            if (!player.hasTag("dorios:rush_of_fear")) {
+                player.removeTag("dorios:rush_of_fear_tag");
+            }
             let blocks = {}
             try {
                 blocks = {
@@ -26,7 +30,7 @@ world.afterEvents.worldLoad.subscribe(() => {
                 }
             } catch { continue }
             const isInLava = blocks.feet?.typeId.includes('lava') &&
-                blocks.head.typeId.includes('lava')
+                blocks.head?.typeId.includes('lava')
 
             if (player.hasTag("dorios:idle_bloom")) {
                 const vel = player.getVelocity()
@@ -82,8 +86,10 @@ world.afterEvents.worldLoad.subscribe(() => {
 
             if (count % 20 != 0) continue
             // world.sendMessage(`${player.dimension.getBiome(player.location).id}`)
-            const rushSeconds = player.getDynamicProperty("dorios:rush_of_fear_time")
-            if (rushSeconds > 0) player.setDynamicProperty("dorios:rush_of_fear_time", rushSeconds - 1)
+            const rushSeconds = player.getDynamicProperty("dorios:rush_of_fear_time") ?? 0;
+            const remaining = player.hasTag("dorios:rush_of_fear") ? Math.max(0, rushSeconds - 1) : 0;
+            if (rushSeconds !== remaining) player.setDynamicProperty("dorios:rush_of_fear_time", remaining);
+            if (remaining === 0) player.removeTag("dorios:rush_of_fear_tag");
 
             if (player.hasTag("dorios:mender_pendant")) {
                 repair(player, "all")
@@ -95,74 +101,55 @@ world.afterEvents.worldLoad.subscribe(() => {
     }, freq)
 })
 
-world.afterEvents.entityHurt.subscribe(({ hurtEntity, damage, damageSource }) => {
-    const attacker = damageSource.damagingEntity
-    const cause = damageSource.cause
+world.beforeEvents.entityHurt.subscribe(event => {
+    const { hurtEntity, damageSource } = event;
+    const attacker = damageSource.damagingEntity;
+    const cause = damageSource.cause;
+    if (event.cancel || event.damage <= 0 || !attacker?.isValid || !hurtEntity?.isValid) return;
+    if (cause === 'thorns' || cause === 'override') return;
 
-    if (!attacker || !hurtEntity) return
+    const playerAttack = attacker.typeId === 'minecraft:player';
+    const melee = playerAttack && cause === 'entityAttack';
+    const projectile = playerAttack && cause === 'projectile';
+    const frost = projectile && attacker.hasTag('dorios:frost_quiver');
+    const molten = projectile && attacker.hasTag('dorios:molten_quiver');
+    const venom = projectile && attacker.hasTag('dorios:venom_quiver');
+    const breeze = melee && attacker.hasTag('dorios:strong_breeze_ring');
+    const echo = melee && attacker.hasTag('dorios:strong_echo_ring');
+    const rush = hurtEntity.typeId === 'minecraft:player' && hurtEntity.hasTag('dorios:rush_of_fear');
+    const baseDamage = event.damage;
 
-    if (attacker.typeId == 'minecraft:player') {
-        const player = attacker
-        if (cause == 'projectile') {
-            if (player.hasTag("dorios:frost_quiver")) {
-                hurtEntity.addEffect('slowness', 100, { amplifier: 0 })
-            }
-            if (player.hasTag("dorios:molten_quiver")) {
-                hurtEntity.setOnFire(5)
-            }
-            if (player.hasTag("dorios:venom_quiver")) {
-                hurtEntity.addEffect('poison', 100, { amplifier: 0 })
-            }
-        }
-
-        if (cause == 'entityAttack') {
-            if (player.hasTag("dorios:strong_breeze_ring")) {
-                // Emit breeze wind explosion particles
-                hurtEntity.dimension.spawnParticle("minecraft:wind_explosion_emitter", hurtEntity.location);
-
-                // Apply knockback away from the source
-                const hx = hurtEntity.location.x;
-                const hz = hurtEntity.location.z;
-                const sx = player.location.x;
-                const sz = player.location.z;
-
-                // Calculate normalized direction vector
-                const dx = hx - sx;
-                const dz = hz - sz;
-                const magnitude = (Math.sqrt(dx * dx + dz * dz) || 1) * 2;
-
-                const knockbackPower = 0.8; // You can tweak this
-                hurtEntity.applyKnockback(
-                    {
-                        x: dx / magnitude,
-                        z: dz / magnitude
-                    },
-                    knockbackPower
-                );
-            }
-            if (player.hasTag("dorios:strong_echo_ring")) {
-                system.runTimeout(() => {
-                    hurtEntity.applyDamage(damage * 0.25, { cause: 'thorns', damagingEntity: player })
-                }, 20)
-            }
-            if (player.hasTag("dorios:holy_cross")) {
-                if (hurtEntity.getComponent('type_family').hasTypeFamily('undead')) {
-                    hurtEntity.applyDamage(damage * 0.50, { cause: 'thorns', damagingEntity: player })
-                }
-            }
-        }
+    if (melee && attacker.hasTag('dorios:holy_cross')
+        && hurtEntity.getComponent('type_family')?.hasTypeFamily('undead')) {
+        event.damage += baseDamage * 0.50;
     }
 
-    if (hurtEntity.typeId == 'minecraft:player') {
-        const player = hurtEntity
-
-        if (player.hasTag("dorios:rush_of_fear")) {
-            player.addTag("dorios:rush_of_fear_tag")
-            player.setDynamicProperty("dorios:rush_of_fear_time", 3) // segundos restantes
-        }
+    // Echo remains a delayed hit; its cause excludes it from offensive bonuses.
+    if (echo) {
+        system.runTimeout(() => {
+            if (!hurtEntity.isValid || !attacker.isValid) return;
+            hurtEntity.applyDamage(baseDamage * 0.25, { cause: 'thorns', damagingEntity: attacker });
+        }, 20);
     }
-
-})
+    if (!frost && !molten && !venom && !breeze && !rush) return;
+    system.run(() => {
+        if (!attacker.isValid || !hurtEntity.isValid) return;
+        if (frost) hurtEntity.addEffect('slowness', 100, { amplifier: 0 });
+        if (molten) hurtEntity.setOnFire(5);
+        if (venom) hurtEntity.addEffect('poison', 100, { amplifier: 0 });
+        if (breeze) {
+            hurtEntity.dimension.spawnParticle('minecraft:wind_explosion_emitter', hurtEntity.location);
+            const dx = hurtEntity.location.x - attacker.location.x;
+            const dz = hurtEntity.location.z - attacker.location.z;
+            const magnitude = (Math.sqrt(dx * dx + dz * dz) || 1) * 2;
+            hurtEntity.applyKnockback({ x: dx / magnitude, z: dz / magnitude }, 0.8);
+        }
+        if (rush && hurtEntity.hasTag('dorios:rush_of_fear')) {
+            hurtEntity.addTag('dorios:rush_of_fear_tag');
+            hurtEntity.setDynamicProperty('dorios:rush_of_fear_time', 3);
+        }
+    });
+});
 
 /**
  * Maneja el efecto de caminar sobre lava con Lava Waders

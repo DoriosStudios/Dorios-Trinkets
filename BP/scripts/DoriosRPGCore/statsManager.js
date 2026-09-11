@@ -1,11 +1,6 @@
 import { system, world } from '@minecraft/server'
 import { ActionFormData } from '@minecraft/server-ui'
-import { data, statsConfig, statTexts, vanillaStats, vanillaEventStats, scriptEventsHandler } from './config.js'
-
-system.afterEvents.scriptEventReceive.subscribe((e) => {
-    const event = scriptEventsHandler[e.id]
-    if (event) event(e)
-});
+import { data, statsConfig, statTexts, vanillaStats, vanillaEventStats } from './config.js'
 
 /**
  * Recalculates, stores, and applies all stat categories for a player.
@@ -13,6 +8,7 @@ system.afterEvents.scriptEventReceive.subscribe((e) => {
  * @param {Entity} player The player to update.
  */
 export function updatePlayerStats(player) {
+    if (!player?.isValid || player.typeId !== "minecraft:player") return;
     const playerData = calculateAllStats(player);
 
     // Guardar
@@ -38,14 +34,14 @@ function applyVanillaStatsViaEvents(player, stats) {
 
         const eventName = `minecraft:${stat}${value}`;
         system.runTimeout(() => {
-            player.triggerEvent(eventName);
+            if (player.isValid) player.triggerEvent(eventName);
         }, tickOffset++);
     });
 
     vanillaStats.forEach(stat => {
         const value = stats[stat[0]];
         if (value === undefined) return;
-        player.getComponent(`minecraft:${stat[1]}`).setCurrentValue((value / 100) * stat[2])
+        player.getComponent(`minecraft:${stat[1]}`)?.setCurrentValue((value / 100) * stat[2])
     });
 }
 
@@ -73,8 +69,16 @@ export function getStatCategory(player, category) {
     const valid = ["stats", "passives", "actives", "immunities"];
     if (!valid.includes(category)) return {};
 
-    const raw = player.getDynamicProperty(`dorios:playerData.${category}`);
-    return raw ? JSON.parse(raw) : {};
+    const fallback = category === "immunities" ? [] : {};
+    if (!player?.isValid) return fallback;
+    try {
+        const raw = player.getDynamicProperty(`dorios:playerData.${category}`);
+        const value = typeof raw === "string" ? JSON.parse(raw) : undefined;
+        if (category === "immunities") return Array.isArray(value) ? value.filter(effect => typeof effect === "string") : [];
+        return value && typeof value === "object" && !Array.isArray(value) ? value : {};
+    } catch {
+        return fallback;
+    }
 }
 
 /**
@@ -89,10 +93,7 @@ export function getStatCategory(player, category) {
  * }}
  */
 export function getAllStats(player) {
-    const get = (key) => {
-        const raw = player.getDynamicProperty(`dorios:playerData.${key}`);
-        return raw ? JSON.parse(raw) : {};
-    };
+    const get = key => getStatCategory(player, key);
 
     return {
         stats: get("stats"),
@@ -262,10 +263,11 @@ function formatStatName(name) {
 }
 
 export function displayStats(player) {
+    if (!player?.isValid || player.typeId !== "minecraft:player") return;
     const text = formatAllStats(player)
     const form = new ActionFormData()
         .title('§6§lAll Stats:')
         .body(text)
-    form.show(player)
+    form.show(player).catch(() => {});
 }
 

@@ -1,5 +1,5 @@
 import { system, world } from '@minecraft/server'
-import { getStatCategory } from './stats_manager.js'
+import { getStatCategory } from './statsManager.js'
 import { manaBarFrames } from './config.js'
 import { addHealth } from '../DoriosLib/entity/index.js'
 
@@ -26,6 +26,7 @@ const activesEffectHandlers = {
     },
     manaSteal: (_entity, value, attacker, stats) => {
         let manaScore = world.scoreboard.getObjective('dorios:mana');
+        if (!manaScore || !attacker.scoreboardIdentity) return;
         let mana = manaScore.getScore(attacker.scoreboardIdentity) || 0;
         const maxMana = stats.mana;
         const regen = Math.min((value / 100) * maxMana, maxMana - mana)
@@ -41,55 +42,52 @@ const activesEffectHandlers = {
     }
 };
 
-world.afterEvents.entityHurt.subscribe(e => {
-    const { hurtEntity, damageSource, damage } = e
-    const { damagingProjectile, damagingEntity, cause } = damageSource
+world.beforeEvents.entityHurt.subscribe(event => {
+    const { hurtEntity, damageSource } = event;
+    const { damagingProjectile, damagingEntity: attacker, cause } = damageSource;
+    if (event.cancel || event.damage <= 0 || !hurtEntity?.isValid) return;
+    const generatedHit = cause === 'thorns' || cause === 'override';
+    const isAttack = attacker?.isValid && (cause === 'entityAttack' || cause === 'projectile');
+    const stats = isAttack && attacker.typeId === 'minecraft:player'
+        ? getStatCategory(attacker, 'stats') : undefined;
+    const actives = stats ? getStatCategory(attacker, 'actives') : undefined;
 
-    if (cause == 'thorns') return
+    if (stats) {
+        const item = attacker.getComponent('equippable')?.getEquipment('Mainhand');
+        const ability = item?.getComponent('ea:main_ability')?.customComponentParameters?.params;
+        const weaponDamage = Array.isArray(ability) ? ability[0]?.damage ?? 0 : 0;
+        event.damage = calculateAttackDamage(event.damage, stats, weaponDamage + 1, attacker).damage;
+    }
 
-    if (damagingEntity?.typeId == 'minecraft:player') {
-        const player = damagingEntity
-        const actives = getStatCategory(player, 'actives');
-        if (actives) {
+    const defense = hurtEntity.typeId === 'minecraft:player'
+        ? getStatCategory(hurtEntity, 'stats') : {};
+    // Defense covers every damage cause, including environmental and generated hits.
+    // The stat is unrestricted; damage itself cannot become negative.
+    event.damage = Math.max(0, event.damage * (1 - (defense.damageReduction ?? 0) / 100));
+    if (event.damage <= 0 || generatedHit || !attacker?.isValid) return;
+
+    const damage = event.damage;
+    const thorns = defense.thorns ?? 0;
+    if (!stats && thorns <= 0) return;
+
+    // Only the damage value changes in restricted execution. Side effects run later.
+    system.run(() => {
+        if (!attacker.isValid || !hurtEntity.isValid) return;
+        if (stats) {
             applyActiveStatusEffects(hurtEntity, actives);
+            applyStatsEffects(hurtEntity, stats, attacker, { cause, damage, damagingProjectile });
         }
-
-        const stats = getStatCategory(player, 'stats')
-        const context = { cause, damage, damagingProjectile }
-        if (stats) {
-            applystatsEffects(hurtEntity, stats, player, context)
+        if (thorns > 0 && attacker.isValid) {
+            attacker.applyDamage(damage * thorns / 100, { damagingEntity: hurtEntity, cause: 'thorns' });
         }
-
-        const itemStack = player.getComponent("equippable")?.getEquipment('Mainhand')
-        const mainAbility = itemStack?.getComponent('ea:main_ability')?.customComponentParameters?.params;
-        const baseWeaponDamage = Array.isArray(mainAbility) ? mainAbility[0]?.damage ?? 0 : 0;
-
-        const totalDamage = calculateAttackDamage(damage, stats, baseWeaponDamage + 1, player);
-        if (totalDamage.damage > 0) {
-            if (totalDamage.isCrit) {
-                hurtEntity.applyDamage(totalDamage.damage, { damagingEntity: player, cause: 'override' })
-            } else {
-                hurtEntity.applyDamage(totalDamage.damage, { damagingEntity: player, cause: 'thorns' })
-            }
-        }
-
-    }
-
-    if (hurtEntity?.typeId == 'minecraft:player') {
-        const player = hurtEntity
-        const stats = getStatCategory(player, 'stats');
-        if (stats) {
-            if (stats.thorns <= 0) return
-            damagingEntity?.applyDamage((stats.thorns / 100) * damage, { damagingEntity: hurtEntity })
-        }
-    }
-})
+    });
+});
 
 
 /**
- * Calculates final damage and whether it was a critical hit.
+ * Adds the existing bonus formula to the original hit instead of dealing a second hit.
  *
- * @param {number} contextDamage The damage already applied from other sources (e.g., base melee)
+ * @param {number} contextDamage The incoming damage of the original hit before this modifier
  * @param {Object} stats Object containing combat stats
  * @param {number} [stats.attack=0] Flat attack stat
  * @param {number} [stats.critChance=0] Chance (%) to land a critical hit
@@ -122,7 +120,7 @@ function calculateAttackDamage(contextDamage, stats, baseWeaponDamage = 0, playe
     }
     return {
         isCrit,
-        damage
+        damage: contextDamage + Math.max(0, damage)
     };
 }
 
@@ -141,16 +139,12 @@ function applyActiveStatusEffects(entity, actives) {
     }
 }
 
-function applystatsEffects(entity, stats, attacker, context) {
+function applyStatsEffects(entity, stats, attacker, context) {
     for (const [effectName, value] of Object.entries(stats)) {
         if (value <= 0) continue
-        // try {
         const handler = activesEffectHandlers[effectName];
         if (handler) {
             handler(entity, value, attacker, stats, context);
         }
-        // } catch (e) {
-        //     console.warn(`[Dorios RPG Core] Error applying stats effect '${effectName}':`, e);
-        // }
     }
 }
