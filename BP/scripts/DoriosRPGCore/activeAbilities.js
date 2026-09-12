@@ -56,7 +56,7 @@ world.beforeEvents.entityHurt.subscribe(event => {
         const item = attacker.getComponent('equippable')?.getEquipment('Mainhand');
         const ability = item?.getComponent('ea:main_ability')?.customComponentParameters?.params;
         const weaponDamage = Array.isArray(ability) ? ability[0]?.damage ?? 0 : 0;
-        event.damage = calculateAttackDamage(event.damage, stats, weaponDamage + 1, attacker).damage;
+        event.damage = calculateAttackDamage(event.damage, stats, weaponDamage, attacker).damage;
     }
 
     const defense = hurtEntity.typeId === 'minecraft:player'

@@ -18,52 +18,52 @@ item.dorios:scroll=Pergaminho \nEquipa ou retira teus amuletos com isso
 item.dorios:empty_ring=Anel Vazio \nMaterial de criação
 item.dorios:heavy_empty_ring=Anel Vazio Pesado \nMaterial de criação
 
-item.dorios:purity_blossom=Flor da Pureza \n§6Slot: §eAmuleto \n§6Nível: §9Aprendiz \n§fUma flor mística que concede imunidade a toxinas. \n Imunidade
+item.dorios:purity_blossom=Flor da Pureza \n§6Slot: §eAmuleto \n§6Nível: §9Aprendiz \n§fUma flor mística que concede imunidade a\n§ftoxinas.\n Imunidade
 
-item.dorios:rotten_heart=Coração Podre \n§6Slot: §eAmuleto de Saúde \n§6Nível: §fPrimitivo \n§fUm coração em decomposição que aumenta levemente a saúde. \n+1
-item.dorios:candy_heart=Coração de Doce \n§6Slot: §eAmuleto de Saúde \n§6Nível: §9Aprendiz \n§fUm doce em forma de coração que reforça tua vitalidade. \n+2
-item.dorios:immaculate_heart=Coração Imaculado \n§6Slot: §eAmuleto de Saúde \n§6Nível: §bAscendido \n§fUm coração puro e poderoso que aumenta a saúde e o dano. \n+5 | +1
-item.dorios:black_heart=Coração Negro \n§6Slot: §eAmuleto de Saúde \n§6Nível: §eMestre \n§fUma relíquia sombria do End que aumenta tua saúde máxima. \n+3
-item.dorios:soul_heart=Coração de Alma \n§6Slot: §eAmuleto de Saúde \n§6Nível: §eMestre \n§fUm coração espectral concedido pelo Guardião, usado para criar o Coração do Guardião. \n+4 \n Imunidade
-item.dorios:sacred_heart=Coração Sagrado \n§6Slot: §eAmuleto de Saúde \n§6Nível: §bAscendido+ \n§fUma relíquia abençoada do deserto que aumenta tua saúde com poder divino. \n+10 \n+ I
-item.dorios:eternal_heart=Coração Eterno \n§6Slot: §eAmuleto de Saúde \n§6Nível: §bAscendido \n§fUm coração eterno que melhora a saúde e previne doenças. \n+4 \n |  |  Imunidade
-item.dorios:warden_heart=Coração do Guardião \n§6Slot: §eAmuleto de Saúde \n§6Nível: §bAscendido+ \n§fUm coração infundido com o poder do Guardião, aumentando tua vitalidade. \n+8 | +25% Magia  \n |  Imunidade
-item.dorios:wither_heart=Coração de Wither \n§6Slot: §eAmuleto de Saúde \n§6Nível: §bAscendido+ \n§fA essência do Wither, aumentando a saúde, regenerando e protegendo contra o efeito Wither. \n+8 \n+ I \n Imunidade
+item.dorios:rotten_heart=Coração Podre \n§6Slot: §eAmuleto de Saúde \n§6Nível: §fPrimitivo \n§fUm coração em decomposição que aumenta\n§flevemente a saúde.\n+1
+item.dorios:candy_heart=Coração de Doce \n§6Slot: §eAmuleto de Saúde \n§6Nível: §9Aprendiz \n§fUm doce em forma de coração que reforça tua\n§fvitalidade.\n+2
+item.dorios:immaculate_heart=Coração Imaculado \n§6Slot: §eAmuleto de Saúde \n§6Nível: §bAscendido \n§fUm coração puro e poderoso que aumenta a\n§fsaúde e o dano.\n+5 | +1
+item.dorios:black_heart=Coração Negro \n§6Slot: §eAmuleto de Saúde \n§6Nível: §eMestre \n§fUma relíquia sombria do End que aumenta tua\n§fsaúde máxima.\n+3
+item.dorios:soul_heart=Coração de Alma \n§6Slot: §eAmuleto de Saúde \n§6Nível: §eMestre \n§fUm coração espectral concedido pelo\n§fGuardião, usado para criar o Coração do\n§fGuardião.\n+4 \n Imunidade
+item.dorios:sacred_heart=Coração Sagrado \n§6Slot: §eAmuleto de Saúde \n§6Nível: §bAscendido+ \n§fUma relíquia abençoada do deserto que\n§faumenta tua saúde com poder divino.\n+10 \n+ I
+item.dorios:eternal_heart=Coração Eterno \n§6Slot: §eAmuleto de Saúde \n§6Nível: §bAscendido \n§fUm coração eterno que melhora a saúde e\n§fprevine doenças.\n+4 \n |  |  Imunidade
+item.dorios:warden_heart=Coração do Guardião \n§6Slot: §eAmuleto de Saúde \n§6Nível: §bAscendido+ \n§fUm coração infundido com o poder do\n§fGuardião, aumentando tua vitalidade.\n+8 | +25% Magia  \n |  Imunidade
+item.dorios:wither_heart=Coração de Wither \n§6Slot: §eAmuleto de Saúde \n§6Nível: §bAscendido+ \n§fA essência do Wither, aumentando a saúde,\n§fregenerando e protegendo contra o efeito\n§fWither.\n+8 \n+ I \n Imunidade
 
-item.dorios:dead_abyssal_orb=Orbe Abissal Morto \n§6Slot: §eAmuleto \n§6Nível: §fPrimitivo \n§fUm orbe em decomposição que melhora a respiração e a natação debaixo d'água. \n+30%
-item.dorios:abyssal_clam_shell=Concha Abissal \n§6Slot: §eTalismã \n§6Nível: §9Aprendiz \n§fUma rara concha do abismo que brilha fraca e magicamente com poder oculto. \n+50%
-item.dorios:abyssal_orb=Orbe Abissal \n§6Slot: §eAmuleto \n§6Nível: §eMestre \n§fUm orbe encantado que melhora a respiração e a velocidade ao nadar debaixo d'água. \n+100% \n+ I
-item.dorios:abyssal_essence=Essência Abissal \n§6Slot: §eAmuleto Arcano \n§6Nível: §bAscendido \n§fConcede a Benção do Oceano, aumentando a força e a velocidade na água. \n+200% \n+ I \n+ II na Água
-item.dorios:abyssal_diver_helmet=Capacete de Mergulhador Abissal \n§6Slot: §eCabeça \n§6Nível: §fPrimitivo \n§fUm capacete para exploração submarina que concede ar e visão clara debaixo d'água. \n+20% \n+ I
+item.dorios:dead_abyssal_orb=Orbe Abissal Morto \n§6Slot: §eAmuleto \n§6Nível: §fPrimitivo \n§fUm orbe em decomposição que melhora a\n§frespiração e a natação debaixo d'água.\n+30%
+item.dorios:abyssal_clam_shell=Concha Abissal \n§6Slot: §eTalismã \n§6Nível: §9Aprendiz \n§fUma rara concha do abismo que brilha fraca e\n§fmagicamente com poder oculto.\n+50%
+item.dorios:abyssal_orb=Orbe Abissal \n§6Slot: §eAmuleto \n§6Nível: §eMestre \n§fUm orbe encantado que melhora a respiração e\n§fa velocidade ao nadar debaixo d'água.\n+100% \n+ I
+item.dorios:abyssal_essence=Essência Abissal \n§6Slot: §eAmuleto Arcano \n§6Nível: §bAscendido \n§fConcede a Benção do Oceano, aumentando a\n§fforça e a velocidade na água.\n+200% \n+ I \n+ II na Água
+item.dorios:abyssal_diver_helmet=Capacete de Mergulhador Abissal \n§6Slot: §eCabeça \n§6Nível: §fPrimitivo \n§fUm capacete para exploração submarina que\n§fconcede ar e visão clara debaixo d'água.\n+20% \n+ I
 
-item.dorios:venom_gauntlet=Luva Tóxica \n§6Slot: §eLuva \n§6Nível: §fPrimitivo \n§fUma luva que libera veneno mortal ao impactar. \n+ ao golpear
-item.dorios:fire_gauntlet=Luva Infernal \n§6Slot: §eLuva \n§6Nível: §fPrimitivo \n§fUma luva ardente que incendeia os inimigos ao contato com seu calor. \n+ ao golpear
-item.dorios:ice_gauntlet=Luva Congelante \n§6Slot: §eLuva \n§6Nível: §fPrimitivo \n§fUma luva gelada imbuída com poder frio, que desacelera os inimigos a cada golpe. \n+ ao golpear
-item.dorios:frost_quiver=Aljava Congelante \n§6Slot: §eCorpo \n§6Nível: §9Aprendiz \n§fFlechas imbuídas com poder gelado, que desaceleram os inimigos ao impactar. \n+ ao golpear
-item.dorios:molten_quiver=Aljava Fundida \n§6Slot: §eCorpo \n§6Nível: §9Aprendiz \n§fDispara flechas que incendeiam seus inimigos com raiva ardente. \n+ ao golpear
-item.dorios:venom_quiver=Aljava Tóxica \n§6Slot: §eCorpo \n§6Nível: §9Aprendiz \n§fEnvenena as flechas para causar dano adicional ao longo do tempo. \n+ ao golpear
+item.dorios:venom_gauntlet=Luva Tóxica \n§6Slot: §eLuva \n§6Nível: §fPrimitivo \n§fUma luva que libera veneno mortal ao\n§fimpactar.\n+ ao golpear
+item.dorios:fire_gauntlet=Luva Infernal \n§6Slot: §eLuva \n§6Nível: §fPrimitivo \n§fUma luva ardente que incendeia os inimigos\n§fao contato com seu calor.\n+ ao golpear
+item.dorios:ice_gauntlet=Luva Congelante \n§6Slot: §eLuva \n§6Nível: §fPrimitivo \n§fUma luva gelada imbuída com poder frio, que\n§fdesacelera os inimigos a cada golpe.\n+ ao golpear
+item.dorios:frost_quiver=Aljava Congelante \n§6Slot: §eCorpo \n§6Nível: §9Aprendiz \n§fFlechas imbuídas com poder gelado, que\n§fdesaceleram os inimigos ao impactar.\n+ ao golpear
+item.dorios:molten_quiver=Aljava Fundida \n§6Slot: §eCorpo \n§6Nível: §9Aprendiz \n§fDispara flechas que incendeiam seus inimigos\n§fcom raiva ardente.\n+ ao golpear
+item.dorios:venom_quiver=Aljava Tóxica \n§6Slot: §eCorpo \n§6Nível: §9Aprendiz \n§fEnvenena as flechas para causar dano\n§fadicional ao longo do tempo.\n+ ao golpear
 
-item.dorios:fire_claw=Garras Ardentes \n§6Slot: §eLuva \n§6Nível: §9Aprendiz \n§fGarras ígneas que causam maior dano e queimam os inimigos ao contato. \n+2 \n+ ao golpear
-item.dorios:venom_claw=Garras Venenosas \n§6Slot: §eLuva \n§6Nível: §9Aprendiz \n§fGarras congelantes que aumentam o dano e congelam os inimigos a cada golpe. \n+2 \n+2 \n+ ao golpear
-item.dorios:ice_claw=Garras Glaciantes \n§6Slot: §eLuva \n§6Nível: §9Aprendiz \n§fGarras venenosas que aumentam o dano e envenenam os inimigos ao longo do tempo. \n+ ao golpear
+item.dorios:fire_claw=Garras Ardentes \n§6Slot: §eLuva \n§6Nível: §9Aprendiz \n§fGarras ígneas que causam maior dano e\n§fqueimam os inimigos ao contato.\n+2 \n+ ao golpear
+item.dorios:venom_claw=Garras Venenosas \n§6Slot: §eLuva \n§6Nível: §9Aprendiz \n§fGarras congelantes que aumentam o dano e\n§fcongelam os inimigos a cada golpe.\n+2 \n+2 \n+ ao golpear
+item.dorios:ice_claw=Garras Glaciantes \n§6Slot: §eLuva \n§6Nível: §9Aprendiz \n§fGarras venenosas que aumentam o dano e\n§fenvenenam os inimigos ao longo do tempo.\n+ ao golpear
 
 item.dorios:guardian_ring=Anel do Guardião \n§6Slot: §eAnel \n§6Nível: §bAscendido \n§fAumenta a defesa e reduz o dano recebido. \n+ I
-item.dorios:healer_ring=Anel do Curador \n§6Slot: §eAnel \n§6Nível: §eMestre \n§fMelhora a cura e restaura saúde ao longo do tempo. \n+ I
-item.dorios:miner_ring=Anel do Minerador \n§6Slot: §eAnel \n§6Nível: §fPrimitivo \n§fAumenta a velocidade de mineração e o rendimento de minerais. \n+ I
-item.dorios:warrior_ring=Anel do Guerreiro \n§6Slot: §eAnel \n§6Nível: §eMestre \n§fAumenta o poder de ataque e a força em combate. \n+2
-item.dorios:runner_ring=Anel do Corredor \n§6Slot: §eAnel \n§6Nível: §fPrimitivo \n§fAumenta consideravelmente a velocidade e a resistência. \n+ I
+item.dorios:healer_ring=Anel do Curador \n§6Slot: §eAnel \n§6Nível: §eMestre \n§fMelhora a cura e restaura saúde ao longo do\n§ftempo.\n+ I
+item.dorios:miner_ring=Anel do Minerador \n§6Slot: §eAnel \n§6Nível: §fPrimitivo \n§fAumenta a velocidade de mineração e o\n§frendimento de minerais.\n+ I
+item.dorios:warrior_ring=Anel do Guerreiro \n§6Slot: §eAnel \n§6Nível: §eMestre \n§fAumenta o poder de ataque e a força em\n§fcombate.\n+2
+item.dorios:runner_ring=Anel do Corredor \n§6Slot: §eAnel \n§6Nível: §fPrimitivo \n§fAumenta consideravelmente a velocidade e a\n§fresistência.\n+ I
 
 item.dorios:lava_waders=Botas de Lava \n§6Slot: §ePés \n§6Nível: §9Aprendiz \n§fConcede a habilidade de andar sobre lava. \n+20%
-item.dorios:idle_bloom=Flor Imóvel \n§6Slot: §eCorpo \n§6Nível: §bAscendido \n§fUma flor que concede regeneração ao ficar parado. \n+ II (Quando está parado)
+item.dorios:idle_bloom=Flor Imóvel \n§6Slot: §eCorpo \n§6Nível: §bAscendido \n§fUma flor que concede regeneração ao ficar\n§fparado.\n+ II (Quando está parado)
 
-item.dorios:mender_pendant=Pingente do Curador \n§6Slot: §eColar \n§6Nível: §bAscendido \n§fRestaura gradualmente a durabilidade dos seus itens equipados.
-item.dorios:repair_talis=Talismã de Reparação \n§6Slot: §eColar \n§6Nível: §eMestre \n§fRestaura lentamente a durabilidade do item que você segura.
-item.dorios:rush_of_fear=Explosão do Medo \n§6Slot: §eColar \n§6Nível: §9Aprendiz \n§fLibera um aumento de velocidade quando o perigo se aproxima. \n+2 \n+100% após receber dano
-item.dorios:rabbit_rush=Explosão do Coelho \n§6Slot: §eColar \n§6Nível: §fPrimitivo \n§fUm pingente de pata de coelho que aumenta a velocidade e agilidade. \n+20%
+item.dorios:mender_pendant=Pingente do Curador \n§6Slot: §eColar \n§6Nível: §bAscendido \n§fRestaura gradualmente a durabilidade dos\n§fseus itens equipados.
+item.dorios:repair_talis=Talismã de Reparação \n§6Slot: §eColar \n§6Nível: §eMestre \n§fRestaura lentamente a durabilidade do item\n§fque você segura.
+item.dorios:rush_of_fear=Explosão do Medo \n§6Slot: §eColar \n§6Nível: §9Aprendiz \n§fLibera um aumento de velocidade quando o\n§fperigo se aproxima.\n+2 \n+100% após receber dano
+item.dorios:rabbit_rush=Explosão do Coelho \n§6Slot: §eColar \n§6Nível: §fPrimitivo \n§fUm pingente de pata de coelho que aumenta a\n§fvelocidade e agilidade.\n+20%
 
 item.dorios:night_vision_goggles=Óculos de Visão Noturna \n§6Slot: §eCabeça \n§6Nível: §fPrimitivo \n§fEnxergue facilmente na escuridão. \n+ I
-item.dorios:night_vision_mask=Máscara de Visão Noturna \n§6Slot: §eCabeça \n§6Nível: §9Aprendiz \n§fUma máscara que concede visão noturna, juntamente com imunidade à escuridão e cegueira. \n+ I \n |  Imunidade
-item.dorios:obsidian_skull=Crânio de Obsidiana \n§6Slot: §eAmuleto \n§6Nível: §9Aprendiz \n§fConcede imunidade ao fogo e breve resistência à lava. \n+ I (Dura 15s na lava)
+item.dorios:night_vision_mask=Máscara de Visão Noturna \n§6Slot: §eCabeça \n§6Nível: §9Aprendiz \n§fUma máscara que concede visão noturna,\n§fjuntamente com imunidade à escuridão e\n§fcegueira.\n+ I \n |  Imunidade
+item.dorios:obsidian_skull=Crânio de Obsidiana \n§6Slot: §eAmuleto \n§6Nível: §9Aprendiz \n§fConcede imunidade ao fogo e breve\n§fresistência à lava.\n+ I (Dura 15s na lava)
 
 
 tile.dorios:lava_solid_0.name=Lava Sólida
@@ -73,54 +73,95 @@ tile.dorios:lava_flow_0.name=Lava Fluida
 tile.dorios:lava_flow_1.name=Lava Fluida
 tile.dorios:lava_flow_2.name=Lava Fluida
 
-item.dorios:broken_paladin_helmet=Capacete do Paladino Quebrado \n§6Slot: §eCabeça \n§6Nível: §fPrimitivo \n§fUma relíquia quebrada de um nobre defensor. Aumenta levemente o dano. \n+1
-item.dorios:restored_paladin_helmet=Capacete do Paladino Restaurado \n§6Slot: §eCabeça \n§6Nível: §eMestre \n§fForjado novamente à sua antiga glória. Concede maior força ao portador. \n+3
-item.dorios:holy_cross=Cruz Sagrada \n§6Slot: §eTalismã \n§6Nível: §bAscendido \n§fUma relíquia sagrada que potencializa seu portador e aniquila mortos-vivos com poder divino. \n+50% contra Mortos-Vivos
+item.dorios:broken_paladin_helmet=Capacete do Paladino Quebrado \n§6Slot: §eCabeça \n§6Nível: §fPrimitivo \n§fUma relíquia quebrada de um nobre defensor.\n§fAumenta levemente o dano.\n+1
+item.dorios:restored_paladin_helmet=Capacete do Paladino Restaurado \n§6Slot: §eCabeça \n§6Nível: §eMestre \n§fForjado novamente à sua antiga glória.\n§fConcede maior força ao portador.\n+3
+item.dorios:holy_cross=Cruz Sagrada \n§6Slot: §eTalismã \n§6Nível: §bAscendido \n§fUma relíquia sagrada que potencializa seu\n§fportador e aniquila mortos-vivos com poder\n§fdivino.\n+50% contra Mortos-Vivos
 
 item.dorios:blood_pact=Pacto de Sangue \n§6Slot: §eAmuleto Arcano \n§6Nível: §bAscendido+ \n§fVocê fez um pacto com Satanás. \nPara curar, você deve matar. \n-10 \n Imunidade \n+12% Roubo de Vida
-item.dorios:bloodbound_amulet=Amuleto Sangrento \n§6Slot: §eAmuleto \n§6Nível: §bAscendido \n§fUm artefato poderoso ligado por sangue, extraindo força dos inimigos caídos. \n+3 \n+6% Roubo de Vida
-item.dorios:blood_pendant=Pingente de Sangue \n§6Slot: §eColar \n§6Nível: §eMestre \n§fUma delicada relíquia que aproveita a essência do sangue derramado para restaurar saúde. \n+2 \n+2% Roubo de Vida
+item.dorios:bloodbound_amulet=Amuleto Sangrento \n§6Slot: §eAmuleto \n§6Nível: §bAscendido \n§fUm artefato poderoso ligado por sangue,\n§fextraindo força dos inimigos caídos.\n+3 \n+6% Roubo de Vida
+item.dorios:blood_pendant=Pingente de Sangue \n§6Slot: §eColar \n§6Nível: §eMestre \n§fUma delicada relíquia que aproveita a\n§fessência do sangue derramado para restaurar\n§fsaúde.\n+2 \n+2% Roubo de Vida
 
-item.dorios:cloud_steps_boots=Botas de Nuvens \n§6Slot: §ePés \n§6Nível: §9Aprendiz \n§fLeves como uma pluma, concedendo agilidade e um duplo salto. \n+30% \n+ Duplo salto
+item.dorios:cloud_steps_boots=Botas de Nuvens \n§6Slot: §ePés \n§6Nível: §9Aprendiz \n§fLeves como uma pluma, concedendo agilidade e\n§fum duplo salto.\n+30% \n+ Duplo salto
 
-item.dorios:heavy_guardian_ring=Anel Pesado do Guardião \n§6Slot: §eAnel Pesado \n§6Nível: §bAscendido \n§fConcede a bênção do Guardião, protegendo o portador. \n+ I
-item.dorios:heavy_healer_ring=Anel Pesado do Curador \n§6Slot: §eAnel Pesado \n§6Nível: §eMestre \n§fConcede a bênção do Curador, melhorando a recuperação. \n+ I
-item.dorios:heavy_miner_ring=Anel Pesado do Minerador \n§6Slot: §eAnel Pesado \n§6Nível: §eMestre \n§fConcede a bênção do Minerador, concedendo velocidade de mineração. \n+ II
+item.dorios:heavy_guardian_ring=Anel Pesado do Guardião \n§6Slot: §eAnel Pesado \n§6Nível: §bAscendido \n§fConcede a bênção do Guardião, protegendo o\n§fportador.\n+ I
+item.dorios:heavy_healer_ring=Anel Pesado do Curador \n§6Slot: §eAnel Pesado \n§6Nível: §eMestre \n§fConcede a bênção do Curador, melhorando a\n§frecuperação.\n+ I
+item.dorios:heavy_miner_ring=Anel Pesado do Minerador \n§6Slot: §eAnel Pesado \n§6Nível: §eMestre \n§fConcede a bênção do Minerador, concedendo\n§fvelocidade de mineração.\n+ II
 item.dorios:heavy_warrior_ring=Anel Pesado do Guerreiro \n§6Slot: §eAnel Pesado \n§6Nível: §eMestre \n§fPotencializa o portador com força aumentada. \n+ I
-item.dorios:heavy_runner_ring=Anel Pesado do Corredor \n§6Slot: §eAnel Pesado \n§6Nível: §9Aprendiz \n§fInfunde a bênção do Corredor, melhorando a agilidade. \n+ I
+item.dorios:heavy_runner_ring=Anel Pesado do Corredor \n§6Slot: §eAnel Pesado \n§6Nível: §9Aprendiz \n§fInfunde a bênção do Corredor, melhorando a\n§fagilidade.\n+ I
 
-item.dorios:bloodtide_chalice=Cálice da Maré de Sangue \n§6Slot: §eAmuleto \n§6Tier: §bAscendente \n§fUm relicário amaldiçoado, sedento pela vida que já possuiu. \n+10% Roubo de Vida
-item.dorios:voodoo=Vodu \n§6Slot: §eBoneco \n§6Tier: §eMestre \n§fPreso por rituais sombrios, este efígie amaldiçoado entrelaça dor entre as almas. \nReflete 10% do Dano
-item.dorios:bloodgem=Gema de Sangue \n§6Slot: §eTalismã \n§6Tier: §eMestre \n§fUma gema pulsante com sangue antigo, ansiosa para compartilhar seu poder... por um preço. \n+4% Roubo de Vida
-item.dorios:bloodstained_heart=Coração Manchado de Sangue \n§6Slot: §eAmuleto Vital \n§6Tier: §eMestre \n§fUm relicário em forma de coração encharcado em rituais de sangue antigos. \n+4
-item.dorios:bloodbound_emblem=Emblema Vinculado ao Sangue \n§6Slot: §eCorpo \n§6Tier: §eMestre \n§fUm sigilo gravado em carmesim, pulsando com a essência do sacrifício. \n+ I após 
+item.dorios:bloodtide_chalice=Cálice da Maré de Sangue \n§6Slot: §eAmuleto \n§6Tier: §bAscendente \n§fUm relicário amaldiçoado, sedento pela vida\n§fque já possuiu.\n+10% Roubo de Vida
+item.dorios:voodoo=Vodu \n§6Slot: §eBoneco \n§6Tier: §eMestre \n§fPreso por rituais sombrios, este efígie\n§famaldiçoado entrelaça dor entre as almas.\nReflete 10% do Dano
+item.dorios:bloodgem=Gema de Sangue \n§6Slot: §eTalismã \n§6Tier: §eMestre \n§fUma gema pulsante com sangue antigo, ansiosa\n§fpara compartilhar seu poder... por um preço.\n+4% Roubo de Vida
+item.dorios:bloodstained_heart=Coração Manchado de Sangue \n§6Slot: §eAmuleto Vital \n§6Tier: §eMestre \n§fUm relicário em forma de coração encharcado\n§fem rituais de sangue antigos.\n+4
+item.dorios:bloodbound_emblem=Emblema Vinculado ao Sangue \n§6Slot: §eCorpo \n§6Tier: §eMestre \n§fUm sigilo gravado em carmesim, pulsando com\n§fa essência do sacrifício.\n+ I após 
 
 
-item.dorios:dragon_heart=Coração do Dragão \n§6Slot: §eAnel Pesado \n§6Tier: §bAscendente++ \n§fUm coração pulsante com o poder do governante do Fim. \n+10 | +2\n+ I
-item.dorios:strong_ancient_ring=Anel Antigo Forte \n§6Slot: §eAnel Pesado \n§6Tier: §eMestre \n§fUm relicário sussurrando conhecimentos esquecidos. \n+2 | +10% | +2
+item.dorios:dragon_heart=Coração do Dragão \n§6Slot: §eAnel Pesado \n§6Tier: §bAscendente++ \n§fUm coração pulsante com o poder do\n§fgovernante do Fim.\n+10 | +2\n+ I
+item.dorios:strong_ancient_ring=Anel Antigo Forte \n§6Slot: §eAnel Pesado \n§6Tier: §eMestre \n§fUm relicário sussurrando conhecimentos\n§fesquecidos.\n+2 | +10% | +2
 item.dorios:strong_breeze_ring=Anel da Brisa Forte \n§6Slot: §eAnel Pesado \n§6Tier: §eMestre \n§fUm anel que carrega a essência do vento. \n+3
-item.dorios:strong_brute_ring=Anel do Bruto Forte \n§6Slot: §eAnel Pesado \n§6Tier: §bAscendente \n§fEmpunhe o poder bruto dos guerreiros mais fortes. \n+4 \n+ I
+item.dorios:strong_brute_ring=Anel do Bruto Forte \n§6Slot: §eAnel Pesado \n§6Tier: §bAscendente \n§fEmpunhe o poder bruto dos guerreiros mais\n§ffortes.\n+4 \n+ I
 item.dorios:strong_celestial_ring=Anel Celestial Forte \n§6Slot: §eAnel Pesado \n§6Tier: §bAscendente \n§fForjado sob o olhar dos céus. \n+2 Pulos Extras \n+ ao Agachar
-item.dorios:strong_ender_ring=Anel do Ender Forte \n§6Slot: §eAnel Pesado \n§6Tier: §eMestre \n§fTecida com essência do Ender, dobra a realidade para evitar danos. \n+Evasão
-item.dorios:strong_echo_ring=Anel do Eco Forte \n§6Slot: §eAnel Pesado \n§6Tier: §eMestre \n§fOs golpes ressoam, atingindo duas vezes pelo desígnio do destino.
-item.dorios:strong_fortress_ring=Anel da Fortaleza Forte \n§6Slot: §eAnel Pesado \n§6Tier: §eMestre \n§fForjado com a vontade de uma fortaleza inquebrável. \n+2 \n+ I | + I
-item.dorios:strong_jade_ring=Anel de Jade Forte \n§6Slot: §eAnel Pesado \n§6Tier: §eMestre \n§fInfundido com a resistência e força da natureza.\n+5 \n+ I \n Imunidade
-item.dorios:strong_shulker_ring=Anel do Shulker Forte \n§6Slot: §eAnel Pesado \n§6Tier: §eMestre \n§fUm anel infundido com a resiliência dos guardiões do End. \n+1 \n+ ao Acertar
-item.dorios:strong_trader_ring=Anel do Mercador Forte \n§6Slot: §eAnel Pesado \n§6Tier: §eMestre \n§fUm anel que muda os ventos do comércio a seu favor. \n+ II
-item.dorios:strong_inferno_ring=Anel do Inferno Forte \n§6Slot: §eAnel Pesado \n§6Tier: §bAscendente \n§fForjado em chamas eternas, este anel alimenta a agressividade incansável. \n+4 \n+ I \n+ ao Acertar
-item.dorios:strong_abyssal_ring=Anel Abissal Forte \n§6Slot: §eAnel Pesado \n§6Tier: §eMestre \n§fForjado nas profundezas, seu poder flui como uma maré sem fim. \n+50% \n+ I
-item.dorios:strong_blood_ring=Anel de Sangue Forte \n§6Slot: §eAnel Pesado \n§6Tier: §bAscendente \n§fUm anel amaldiçoado pulsando com vitalidade sombria, alimentando-se da força vital dos inimigos. \n+2
+item.dorios:strong_ender_ring=Anel do Ender Forte \n§6Slot: §eAnel Pesado \n§6Tier: §eMestre \n§fTecida com essência do Ender, dobra a\n§frealidade para evitar danos.\n+Evasão
+item.dorios:strong_echo_ring=Anel do Eco Forte \n§6Slot: §eAnel Pesado \n§6Tier: §eMestre \n§fOs golpes ressoam, atingindo duas vezes pelo\n§fdesígnio do destino.
+item.dorios:strong_fortress_ring=Anel da Fortaleza Forte \n§6Slot: §eAnel Pesado \n§6Tier: §eMestre \n§fForjado com a vontade de uma fortaleza\n§finquebrável.\n+2 \n+ I | + I
+item.dorios:strong_jade_ring=Anel de Jade Forte \n§6Slot: §eAnel Pesado \n§6Tier: §eMestre \n§fInfundido com a resistência e força da\n§fnatureza.\n+5 \n+ I \n Imunidade
+item.dorios:strong_shulker_ring=Anel do Shulker Forte \n§6Slot: §eAnel Pesado \n§6Tier: §eMestre \n§fUm anel infundido com a resiliência dos\n§fguardiões do End.\n+1 \n+ ao Acertar
+item.dorios:strong_trader_ring=Anel do Mercador Forte \n§6Slot: §eAnel Pesado \n§6Tier: §eMestre \n§fUm anel que muda os ventos do comércio a seu\n§ffavor.\n+ II
+item.dorios:strong_inferno_ring=Anel do Inferno Forte \n§6Slot: §eAnel Pesado \n§6Tier: §bAscendente \n§fForjado em chamas eternas, este anel\n§falimenta a agressividade incansável.\n+4 \n+ I \n+ ao Acertar
+item.dorios:strong_abyssal_ring=Anel Abissal Forte \n§6Slot: §eAnel Pesado \n§6Tier: §eMestre \n§fForjado nas profundezas, seu poder flui como\n§fuma maré sem fim.\n+50% \n+ I
+item.dorios:strong_blood_ring=Anel de Sangue Forte \n§6Slot: §eAnel Pesado \n§6Tier: §bAscendente \n§fUm anel amaldiçoado pulsando com vitalidade\n§fsombria, alimentando-se da força vital dos\n§finimigos.\n+2
 
 
-item.dorios:tideforged_pendant=Pingente Forjado pela Maré \n§6Slot: §eColar \n§6Tier: §fPrimitivo \n§fEvoca o poder do oceano, convocando ondas e correntes para auxiliar seu portador. \n+20%
-item.dorios:tideforged_carapace=Carapaça Forjada pela Maré \n§6Slot: §eCorpo \n§6Tier: §9Aprendiz \n§fUma carapaça protetora infundida com a resiliência das profundezas do oceano. \n+ I na Água
-item.dorios:tideforged_heart=Coração Forjado pela Maré \n§6Slot: §eAmuleto Vital \n§6Tier: §9Aprendiz \n§fUm núcleo de marés imortais, pulsando no ritmo do mar. \n+2
-item.dorios:tideforged_eye=Olho Forjado pela Maré \n§6Slot: §eTalismã \n§6Tier: §fPrimitivo  \n§fUma gema vigilante infundida com as profundezas do oceano, vendo além da visão mortal. \n+ I
-item.dorios:tideforged_stars=Estrelas Forjadas pela Maré \n§6Slot: §eAmuleto \n§6Tier: §9Aprendiz \n§fForjadas nas profundezas, estas estrelas fluem como as marés, rápidas e implacáveis. \n+50%
-item.dorios:tideforged_ring=Anel Forjado pela Maré \n§6Slot: §eAnel \n§6Tier: §fPrimitivo \n§fUm anel infundido com as correntes inquietas, fluindo com o poder do oceano. \n+30%
-item.dorios:tideforged_knuckles=Soqueiras Forjadas pela Maré \n§6Slot: §eManopla \n§6Tier: §fPrimitivo \n§fSoqueiras moldadas pela força incansável do oceano, golpeando como ondas furiosas. \n+1
+item.dorios:tideforged_pendant=Pingente Forjado pela Maré \n§6Slot: §eColar \n§6Tier: §fPrimitivo \n§fEvoca o poder do oceano, convocando ondas e\n§fcorrentes para auxiliar seu portador.\n+20%
+item.dorios:tideforged_carapace=Carapaça Forjada pela Maré \n§6Slot: §eCorpo \n§6Tier: §9Aprendiz \n§fUma carapaça protetora infundida com a\n§fresiliência das profundezas do oceano.\n+ I na Água
+item.dorios:tideforged_heart=Coração Forjado pela Maré \n§6Slot: §eAmuleto Vital \n§6Tier: §9Aprendiz \n§fUm núcleo de marés imortais, pulsando no\n§fritmo do mar.\n+2
+item.dorios:tideforged_eye=Olho Forjado pela Maré \n§6Slot: §eTalismã \n§6Tier: §fPrimitivo  \n§fUma gema vigilante infundida com as\n§fprofundezas do oceano, vendo além da visão\n§fmortal.\n+ I
+item.dorios:tideforged_stars=Estrelas Forjadas pela Maré \n§6Slot: §eAmuleto \n§6Tier: §9Aprendiz \n§fForjadas nas profundezas, estas estrelas\n§ffluem como as marés, rápidas e implacáveis.\n+50%
+item.dorios:tideforged_ring=Anel Forjado pela Maré \n§6Slot: §eAnel \n§6Tier: §fPrimitivo \n§fUm anel infundido com as correntes\n§finquietas, fluindo com o poder do oceano.\n+30%
+item.dorios:tideforged_knuckles=Soqueiras Forjadas pela Maré \n§6Slot: §eManopla \n§6Tier: §fPrimitivo \n§fSoqueiras moldadas pela força incansável do\n§foceano, golpeando como ondas furiosas.\n+1
 
 
-item.dorios:blazing_amulet=Amuleto Ardente \n§6Slot: §eAmuleto \n§6Tier: §9Aprendiz \n§fUm fragmento de fogo vivo, sempre ardendo, mas nunca consumido. \n+ ao Acertar
-item.dorios:blazed_heart_necklace=Colar do Coração em Chamas \n§6Slot: §eColar \n§6Tier: §eMestre \n§fUm núcleo flamejante pulsa dentro, irradiando calor e uma vontade inquebrável. \n+4
-item.dorios:abyssal_sun_amulet=Amuleto do Sol Abissal \n§6Slot: §eAmuleto \n§6Tier: §bAscendente \n§fForjado no encontro do fogo e da maré, seu brilho guarda os segredos das profundezas. \n+100% \n+ I na Água
+item.dorios:blazing_amulet=Amuleto Ardente \n§6Slot: §eAmuleto \n§6Tier: §9Aprendiz \n§fUm fragmento de fogo vivo, sempre ardendo,\n§fmas nunca consumido.\n+ ao Acertar
+item.dorios:blazed_heart_necklace=Colar do Coração em Chamas \n§6Slot: §eColar \n§6Tier: §eMestre \n§fUm núcleo flamejante pulsa dentro,\n§firradiando calor e uma vontade inquebrável.\n+4
+item.dorios:abyssal_sun_amulet=Amuleto do Sol Abissal \n§6Slot: §eAmuleto \n§6Tier: §bAscendente \n§fForjado no encontro do fogo e da maré, seu\n§fbrilho guarda os segredos das profundezas.\n+100% \n+ I na Água
+
+## Trinket Scroll Guide
+ui.dorios:scroll_guide.title=§8§lGuia do pergaminho
+ui.dorios:scroll_guide.close=Fechar guia
+ui.dorios:scroll_guide.use=§8§lComo usar
+ui.dorios:scroll_guide.equip=§8Coloque os trinkets nas suas ranhuras. Retire-os para desequipar.
+ui.dorios:scroll_guide.refresh=§8Reabra o pergaminho após alterar o equipamento para atualizar os atributos.
+ui.dorios:scroll_guide.stats=§8§lAtributos
+ui.dorios:scroll_guide.health=§f §8Vida máxima em corações.
+ui.dorios:scroll_guide.attack=§f §8Dano dos trinkets + 1 base. Não inclui armas nem críticos.
+ui.dorios:scroll_guide.speed=§f §8Velocidade em terra. 100% = normal.
+ui.dorios:scroll_guide.water=§f §8Velocidade na água. 100% = normal.
+ui.dorios:scroll_guide.steal=§f §8Dano do golpe recuperado como vida (%).
+ui.dorios:scroll_guide.thorns=§f §8Dano recebido devolvido ao atacante (%).
+ui.dorios:scroll_guide.fire=§f §8Segundos em que o inimigo arde após o golpe.
+ui.dorios:scroll_guide.jumps=§f §8Saltos extras antes de tocar no chão.
+ui.dorios:scroll_guide.effects=§8§lEfeitos
+ui.dorios:scroll_guide.effect_use=§8Passivos: em você. Ativos: nos inimigos que atingir.
+ui.dorios:scroll_guide.levels=§8I, II, III, IV, V = níveis 1-5. None = sem efeitos de trinkets.
+ui.dorios:scroll_guide.conduit=§f §8Poder do aqueduto: respirar, ver e minerar debaixo de água.
+ui.dorios:scroll_guide.fire_res=§f §8Resistência ao fogo: proteção contra fogo e lava.
+ui.dorios:scroll_guide.haste=§f §8Pressa: mineração mais rápida.
+ui.dorios:scroll_guide.night=§f §8Visão noturna: ver no escuro.
+ui.dorios:scroll_guide.regen=§f §8Regeneração: recupera vida.
+ui.dorios:scroll_guide.resistance=§f §8Resistência: receber menos dano.
+ui.dorios:scroll_guide.falling=§f §8Queda lenta: descer mais devagar.
+ui.dorios:scroll_guide.effect_speed=§f §8Velocidade: mover-se mais depressa.
+ui.dorios:scroll_guide.strength=§f §8Força: mais dano corpo a corpo.
+ui.dorios:scroll_guide.hero=§f §8Herói da vila: melhores preços.
+ui.dorios:scroll_guide.breathing=§f §8Respiração aquática: respirar debaixo de água.
+ui.dorios:scroll_guide.levitation=§f §8Levitação: flutuar para cima.
+ui.dorios:scroll_guide.poison=§f §8Veneno: dano ao longo do tempo.
+ui.dorios:scroll_guide.slowness=§f §8Lentidão: mover-se mais devagar.
+ui.dorios:scroll_guide.immunities=§8§lImunidades
+ui.dorios:scroll_guide.immune_use=§8Um ícone aqui indica que esse efeito é bloqueado. Não tem nível.
+ui.dorios:scroll_guide.blindness=§f §8Cegueira: visão reduzida.
+ui.dorios:scroll_guide.darkness=§f §8Escuridão: escurece a visão.
+ui.dorios:scroll_guide.hunger=§f §8Fome: perde comida mais depressa.
+ui.dorios:scroll_guide.immune_poison=§f §8Bloqueia o dano de veneno.
+ui.dorios:scroll_guide.immune_regen=§f §8Bloqueia Regeneração, incluindo a cura.
+ui.dorios:scroll_guide.wither=§f §8Wither: dano ao longo do tempo.

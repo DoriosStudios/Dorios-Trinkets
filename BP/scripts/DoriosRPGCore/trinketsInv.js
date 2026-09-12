@@ -7,7 +7,9 @@ import {
   stopPlayerTracking,
 } from "../DoriosLib/entity/index.js";
 import { data, slots } from "./config.js";
-import { getStatCategory, displayStats } from "./statsManager.js";
+import { getStatCategory, updatePlayerStats } from "./statsManager.js";
+
+import { writeStatDisplay, statDisplayItem } from "./statDisplay.js";
 
 const trinketEntities = new Map();
 
@@ -23,8 +25,6 @@ function isAuxiliaryTag(tag) {
 }
 
 world.afterEvents.itemUse.subscribe((e) => {
-  if (e.itemStack.typeId == "dorios:stats_scroll") displayStats(e.source);
-  if (e.itemStack.typeId == "dorios:recover_scroll") unequipAllTrinkets(e.source);
   tryEquipTrinket(e.source, e.itemStack);
 });
 
@@ -37,8 +37,33 @@ world.afterEvents.playerLeave.subscribe(({ playerId }) => {
   if (entity.isValid) entity.remove();
 });
 
+// Subscribe after world load, and calculate one snapshot per actual opening.
+world.afterEvents.worldLoad.subscribe(() => {
+  world.afterEvents.entityContainerOpened.subscribe(refreshOpenedTrinketStats, {
+    entityFilter: { type: "dorios:trinkets_inv" },
+  });
+});
+
+function refreshOpenedTrinketStats({ entity, openSource }) {
+  const player = openSource?.entity;
+  if (!entity?.isValid || entity.typeId !== "dorios:trinkets_inv"
+      || !player?.isValid || player.typeId !== "minecraft:player"
+      || !entity.getTags().includes(player.id)) return;
+
+  prepareTrinketInventory(player, entity);
+  validateTrinketSlots(player, entity);
+  const playerData = updatePlayerStats(player);
+  writeStatDisplay(entity, playerData);
+}
+
+function prepareTrinketInventory(player, entity) {
+  if (entity.getTags().includes("dorios:trinket_loaded")) return;
+  loadEntityInv(player, entity);
+  entity.addTag("dorios:trinket_loaded");
+}
+
 export function trinketTick(player) {
-  if (!player?.isValid) return;
+  if (!player?.isValid || !player.dimension.isChunkLoaded(player.location)) return;
   let mainHand = getEquipment(player, "Mainhand");
   if (!mainHand || mainHand?.typeId != "dorios:scroll") {
     removeInvEntity(player);
@@ -59,10 +84,8 @@ export function trinketTick(player) {
     }, 1);
 
     const trinketInv = getOrCreateInvEntity(player);
-    if (!trinketInv.getTags().includes("dorios:trinket_loaded")) {
-      loadEntityInv(player, trinketInv);
-      trinketInv.addTag("dorios:trinket_loaded");
-    }
+    if (!trinketInv) return;
+    prepareTrinketInventory(player, trinketInv);
     validateTrinketSlots(player, trinketInv);
   }
 }
@@ -106,6 +129,11 @@ function validateTrinketSlots(player, entity) {
   for (const index of Object.values(slots)) {
     const item = container.getItem(index);
     if (!item) continue;
+    // Internal display items must never become equipment or returned items.
+    if (item.typeId === statDisplayItem) {
+      container.setItem(index);
+      continue;
+    }
     const entry = data[item.typeId];
     const target = slots[entry?.trinket];
     const allowed = typeof entry?.condition !== "function" || entry.condition(player);
@@ -137,7 +165,18 @@ function validateTrinketSlots(player, entity) {
 }
 
 function summonInvEntity(player) {
-  const entity = player.dimension.spawnEntity("dorios:trinkets_inv", player.location);
+  const dimension = player.dimension;
+  const location = player.location;
+  if (!dimension.isChunkLoaded(location)) return;
+  let entity;
+  try {
+    entity = dimension.spawnEntity("dorios:trinkets_inv", location);
+  } catch (error) {
+    // A chunk can stop ticking during loading or a dimension transition.
+    // The existing player tick retries without changing equipment tags.
+    if (error.name === 'LocationInUnloadedChunkError') return;
+    throw error;
+  }
   entity.addTag(`${player.id}`);
   entity.getComponent("minecraft:tameable").tame(player);
   entity.nameTag = "Dorios Trinkets";
@@ -265,30 +304,5 @@ function clearTrinketImmuneEffects(player, entry) {
     if (entry.immunities.some((im) => im.toLowerCase() === effectName.toLowerCase())) {
       player.removeEffect(effect.typeId);
     }
-  }
-}
-
-function unequipAllTrinkets(player) {
-  if (!player?.isValid) return;
-  removeInvEntity(player);
-  const tags = player.getTags();
-  const inv = player.getComponent("inventory")?.container;
-  if (!inv) return;
-
-  for (const tag of tags) {
-    if (isAuxiliaryTag(tag)) continue;
-
-    const entry = data[tag];
-    if (!entry?.trinket) continue;
-
-    let item;
-    try {
-      item = new ItemStack(tag);
-    } catch {
-      continue;
-    }
-
-    returnItem(player, item);
-    player.removeTag(tag);
   }
 }

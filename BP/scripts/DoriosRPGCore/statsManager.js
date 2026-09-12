@@ -16,6 +16,7 @@ export function updatePlayerStats(player) {
 
     // Aplicar vanilla stats con eventos
     applyVanillaStatsViaEvents(player, playerData.stats);
+    return playerData;
 }
 
 /**

@@ -66,7 +66,7 @@ world.afterEvents.worldLoad.subscribe(() => {
 
             // --- Lava Waders: flotar y solidificar 3x3 sobre lava ---
             if (player.hasTag("dorios:lava_waders")) {
-                handleLavaWaders(player, blocks.feet, blocks.head)
+                handleLavaWaders(player)
             }
 
             if (player.hasTag("dorios:strong_celestial_ring")) {
@@ -152,65 +152,37 @@ world.beforeEvents.entityHurt.subscribe(event => {
 });
 
 /**
- * Maneja el efecto de caminar sobre lava con Lava Waders
- * @param {Player} player Jugador
- * @param {Block} feetBlock Bloque en los pies
- * @param {Block} headBlock Bloque en la cabeza
+ * Freeze nearby lava at foot level, following Helpful Items' Lava Boots pattern.
+ * Native block ticks handle melting; each block retains its original liquid depth.
  */
-function handleLavaWaders(player, feetBlock, headBlock) {
-    const dim = player.dimension
-    const px = Math.floor(player.location.x)
-    const py = Math.floor(player.location.y)
-    const pz = Math.floor(player.location.z)
+function handleLavaWaders(player) {
+    const dimension = player.dimension;
+    const { x, y, z } = player.location;
+    const baseX = Math.floor(x);
+    const baseZ = Math.floor(z);
+    const feetY = Math.floor(y);
+    const radius = 2;
 
-    const view = player.getViewDirection?.() ?? { x: 0, z: 0 }
-    const fx = Math.sign(view.x)
-    const fz = Math.sign(view.z)
+    for (const blockY of [feetY, feetY - 1]) {
+        if (blockY < dimension.heightRange.min || blockY >= dimension.heightRange.max) continue;
+        for (let dx = -radius; dx <= radius; dx++) {
+            for (let dz = -radius; dz <= radius; dz++) {
+                if (dx * dx + dz * dz > radius * radius) continue;
+                const location = { x: baseX + dx, y: blockY, z: baseZ + dz };
+                if (!dimension.isChunkLoaded(location)) continue;
+                const block = dimension.getBlock(location);
+                if (!block) continue;
 
-    // Centros a revisar: bajo pies y 1 bloque al frente
-    const centers = [
-        { x: px, z: pz },
-        { x: px + fx, z: pz + fz }
-    ]
-
-    // Flotación si está en lava
-    const inLava =
-        (feetBlock?.typeId?.includes("lava") ?? false) ||
-        (headBlock?.typeId?.includes("lava") ?? false)
-
-    if (inLava) {
-        player.applyKnockback?.({ x: 0, z: 0 }, 0.1)
-    }
-
-    for (const c of centers) {
-        for (let dx = -1; dx <= 1; dx++) {
-            for (let dz = -1; dz <= 1; dz++) {
-                const bx = c.x + dx
-                const bz = c.z + dz
-
-                // Buscar la lava más alta en un rango de 3 bloques hacia abajo
-                let lavaY = null
-                for (let checkY = py; checkY >= py - 3; checkY--) {
-                    const blockCheck = dim.getBlock({ x: bx, y: checkY, z: bz })
-                    if (blockCheck?.typeId === "minecraft:lava") {
-                        lavaY = checkY
-                        break
-                    }
+                if (block.typeId === 'minecraft:lava') {
+                    const depth = block.permutation.getState('liquid_depth') ?? 0;
+                    const typeId = depth === 0 ? 'dorios:lava_solid_0' : 'dorios:lava_flow_0';
+                    block.setPermutation(BlockPermutation.resolve(typeId, { 'dorios:liquid_depth': depth }));
+                } else if (/^dorios:lava_(solid|flow)_[12]$/.test(block.typeId)) {
+                    const depth = block.permutation.getState('dorios:liquid_depth');
+                    block.setPermutation(BlockPermutation.resolve(block.typeId.slice(0, -1) + '0', {
+                        'dorios:liquid_depth': depth,
+                    }));
                 }
-
-                // Si no hay lava cerca, no hacemos nada
-                if (lavaY === null) continue
-
-                // Colocar bloque sólido justo encima de la lava detectada
-                const lavaBlock = dim.getBlock({ x: bx, y: lavaY, z: bz })
-                const solidPos = { x: bx, y: lavaY, z: bz }
-
-                const depth = lavaBlock.permutation?.getState?.("liquid_depth")
-                const targetId = depth === 0 ? "dorios:lava_solid_0" : "dorios:lava_flow_0"
-
-                try {
-                    lavaBlock.setPermutation(BlockPermutation.resolve(targetId))
-                } catch { }
             }
         }
     }

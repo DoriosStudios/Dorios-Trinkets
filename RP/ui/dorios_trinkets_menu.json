@@ -132,7 +132,7 @@
                     "$cell_overlay_ref": "trinkets.slot_feet",
                     "collection_index": 2
                 }
-            }, /////////////////
+            },
             {
                 "item@common.container_item": {
                     "anchor_from": "top_middle",
@@ -168,7 +168,7 @@
                     "$cell_overlay_ref": "trinkets.slot_amulet",
                     "collection_index": 12
                 }
-            }, /////////
+            },
             {
                 "item@common.container_item": {
                     "anchor_from": "top_middle",
@@ -239,6 +239,32 @@
                     ],
                     "$cell_overlay_ref": "trinkets.slot_main_ring",
                     "collection_index": 10
+                }
+            },
+            {
+                "trinkets_heading": {
+                    "type": "label",
+                    "text": "Trinkets",
+                    "localize": false,
+                    "size": [
+                        72,
+                        14
+                    ],
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "text_alignment": "left",
+                    "color": [
+                        0.22,
+                        0.22,
+                        0.24
+                    ],
+                    "font_scale_factor": 1,
+                    "shadow": false,
+                    "layer": 3,
+                    "offset": [
+                        87,
+                        -1
+                    ]
                 }
             }
         ]
@@ -329,7 +355,17 @@
                     "layer": 1,
                     "controls": [
                         {
-                            "common_panel@common.common_panel": {}
+                            "common_panel@common.common_panel": {
+                                "bindings": [
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "trinkets_help_open",
+                                        "source_property_name": "(not #toggle_state)",
+                                        "target_property_name": "#visible",
+                                        "resolve_sibling_scope": false
+                                    }
+                                ]
+                            }
                         },
                         {
                             "chest_panel": {
@@ -348,6 +384,28 @@
                                     {
                                         "inventory_take_progress_icon_button@common.inventory_take_progress_icon_button": {}
                                     }
+                                ],
+                                "bindings": [
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "trinkets_help_open",
+                                        "source_property_name": "(not #toggle_state)",
+                                        "target_property_name": "#visible",
+                                        "resolve_sibling_scope": false
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "stats_sidebar@trinkets.stats_sidebar": {
+                                "bindings": [
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "trinkets_help_open",
+                                        "source_property_name": "(not #toggle_state)",
+                                        "target_property_name": "#visible",
+                                        "resolve_sibling_scope": false
+                                    }
                                 ]
                             }
                         },
@@ -356,10 +414,433 @@
                         },
                         {
                             "gamepad_cursor@common.gamepad_cursor_button": {}
+                        },
+                        {
+                            "trinkets_help_open@trinkets_guide.guide_toggle": {
+                                "offset": [
+                                    250,
+                                    4
+                                ],
+                                "layer": 35,
+                                "$toggle_group_forced_index": 1,
+                                "$toggle_tts_name": "ui.dorios:scroll_guide.title",
+                                "$toggle_binding_condition": "always",
+                                "bindings": [
+                                    {
+                                        "binding_type": "$toggle_binding_type",
+                                        "binding_condition": "$toggle_binding_condition",
+                                        "binding_collection_name": "$toggle_grid_collection_name",
+                                        "binding_name": "$toggle_state_binding_name",
+                                        "binding_name_override": "#toggle_state"
+                                    },
+                                    {
+                                        "binding_type": "$toggle_enabled_binding_type",
+                                        "binding_condition": "$toggle_enabled_binding_condition",
+                                        "binding_collection_name": "$toggle_grid_collection_name",
+                                        "binding_name": "$toggle_enabled_binding_name",
+                                        "binding_name_override": "#enabled"
+                                    },
+                                    {
+                                        "binding_type": "$toggle_collection_details_type",
+                                        "binding_collection_name": "$toggle_collection_detail_name"
+                                    },
+                                    {
+                                        "binding_type": "$toggle_tts_header_binding_type",
+                                        "binding_condition": "$toggle_tts_header_binding_condition",
+                                        "binding_collection_name": "$toggle_tts_header_binding_collection_name",
+                                        "binding_name": "$toggle_tts_header"
+                                    },
+                                    {
+                                        "binding_type": "$toggle_tts_value_binding_type",
+                                        "binding_condition": "$toggle_tts_value_binding_condition",
+                                        "binding_collection_name": "$toggle_tts_value_binding_collection_name",
+                                        "binding_name": "$toggle_tts_override_toggle_value"
+                                    },
+                                    {
+                                        "ignored": "$ignore_tts_enabled_bind",
+                                        "binding_type": "$toggle_tts_enabled_binding_type",
+                                        "binding_name": "#tts_enabled",
+                                        "binding_name_override": "#focus_enabled"
+                                    },
+                                    {
+                                        "ignored": "(($toggle_focus_bind = '') and (not $ignore_tts_enabled_bind))",
+                                        "binding_type": "global",
+                                        "binding_name": "$toggle_focus_bind",
+                                        "binding_name_override": "#focus_enabled"
+                                    },
+                                    {
+                                        "binding_type": "$toggle_focus_id_binding_type",
+                                        "binding_condition": "$toggle_focus_id_binding_condition",
+                                        "binding_collection_name": "$toggle_focus_id_collection_name",
+                                        "binding_name": "$toggle_focus_id_binding_name",
+                                        "binding_name_override": "#focus_identifier"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(not #toggle_state)",
+                                        "target_property_name": "#visible"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "guide_overlay@trinkets_guide.guide_panel": {}
+                        }
+                    ],
+                    "offset": [
+                        -48.0,
+                        0
+                    ]
+                }
+            }
+        ]
+    },
+    "stats_content": {
+        "type": "stack_panel",
+        "orientation": "vertical",
+        "size": [
+            "100%",
+            "100%c"
+        ],
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "controls": [
+            {
+                "section_0_heading": {
+                    "type": "label",
+                    "text": "§lStats§r",
+                    "localize": false,
+                    "size": [
+                        "100%",
+                        14
+                    ],
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "text_alignment": "left",
+                    "color": [
+                        0.3,
+                        0.3,
+                        0.3
+                    ],
+                    "font_scale_factor": 0.7,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "section_0_columns": {
+                    "type": "collection_panel",
+                    "size": [
+                        "100%",
+                        48
+                    ],
+                    "controls": [
+                        {
+                            "column_1": {
+                                "type": "panel",
+                                "size": [
+                                    "50%",
+                                    48
+                                ],
+                                "anchor_from": "top_left",
+                                "anchor_to": "top_left",
+                                "offset": [
+                                    "0%",
+                                    0
+                                ],
+                                "controls": [
+                                    {
+                                        "icons": {
+                                            "type": "label",
+                                            "text": "§f\n\n§f\n\n§f\n\n§f",
+                                            "localize": false,
+                                            "size": [
+                                                8,
+                                                48
+                                            ],
+                                            "anchor_from": "top_left",
+                                            "anchor_to": "top_left",
+                                            "text_alignment": "left",
+                                            "color": [
+                                                1,
+                                                1,
+                                                1
+                                            ],
+                                            "font_scale_factor": 0.65,
+                                            "shadow": false,
+                                            "layer": 3,
+                                            "offset": [
+                                                0,
+                                                0
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "values@trinkets.dynamic_stat_label": {
+                                            "size": [
+                                                "100% - 10px",
+                                                48
+                                            ],
+                                            "anchor_from": "top_left",
+                                            "anchor_to": "top_left",
+                                            "offset": [
+                                                10,
+                                                0
+                                            ],
+                                            "$text_scale": 0.65
+                                        }
+                                    }
+                                ],
+                                "collection_index": 13
+                            }
+                        },
+                        {
+                            "column_2": {
+                                "type": "panel",
+                                "size": [
+                                    "50%",
+                                    48
+                                ],
+                                "anchor_from": "top_left",
+                                "anchor_to": "top_left",
+                                "offset": [
+                                    "50%",
+                                    0
+                                ],
+                                "controls": [
+                                    {
+                                        "icons": {
+                                            "type": "label",
+                                            "text": "§f\n\n§f\n\n§f\n\n§f",
+                                            "localize": false,
+                                            "size": [
+                                                8,
+                                                48
+                                            ],
+                                            "anchor_from": "top_left",
+                                            "anchor_to": "top_left",
+                                            "text_alignment": "left",
+                                            "color": [
+                                                1,
+                                                1,
+                                                1
+                                            ],
+                                            "font_scale_factor": 0.65,
+                                            "shadow": false,
+                                            "layer": 3,
+                                            "offset": [
+                                                0,
+                                                0
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "values@trinkets.dynamic_stat_label": {
+                                            "size": [
+                                                "100% - 10px",
+                                                48
+                                            ],
+                                            "anchor_from": "top_left",
+                                            "anchor_to": "top_left",
+                                            "offset": [
+                                                10,
+                                                0
+                                            ],
+                                            "$text_scale": 0.65
+                                        }
+                                    }
+                                ],
+                                "collection_index": 14
+                            }
+                        }
+                    ],
+                    "collection_name": "container_items",
+                    "$item_collection_name": "container_items"
+                }
+            },
+            {
+                "section_0_gap": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        2
+                    ]
+                }
+            },
+            {
+                "effects_collection": {
+                    "type": "collection_panel",
+                    "collection_name": "container_items",
+                    "$item_collection_name": "container_items",
+                    "size": [
+                        "100%",
+                        "100%cm"
+                    ],
+                    "controls": [
+                        {
+                            "effects@trinkets.dynamic_stat_label": {
+                                "collection_index": 15,
+                                "size": [
+                                    "100%",
+                                    "100%cm"
+                                ],
+                                "$text_scale": 0.65,
+                                "$text_size": [
+                                    "100%",
+                                    "default"
+                                ],
+                                "anchor_from": "top_left",
+                                "anchor_to": "top_left"
+                            }
                         }
                     ]
                 }
             }
         ]
+    },
+    "stats_sidebar": {
+        "type": "panel",
+        "size": [
+            96,
+            166
+        ],
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "offset": [
+            176,
+            0
+        ],
+        "layer": 5,
+        "controls": [
+            {
+                "background@common.dialog_background_opaque": {
+                    "layer": 0
+                }
+            },
+            {
+                "stats_scroll@common.scrolling_panel": {
+                    "size": [
+                        82,
+                        152
+                    ],
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "offset": [
+                        7,
+                        7
+                    ],
+                    "$scrolling_content": "trinkets.stats_content",
+                    "$show_background": false,
+                    "$scroll_size": [
+                        4,
+                        "100% - 4px"
+                    ],
+                    "$scroll_size_touch": [
+                        4,
+                        "100% - 4px"
+                    ],
+                    "$scroll_bar_contained": false,
+                    "$scroll_bar_contained_touch": false,
+                    "$scroll_box_visible_touch": true
+                }
+            }
+        ]
+    },
+    "dynamic_stat_label": {
+        "type": "panel",
+        "$text_scale|default": 1,
+        "controls": [
+            {
+                "label_v1@trinkets.dynamic_stat_text_v1": {
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "offset": [
+                        0,
+                        0
+                    ],
+                    "$text_scale": "$text_scale"
+                }
+            },
+            {
+                "label_v2@trinkets.dynamic_stat_text_v2": {
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "offset": [
+                        0,
+                        0
+                    ],
+                    "$text_scale": "$text_scale"
+                }
+            }
+        ],
+        "$text_size|default": [
+            "default",
+            "default"
+        ]
+    },
+    "dynamic_stat_text_v1": {
+        "type": "label",
+        "text": "#hover_text",
+        "color": [
+            1,
+            1,
+            1
+        ],
+        "layer": 1,
+        "$text_scale|default": 1,
+        "font_scale_factor": "$text_scale",
+        "bindings": [
+            {
+                "binding_name": "#hover_text",
+                "binding_type": "collection",
+                "binding_collection_name": "container_items"
+            }
+        ],
+        "size": "$text_size",
+        "text_alignment": "left",
+        "shadow": false,
+        "localize": false
+    },
+    "dynamic_stat_text_v2": {
+        "type": "label",
+        "text": "#displaying_text",
+        "color": [
+            1,
+            1,
+            1
+        ],
+        "layer": 1,
+        "$text_scale|default": 1,
+        "font_scale_factor": "$text_scale",
+        "bindings": [
+            {
+                "binding_name": "#hover_text",
+                "binding_name_override": "#always_text",
+                "binding_condition": "always",
+                "binding_type": "collection",
+                "binding_collection_name": "container_items"
+            },
+            {
+                "binding_name": "#hover_text",
+                "binding_name_override": "#displaying_text",
+                "binding_condition": "visibility_changed",
+                "binding_type": "collection",
+                "binding_collection_name": "container_items"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#always_text = #displaying_text)",
+                "target_property_name": "#always_equals_display"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((#always_equals_display or (#always_text = '')))",
+                "target_property_name": "#visible"
+            }
+        ],
+        "size": "$text_size",
+        "text_alignment": "left",
+        "shadow": false,
+        "localize": false
     }
 }

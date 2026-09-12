@@ -79,7 +79,7 @@ export const statTexts = {
         attackMulti: value => `§7- Attack Multiplier: §f${value}%%`,
         knockback: value => `§7- Knockback: §f${value}`,
         knockbackRes: value => `§7- Knockback Resistance: §f${value}%%`,
-        damageReduction: { default: 0 },
+        damageReduction: value => `\u00a77- Damage Reduction: \u00a7f${value}%%`,
         speed: value => `§7- Movement Speed: §f${value}%%`,
         waterSpeed: value => `§7- Water Speed: §f${value}%%`,
         lavaSpeed: value => `§7- Lava Speed: §f${value}%%`,

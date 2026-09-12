@@ -2,13 +2,33 @@
 	"format_version": "1.21.50",
 	"minecraft:block": {
 		"description": {
-			"identifier": "dorios:lava_solid_2"
+			"identifier": "dorios:lava_solid_2",
+			"states": {
+				"dorios:liquid_depth": [
+					0,
+					1,
+					2,
+					3,
+					4,
+					5,
+					6,
+					7,
+					8,
+					9,
+					10,
+					11,
+					12,
+					13,
+					14,
+					15
+				]
+			}
 		},
 		"components": {
 			"minecraft:tick": {
 				"interval_range": [
-					40,
-					40
+					17,
+					23
 				]
 			},
 			"dorios:block_tick": {}

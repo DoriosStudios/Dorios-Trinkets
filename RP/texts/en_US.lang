@@ -19,66 +19,64 @@ item.dorios:empty_ring=Empty Ring \nCrafting material
 item.dorios:heavy_empty_ring=Heavy Empty Ring \nCrafting material
 
 item.dorios:scroll=§rScroll\n§7- Opens the trinket inventory.
-item.dorios:stats_scroll=§rStats Scroll\n§7- Use to view your current stats.
-item.dorios:recover_scroll=§rRecover Scroll\n§7- Recovers your equipped trinkets.
 
 
-item.dorios:purity_blossom=Purity Blossom \n§6Slot: §eCharm \n§6Tier: §9Apprentice \n§fA mystical flower that grants immunity to toxins. \n Immunity
+item.dorios:purity_blossom=Purity Blossom \n§6Slot: §eCharm \n§6Tier: §9Apprentice \n§fA mystical flower that grants immunity to\n§ftoxins.\n Immunity
 
 item.dorios:rotten_heart=Rotten Heart \n§6Slot: §eHearty Charm \n§6Tier: §fPrimitive \n§fA decayed heart that slightly boosts health. \n+1
-item.dorios:candy_heart=Candy Heart \n§6Slot: §eHearty Charm \n§6Tier: §9Apprentice \n§fA heart-shaped candy that bolsters your life force. \n+2
-item.dorios:immaculate_heart=Immaculate Heart \n§6Slot: §eHearty Charm \n§6Tier: §bAscendant \n§fA pure and powerful heart, increases health and damage. \n+5 | +1
-item.dorios:black_heart=Black Heart \n§6Slot: §eHearty Charm \n§6Tier: §eMastercraft \n§fA shadowy relic from the End, boosting your maximum health. \n+3
-item.dorios:soul_heart=Soul Heart \n§6Slot: §eHearty Charm \n§6Tier: §eMastercraft \n§fA haunting heart awarded by the Warden, used to craft the Warden Heart. \n+4 \n Immunity
-item.dorios:sacred_heart=Sacred Heart \n§6Slot: §eHearty Charm \n§6Tier: §bAscendant+ \n§fA blessed relic from the desert, increasing your health with divine power. \n+10 \n+ I
-item.dorios:eternal_heart=Eternal Heart \n§6Slot: §eHearty Charm \n§6Tier: §bAscendant \n§fA heart of eternity, boosting health and preventing diseases.\n+4 \n |  |  Immunity
-item.dorios:warden_heart=Warden's Heart \n§6Slot: §eHearty Charm \n§6Tier: §bAscendant+ \n§fA heart infused with the Warden's power, increasing your life force.\n+8 \n |  Immunity
-item.dorios:wither_heart=Wither's Heart \n§6Slot: §eHearty Charm \n§6Tier: §bAscendant+ \n§fThe Wither's essence, boosting health, regenerating you, and protecting from Wither.\n+8 \n+ I \n Immunity
-item.dorios:dragon_heart=Dragon's Heart \n§6Slot: §eHearty Charm\n§6Tier: §bAscendant++ \n§fA heart pulsing with the might of the End's ruler. \n+10 | +2\n+ I
+item.dorios:candy_heart=Candy Heart \n§6Slot: §eHearty Charm \n§6Tier: §9Apprentice \n§fA heart-shaped candy that bolsters your life\n§fforce.\n+2
+item.dorios:immaculate_heart=Immaculate Heart \n§6Slot: §eHearty Charm \n§6Tier: §bAscendant \n§fA pure and powerful heart, increases health\n§fand damage.\n+5 | +1
+item.dorios:black_heart=Black Heart \n§6Slot: §eHearty Charm \n§6Tier: §eMastercraft \n§fA shadowy relic from the End, boosting your\n§fmaximum health.\n+3
+item.dorios:soul_heart=Soul Heart \n§6Slot: §eHearty Charm \n§6Tier: §eMastercraft \n§fA haunting heart awarded by the Warden, used\n§fto craft the Warden Heart.\n+4 \n Immunity
+item.dorios:sacred_heart=Sacred Heart \n§6Slot: §eHearty Charm \n§6Tier: §bAscendant+ \n§fA blessed relic from the desert, increasing\n§fyour health with divine power.\n+10 \n+ I
+item.dorios:eternal_heart=Eternal Heart \n§6Slot: §eHearty Charm \n§6Tier: §bAscendant \n§fA heart of eternity, boosting health and\n§fpreventing diseases.\n+4 \n |  |  Immunity
+item.dorios:warden_heart=Warden's Heart \n§6Slot: §eHearty Charm \n§6Tier: §bAscendant+ \n§fA heart infused with the Warden's power,\n§fincreasing your life force.\n+8 \n |  Immunity
+item.dorios:wither_heart=Wither's Heart \n§6Slot: §eHearty Charm \n§6Tier: §bAscendant+ \n§fThe Wither's essence, boosting health,\n§fregenerating you, and protecting from\n§fWither.\n+8 \n+ I \n Immunity
+item.dorios:dragon_heart=Dragon's Heart \n§6Slot: §eHearty Charm\n§6Tier: §bAscendant++ \n§fA heart pulsing with the might of the End's\n§fruler.\n+10 | +2\n+ I
 
 
-item.dorios:dead_abyssal_orb=Dead Abyssal Orb \n§6Slot: §eCharm \n§6Tier: §fPrimitive \n§fA decayed orb that enhances breathing and swimming underwater. \n+30%
-item.dorios:abyssal_clam_shell=Abyssal Clam Shell \n§6Slot: §eTalisman \n§6Tier: §9Apprentice \n§fA rare clam shell from the abyss, glowing faintly with hidden power. \n+50%
-item.dorios:abyssal_orb=Abyssal Orb \n§6Slot: §eCharm \n§6Tier: §eMastercraft \n§fAn enchanted orb that boosts breathing and swimming speed underwater. \n+100% \n+ I
-item.dorios:abyssal_essence=Abyssal Essence \n§6Slot: §eArchaic Charm \n§6Tier: §bAscendant \n§fGrants the Ocean Blessing, boosting strength and speed in water. \n+200% \n+ I \n+ II in Water
-item.dorios:abyssal_diver_helmet=Abyssal Diver's Helmet \n§6Slot: §eHead \n§6Tier: §fPrimitive \n§fA helmet for underwater exploration, granting air and clear vision below. \n+20% \n+ I
+item.dorios:dead_abyssal_orb=Dead Abyssal Orb \n§6Slot: §eCharm \n§6Tier: §fPrimitive \n§fA decayed orb that enhances breathing and\n§fswimming underwater.\n+30%
+item.dorios:abyssal_clam_shell=Abyssal Clam Shell \n§6Slot: §eTalisman \n§6Tier: §9Apprentice \n§fA rare clam shell from the abyss, glowing\n§ffaintly with hidden power.\n+50%
+item.dorios:abyssal_orb=Abyssal Orb \n§6Slot: §eCharm \n§6Tier: §eMastercraft \n§fAn enchanted orb that boosts breathing and\n§fswimming speed underwater.\n+100% \n+ I
+item.dorios:abyssal_essence=Abyssal Essence \n§6Slot: §eArchaic Charm \n§6Tier: §bAscendant \n§fGrants the Ocean Blessing, boosting strength\n§fand speed in water.\n+200% \n+ I \n+ II in Water
+item.dorios:abyssal_diver_helmet=Abyssal Diver's Helmet \n§6Slot: §eHead \n§6Tier: §fPrimitive \n§fA helmet for underwater exploration,\n§fgranting air and clear vision below.\n+20% \n+ I
 
-item.dorios:venom_gauntlet=Toxic Gauntlet \n§6Slot: §eGauntlet \n§6Tier: §fPrimitive \n§fA gauntlet that unleashes deadly poison on impact. \n+ on hit
-item.dorios:fire_gauntlet=Infernal Gauntlet \n§6Slot: §eGauntlet \n§6Tier: §fPrimitive \n§fA fiery gauntlet that ignites mobs on contact with its powerful heat. \n+ on hit
-item.dorios:ice_gauntlet=Frost Gauntlet \n§6Slot: §eGauntlet \n§6Tier: §fPrimitive \n§fA chilling gauntlet imbued with frosty power, slowing enemies with each strike. \n+ on hit
-item.dorios:frost_quiver=Frost Quiver \n§6Slot: §eBody \n§6Tier: §9Apprentice \n§fArrows imbued with icy power, slowing enemies on impact. \n+ on hit
-item.dorios:molten_quiver=Molten Quiver \n§6Slot: §eBody \n§6Tier: §9Apprentice \n§fShoot arrows that ignite your enemies with fiery wrath. \n+ on hit
-item.dorios:venom_quiver=Toxin Quiver \n§6Slot: §eBody \n§6Tier: §9Apprentice \n§fPoisons arrows to deal extra damage over time.\n+ on hit
+item.dorios:venom_gauntlet=Toxic Gauntlet \n§6Slot: §eGauntlet \n§6Tier: §fPrimitive \n§fA gauntlet that unleashes deadly poison on\n§fimpact.\n+ on hit
+item.dorios:fire_gauntlet=Infernal Gauntlet \n§6Slot: §eGauntlet \n§6Tier: §fPrimitive \n§fA fiery gauntlet that ignites mobs on\n§fcontact with its powerful heat.\n+ on hit
+item.dorios:ice_gauntlet=Frost Gauntlet \n§6Slot: §eGauntlet \n§6Tier: §fPrimitive \n§fA chilling gauntlet imbued with frosty\n§fpower, slowing enemies with each strike.\n+ on hit
+item.dorios:frost_quiver=Frost Quiver \n§6Slot: §eBody \n§6Tier: §9Apprentice \n§fArrows imbued with icy power, slowing\n§fenemies on impact.\n+ on hit
+item.dorios:molten_quiver=Molten Quiver \n§6Slot: §eBody \n§6Tier: §9Apprentice \n§fShoot arrows that ignite your enemies with\n§ffiery wrath.\n+ on hit
+item.dorios:venom_quiver=Toxin Quiver \n§6Slot: §eBody \n§6Tier: §9Apprentice \n§fPoisons arrows to deal extra damage over\n§ftime.\n+ on hit
 
-item.dorios:fire_claw=Blazing Claws \n§6Slot: §eGauntlet \n§6Tier: §9Apprentice \n§fFiery claws that deal increased damage and burn enemies on contact. \n+2 \n+ on hit
-item.dorios:venom_claw=Viper Claws \n§6Slot: §eGauntlet \n§6Tier: §9Apprentice \n§fVenomous claws that increase damage and poison foes over time. \n+2\n+ on hit
-item.dorios:ice_claw=Glazing Claws \n§6Slot: §eGauntlet \n§6Tier: §9Apprentice \n§fIce-infused claws that boost damage and freeze enemies with each strike. \n+2  \n+ on hit
+item.dorios:fire_claw=Blazing Claws \n§6Slot: §eGauntlet \n§6Tier: §9Apprentice \n§fFiery claws that deal increased damage and\n§fburn enemies on contact.\n+2 \n+ on hit
+item.dorios:venom_claw=Viper Claws \n§6Slot: §eGauntlet \n§6Tier: §9Apprentice \n§fVenomous claws that increase damage and\n§fpoison foes over time.\n+2\n+ on hit
+item.dorios:ice_claw=Glazing Claws \n§6Slot: §eGauntlet \n§6Tier: §9Apprentice \n§fIce-infused claws that boost damage and\n§ffreeze enemies with each strike.\n+2  \n+ on hit
 
 item.dorios:guardian_ring=Guardian's Ring \n§6Slot: §eRing \n§6Tier: §bAscendant \n§fIncreases defense and reduces damage taken. \n+ I
-item.dorios:healer_ring=Healer's Ring \n§6Slot: §eRing \n§6Tier: §eMastercraft \n§fEnhances healing and restores health over time. \n+ I
+item.dorios:healer_ring=Healer's Ring \n§6Slot: §eRing \n§6Tier: §eMastercraft \n§fEnhances healing and restores health over\n§ftime.\n+ I
 item.dorios:miner_ring=Miner's Ring \n§6Slot: §eRing \n§6Tier: §fPrimitive \n§fImproves mining speed and ore yield. \n+ I
 item.dorios:warrior_ring=Warrior's Ring \n§6Slot: §eRing \n§6Tier: §eMastercraft \n§fBoosts attack power and strength in combat. \n+2
 item.dorios:runner_ring=Runner's Ring \n§6Slot: §eRing \n§6Tier: §fPrimitive \n§fGreatly enhances speed and stamina. \n+ I
 
 item.dorios:lava_waders=Lava Waders \n§6Slot: §eFeet \n§6Tier: §9Apprentice \n§fGrants the ability to walk on lava. \n+20%
-item.dorios:idle_bloom=Idle Bloom \n§6Slot: §eBody \n§6Tier: §bAscendant \n§fA bloom that grants regeneration while standing still. \n+ II (When standing still)
+item.dorios:idle_bloom=Idle Bloom \n§6Slot: §eBody \n§6Tier: §bAscendant \n§fA bloom that grants regeneration while\n§fstanding still.\n+ II (When standing still)
 
-item.dorios:mender_pendant=Mender's Pendant \n§6Slot: §eNecklace \n§6Tier: §bAscendant \n§fGradually restores the durability of your equipped items.
-item.dorios:repair_talis=Repair Talisman \n§6Slot: §eNecklace \n§6Tier: §eMastercraft \n§fSlowly restores the durability of the item you hold.
-item.dorios:rush_of_fear=Rush of Fear \n§6Slot: §eNecklace \n§6Tier: §9Apprentice \n§fUnleash a burst of speed when danger strikes. \n+2 \n+100% after receiving damage
-item.dorios:rabbit_rush=Rabbit's Rush \n§6Slot: §eNecklace \n§6Tier: §fPrimitive \n§fA rabbit's foot necklace that boosts speed and agility. \n+20%
+item.dorios:mender_pendant=Mender's Pendant \n§6Slot: §eNecklace \n§6Tier: §bAscendant \n§fGradually restores the durability of your\n§fequipped items.
+item.dorios:repair_talis=Repair Talisman \n§6Slot: §eNecklace \n§6Tier: §eMastercraft \n§fSlowly restores the durability of the item\n§fyou hold.
+item.dorios:rush_of_fear=Rush of Fear \n§6Slot: §eNecklace \n§6Tier: §9Apprentice \n§fUnleash a burst of speed when danger\n§fstrikes.\n+2 \n+100% after receiving damage
+item.dorios:rabbit_rush=Rabbit's Rush \n§6Slot: §eNecklace \n§6Tier: §fPrimitive \n§fA rabbit's foot necklace that boosts speed\n§fand agility.\n+20%
 
 item.dorios:night_vision_goggles=Night Vision Goggles \n§6Slot: §eHead \n§6Tier: §fPrimitive \n§fSee through the darkness with ease. \n+ I
-item.dorios:night_vision_mask=Night Vision Mask \n§6Slot: §eHead \n§6Tier: §9Apprentice \n§fA mask that grants night vision, along with immunity to darkness and blindness. \n+ I \n |  Immunity
-item.dorios:obsidian_skull=Obsidian Skull \n§6Slot: §eCharm \n§6Tier: §9Apprentice \n§fGrants fire immunity and brief resistance to lava. \n+ I (Lasts 10s in lava)
+item.dorios:night_vision_mask=Night Vision Mask \n§6Slot: §eHead \n§6Tier: §9Apprentice \n§fA mask that grants night vision, along with\n§fimmunity to darkness and blindness.\n+ I \n |  Immunity
+item.dorios:obsidian_skull=Obsidian Skull \n§6Slot: §eCharm \n§6Tier: §9Apprentice \n§fGrants fire immunity and brief resistance to\n§flava.\n+ I (Lasts 10s in lava)
 
-item.dorios:cloud_steps_boots=Cloudstep Boots \n§6Slot: §eFeet \n§6Tier: §9Apprentice \n§fLight as a feather, granting agility and a double jump. \n+30% \n+1 Extra Jump
+item.dorios:cloud_steps_boots=Cloudstep Boots \n§6Slot: §eFeet \n§6Tier: §9Apprentice \n§fLight as a feather, granting agility and a\n§fdouble jump.\n+30% \n+1 Extra Jump
 
-item.dorios:heavy_guardian_ring=Heavy Guardian's Ring \n§6Slot: §eHeavy Ring \n§6Tier: §bAscendant \n§fBestows the Guardian's blessing, shielding the wearer. \n+ I
-item.dorios:heavy_healer_ring=Heavy Healer's Ring \n§6Slot: §eHeavy Ring \n§6Tier: §eMastercraft \n§fGrants the Healer's blessing, improving recovery. \n+ I
-item.dorios:heavy_miner_ring=Heavy Miner's Ring \n§6Slot: §eHeavy Ring \n§6Tier: §eMastercraft \n§fGives the Miner's blessing, imbuing you with mining haste. \n+ II
+item.dorios:heavy_guardian_ring=Heavy Guardian's Ring \n§6Slot: §eHeavy Ring \n§6Tier: §bAscendant \n§fBestows the Guardian's blessing, shielding\n§fthe wearer.\n+ I
+item.dorios:heavy_healer_ring=Heavy Healer's Ring \n§6Slot: §eHeavy Ring \n§6Tier: §eMastercraft \n§fGrants the Healer's blessing, improving\n§frecovery.\n+ I
+item.dorios:heavy_miner_ring=Heavy Miner's Ring \n§6Slot: §eHeavy Ring \n§6Tier: §eMastercraft \n§fGives the Miner's blessing, imbuing you with\n§fmining haste.\n+ II
 item.dorios:heavy_warrior_ring=Heavy Warrior's Ring \n§6Slot: §eHeavy Ring \n§6Tier: §eMastercraft \n§fEmpowers the wearer with increased strength. \n+ I
-item.dorios:heavy_runner_ring=Heavy Runner's Ring \n§6Slot: §eHeavy Ring \n§6Tier: §9Apprentice \n§fInfuses the Runner's blessing, enhancing agility. \n+ I
+item.dorios:heavy_runner_ring=Heavy Runner's Ring \n§6Slot: §eHeavy Ring \n§6Tier: §9Apprentice \n§fInfuses the Runner's blessing, enhancing\n§fagility.\n+ I
 
 tile.dorios:lava_solid_0.name=Solid Lava
 tile.dorios:lava_solid_1.name=Solid Lava
@@ -88,50 +86,50 @@ tile.dorios:lava_flow_1.name=Solid Lava
 tile.dorios:lava_flow_2.name=Solid Lava
 
 
-item.dorios:broken_paladin_helmet=Broken Paladin Helmet \n§6Slot: §eHead \n§6Tier: §fPrimitive \n§fA shattered relic of a noble defender. Increases damage slightly. \n+1
-item.dorios:restored_paladin_helmet=Restored Paladin Helmet \n§6Slot: §eHead \n§6Tier: §eMastercraft \n§fReforged to its former glory. Grants greater strength to its wearer. \n+3
-item.dorios:holy_cross=Holy Cross \n§6Slot: §eTalisman \n§6Tier: §bAscendant \n§fA sacred relic that empowers its bearer and smites the undead with divine power. \n+50% to Undeads
+item.dorios:broken_paladin_helmet=Broken Paladin Helmet \n§6Slot: §eHead \n§6Tier: §fPrimitive \n§fA shattered relic of a noble defender.\n§fIncreases damage slightly.\n+1
+item.dorios:restored_paladin_helmet=Restored Paladin Helmet \n§6Slot: §eHead \n§6Tier: §eMastercraft \n§fReforged to its former glory. Grants greater\n§fstrength to its wearer.\n+3
+item.dorios:holy_cross=Holy Cross \n§6Slot: §eTalisman \n§6Tier: §bAscendant \n§fA sacred relic that empowers its bearer and\n§fsmites the undead with divine power.\n+50% to Undeads
 
 item.dorios:blood_pact=Blood Pact \n§6Slot: §eArchaic Charm \n§6Tier: §bAscendant+ \n§fYou made a pact with satan. \nIn order to heal you must kill. \n-10 \n Immunity\n+12% Lifesteal
-item.dorios:bloodbound_amulet=Bloodbound Amulet \n§6Slot: §eAmulet \n§6Tier: §bAscendant \n§fA powerful artifact bound by blood, drawing strength from fallen foes. \n+3 \n+6% Lifesteal
-item.dorios:blood_pendant=Blood Pendant \n§6Slot: §eNecklace\n§6Tier: §eMastercraft \n§fA delicate relic that harnesses the essence of spilled blood to restore health. \n+2 \n+2% Lifesteal
+item.dorios:bloodbound_amulet=Bloodbound Amulet \n§6Slot: §eAmulet \n§6Tier: §bAscendant \n§fA powerful artifact bound by blood, drawing\n§fstrength from fallen foes.\n+3 \n+6% Lifesteal
+item.dorios:blood_pendant=Blood Pendant \n§6Slot: §eNecklace\n§6Tier: §eMastercraft \n§fA delicate relic that harnesses the essence\n§fof spilled blood to restore health.\n+2 \n+2% Lifesteal
 
-item.dorios:bloodtide_chalice=Bloodtide Chalice \n§6Slot: §eCharm \n§6Tier: §bAscendant \n§f A cursed relic, forever thirsting for the life it once held. \n+10% Lifesteal
-item.dorios:voodoo=Voodoo \n§6Slot: §eDoll \n§6Tier: §eMastercraft \n§fBound by dark rites, this cursed effigy weaves pain between souls. \nReflect 10% of the Damage
-item.dorios:bloodgem=Bloodgem \n§6Slot: §eTalisman \n§6Tier: §eMastercraft \n§fA gem pulsating with ancient blood, eager to share its power... for a price. \n+4% Lifesteal
-item.dorios:bloodstained_heart=Bloodstained Heart \n§6Slot: §eHearty Charm \n§6Tier: §eMastercraft \n§fA heart-shaped relic soaked in ancient blood rituals. \n+4
-item.dorios:bloodbound_emblem=Bloodbound Emblem \n§6Slot: §eBody \n§6Tier: §eMastercraft \n§fA sigil etched in crimson, pulsing with the essence of sacrifice. \n+ I after 
+item.dorios:bloodtide_chalice=Bloodtide Chalice \n§6Slot: §eCharm \n§6Tier: §bAscendant \n§fA cursed relic, forever thirsting for the\n§flife it once held.\n+10% Lifesteal
+item.dorios:voodoo=Voodoo \n§6Slot: §eDoll \n§6Tier: §eMastercraft \n§fBound by dark rites, this cursed effigy\n§fweaves pain between souls.\nReflect 10% of the Damage
+item.dorios:bloodgem=Bloodgem \n§6Slot: §eTalisman \n§6Tier: §eMastercraft \n§fA gem pulsating with ancient blood, eager to\n§fshare its power... for a price.\n+4% Lifesteal
+item.dorios:bloodstained_heart=Bloodstained Heart \n§6Slot: §eHearty Charm \n§6Tier: §eMastercraft \n§fA heart-shaped relic soaked in ancient blood\n§frituals.\n+4
+item.dorios:bloodbound_emblem=Bloodbound Emblem \n§6Slot: §eBody \n§6Tier: §eMastercraft \n§fA sigil etched in crimson, pulsing with the\n§fessence of sacrifice.\n+ I after 
 
 
 
 item.dorios:strong_ancient_ring=Strong Ancient Ring \n§6Slot: §eHeavy Ring \n§6Tier: §eMastercraft \n§fA relic whispering forgotten knowledge. \n+2 | +10% | +2
 item.dorios:strong_breeze_ring=Strong Breeze Ring \n§6Slot: §eHeavy Ring \n§6Tier: §eMastercraft \n§fA ring carrying the essence of the wind. \n+3
-item.dorios:strong_brute_ring=Strong Brute Ring \n§6Slot: §eHeavy Ring \n§6Tier: §bAscendant \n§fWield the raw power of the strongest warriors. \n+4 \n+ I
+item.dorios:strong_brute_ring=Strong Brute Ring \n§6Slot: §eHeavy Ring \n§6Tier: §bAscendant \n§fWield the raw power of the strongest\n§fwarriors.\n+4 \n+ I
 item.dorios:strong_celestial_ring=Strong Celestial Ring \n§6Slot: §eHeavy Ring \n§6Tier: §bAscendant \n§fForged under the gaze of the heavens. \n+2 Extra Jump \n+ when Sneaking
-item.dorios:strong_ender_ring=Strong Ender Ring \n§6Slot: §eHeavy Ring \n§6Tier: §eMastercraft \n§fWoven with Ender essence, it bends reality to avoid harm. \n+2
-item.dorios:strong_echo_ring=Strong Echo Ring \n§6Slot: §eHeavy Ring \n§6Tier: §eMastercraft \n§fStrikes resound, hitting twice by fate's design.
-item.dorios:strong_fortress_ring=Strong Fortress Ring \n§6Slot: §eHeavy Ring \n§6Tier: §eMastercraft \n§fForged with the will of an unbreakable fortress. \n+2 \n+ I | + I
-item.dorios:strong_jade_ring=Strong Jade Ring \n§6Slot: §eHeavy Ring \n§6Tier: §eMastercraft \n§fInfused with nature's endurance and strength.\n+5 \n+ I \n Immunity
-item.dorios:strong_shulker_ring=Strong Shulker Ring \n§6Slot: §eHeavy Ring \n§6Tier: §eMastercraft \n§fA ring infused with the resilience of the End's guardians. \n+1 \n+ on Hit
-item.dorios:strong_trader_ring=Strong Trader Ring \n§6Slot: §eHeavy Ring \n§6Tier: §eMastercraft \n§fA ring that turns the tides of commerce in your favor. \n+ II
-item.dorios:strong_inferno_ring=Strong Inferno Ring \n§6Slot: §eHeavy Ring \n§6Tier: §bAscendant \n§fForged in eternal flames, this ring fuels relentless aggression. \n+4 \n+ I \n+ on hit
-item.dorios:strong_abyssal_ring=Strong Abyssal Ring \n§6Slot: §eHeavy Ring \n§6Tier: §eMastercraft \n§fForged by the depths, its power flows like an endless tide. \n+50% \n+ I
-item.dorios:strong_blood_ring=Strong Blood Ring \n§6Slot: §eHeavy Ring \n§6Tier: §bAscendant \n§fA cursed ring pulsing with dark vitality, feeding on the life force of foes. \n+2
+item.dorios:strong_ender_ring=Strong Ender Ring \n§6Slot: §eHeavy Ring \n§6Tier: §eMastercraft \n§fWoven with Ender essence, it bends reality\n§fto avoid harm.\n+2
+item.dorios:strong_echo_ring=Strong Echo Ring \n§6Slot: §eHeavy Ring \n§6Tier: §eMastercraft \n§fStrikes resound, hitting twice by fate's\n§fdesign.
+item.dorios:strong_fortress_ring=Strong Fortress Ring \n§6Slot: §eHeavy Ring \n§6Tier: §eMastercraft \n§fForged with the will of an unbreakable\n§ffortress.\n+2 \n+ I | + I
+item.dorios:strong_jade_ring=Strong Jade Ring \n§6Slot: §eHeavy Ring \n§6Tier: §eMastercraft \n§fInfused with nature's endurance and\n§fstrength.\n+5 \n+ I \n Immunity
+item.dorios:strong_shulker_ring=Strong Shulker Ring \n§6Slot: §eHeavy Ring \n§6Tier: §eMastercraft \n§fA ring infused with the resilience of the\n§fEnd's guardians.\n+1 \n+ on Hit
+item.dorios:strong_trader_ring=Strong Trader Ring \n§6Slot: §eHeavy Ring \n§6Tier: §eMastercraft \n§fA ring that turns the tides of commerce in\n§fyour favor.\n+ II
+item.dorios:strong_inferno_ring=Strong Inferno Ring \n§6Slot: §eHeavy Ring \n§6Tier: §bAscendant \n§fForged in eternal flames, this ring fuels\n§frelentless aggression.\n+4 \n+ I \n+ on hit
+item.dorios:strong_abyssal_ring=Strong Abyssal Ring \n§6Slot: §eHeavy Ring \n§6Tier: §eMastercraft \n§fForged by the depths, its power flows like\n§fan endless tide.\n+50% \n+ I
+item.dorios:strong_blood_ring=Strong Blood Ring \n§6Slot: §eHeavy Ring \n§6Tier: §bAscendant \n§fA cursed ring pulsing with dark vitality,\n§ffeeding on the life force of foes.\n+2
 
-item.dorios:tideforged_pendant=Tideforged Pendant \n§6Slot: §eNecklace \n§6Tier: §fPrimitive \n§fEvokes the power of the ocean, calling forth waves and currents to aid its wearer. \n+20%
-item.dorios:tideforged_carapace=Tideforged Carapace \n§6Slot: §eBody \n§6Tier: §9Apprentice \n§fA protective shell infused with the resilience of the ocean depths. \n+ I in Water
-item.dorios:tideforged_heart=Tideforged Heart \n§6Slot: §eHearty Charm \n§6Tier: §9Apprentice \n§fA core of undying tides, pulsing with the rhythm of the sea. \n+2
-item.dorios:tideforged_eye=Tideforged Eye \n§6Slot: §eTalisman \n§6Tier: §fPrimitive  \n§fA watchful gem infused with the ocean's depths, seeing beyond mortal sight. \n+ I
-item.dorios:tideforged_stars=Tideforged Stars \n§6Slot: §eCharm \n§6Tier: §9Apprentice \n§fForged in the depths, these stars flow like the tides, swift and unrelenting. \n+50%
-item.dorios:tideforged_ring=Tideforged Ring \n§6Slot: §eRing \n§6Tier: §fPrimitive \n§fA ring infused with the restless currents, ever flowing with oceanic might. \n+30%
-item.dorios:tideforged_knuckles=Tideforged Knuckles \n§6Slot: §eGauntlet \n§6Tier: §fPrimitive \n§fKnuckles shaped by the ocean's relentless force, striking like crashing waves. \n+1
-
-
+item.dorios:tideforged_pendant=Tideforged Pendant \n§6Slot: §eNecklace \n§6Tier: §fPrimitive \n§fEvokes the power of the ocean, calling forth\n§fwaves and currents to aid its wearer.\n+20%
+item.dorios:tideforged_carapace=Tideforged Carapace \n§6Slot: §eBody \n§6Tier: §9Apprentice \n§fA protective shell infused with the\n§fresilience of the ocean depths.\n+ I in Water
+item.dorios:tideforged_heart=Tideforged Heart \n§6Slot: §eHearty Charm \n§6Tier: §9Apprentice \n§fA core of undying tides, pulsing with the\n§frhythm of the sea.\n+2
+item.dorios:tideforged_eye=Tideforged Eye \n§6Slot: §eTalisman \n§6Tier: §fPrimitive  \n§fA watchful gem infused with the ocean's\n§fdepths, seeing beyond mortal sight.\n+ I
+item.dorios:tideforged_stars=Tideforged Stars \n§6Slot: §eCharm \n§6Tier: §9Apprentice \n§fForged in the depths, these stars flow like\n§fthe tides, swift and unrelenting.\n+50%
+item.dorios:tideforged_ring=Tideforged Ring \n§6Slot: §eRing \n§6Tier: §fPrimitive \n§fA ring infused with the restless currents,\n§fever flowing with oceanic might.\n+30%
+item.dorios:tideforged_knuckles=Tideforged Knuckles \n§6Slot: §eGauntlet \n§6Tier: §fPrimitive \n§fKnuckles shaped by the ocean's relentless\n§fforce, striking like crashing waves.\n+1
 
 
-item.dorios:blazing_amulet=Blazing Amulet \n§6Slot: §eAmulet \n§6Tier: §9Apprentice \n§fA fragment of living fire, forever smoldering yet never consumed. \n+ on hit
-item.dorios:blazed_heart_necklace=Blazed Heart Necklace \n§6Slot: §eNecklace \n§6Tier: §eMastercraft \n§fA fiery core pulses within, radiating warmth and unyielding will. \n+4
-item.dorios:abyssal_sun_amulet=Abyssal Sun Amulet \n§6Slot: §eAmulet \n§6Tier: §bAscendant \n§fForged from the meeting of fire and tide, its glow holds the secrets of the deep. \n+100% \n+ I in Water
+
+
+item.dorios:blazing_amulet=Blazing Amulet \n§6Slot: §eAmulet \n§6Tier: §9Apprentice \n§fA fragment of living fire, forever\n§fsmoldering yet never consumed.\n+ on hit
+item.dorios:blazed_heart_necklace=Blazed Heart Necklace \n§6Slot: §eNecklace \n§6Tier: §eMastercraft \n§fA fiery core pulses within, radiating warmth\n§fand unyielding will.\n+4
+item.dorios:abyssal_sun_amulet=Abyssal Sun Amulet \n§6Slot: §eAmulet \n§6Tier: §bAscendant \n§fForged from the meeting of fire and tide,\n§fits glow holds the secrets of the deep.\n+100% \n+ I in Water
 
 tile.dorios:blazed_crate.name=Blazed Crate
 tile.dorios:sunken_relic_crate.name=Sunken Relic Crate
@@ -145,3 +143,44 @@ item.dorios:blood_helmet=§cBloodforged Helm \n§f+2.5% Life Steal
 item.dorios:blood_chestplate=§cBloodforged Chestguard \n§f+2.5% Life Steal
 item.dorios:blood_leggings=§cBloodforged Greaves \n§f+2.5% Life Steal
 item.dorios:blood_boots=§cBloodforged Boots \n§f+2.5% Life Steal
+
+## Trinket Scroll Guide
+ui.dorios:scroll_guide.title=§8§lScroll Guide
+ui.dorios:scroll_guide.close=Close guide
+ui.dorios:scroll_guide.use=§8§lHow to use
+ui.dorios:scroll_guide.equip=§8Place trinkets in matching slots. Remove them to unequip.
+ui.dorios:scroll_guide.refresh=§8Reopen the scroll after changes to refresh the stats.
+ui.dorios:scroll_guide.stats=§8§lStats
+ui.dorios:scroll_guide.health=§f §8Max health in hearts.
+ui.dorios:scroll_guide.attack=§f §8Trinket damage + 1 base. Excludes weapons and critical hits.
+ui.dorios:scroll_guide.speed=§f §8Land speed. 100% = normal.
+ui.dorios:scroll_guide.water=§f §8Water speed. 100% = normal.
+ui.dorios:scroll_guide.steal=§f §8Hit damage restored as health (%).
+ui.dorios:scroll_guide.thorns=§f §8Incoming hit damage reflected (%).
+ui.dorios:scroll_guide.fire=§f §8Seconds enemies burn after your hit.
+ui.dorios:scroll_guide.jumps=§f §8Extra jumps before landing.
+ui.dorios:scroll_guide.effects=§8§lEffects
+ui.dorios:scroll_guide.effect_use=§8Passive: on you. Active: on enemies you hit.
+ui.dorios:scroll_guide.levels=§8I, II, III, IV, V = levels 1-5. None = no effects from trinkets.
+ui.dorios:scroll_guide.conduit=§f §8Conduit Power: breathe, see and mine underwater.
+ui.dorios:scroll_guide.fire_res=§f §8Fire Resistance: protection from fire and lava.
+ui.dorios:scroll_guide.haste=§f §8Haste: faster mining.
+ui.dorios:scroll_guide.night=§f §8Night Vision: see in the dark.
+ui.dorios:scroll_guide.regen=§f §8Regeneration: restores health.
+ui.dorios:scroll_guide.resistance=§f §8Resistance: take less damage.
+ui.dorios:scroll_guide.falling=§f §8Slow Falling: descend slowly.
+ui.dorios:scroll_guide.effect_speed=§f §8Speed: move faster.
+ui.dorios:scroll_guide.strength=§f §8Strength: more melee damage.
+ui.dorios:scroll_guide.hero=§f §8Hero of the Village: better trade prices.
+ui.dorios:scroll_guide.breathing=§f §8Water Breathing: breathe underwater.
+ui.dorios:scroll_guide.levitation=§f §8Levitation: float upward.
+ui.dorios:scroll_guide.poison=§f §8Poison: damage over time.
+ui.dorios:scroll_guide.slowness=§f §8Slowness: move slower.
+ui.dorios:scroll_guide.immunities=§8§lImmunities
+ui.dorios:scroll_guide.immune_use=§8An icon here means that effect is blocked. No level needed.
+ui.dorios:scroll_guide.blindness=§f §8Blindness: reduced sight.
+ui.dorios:scroll_guide.darkness=§f §8Darkness: darkened vision.
+ui.dorios:scroll_guide.hunger=§f §8Hunger: faster hunger loss.
+ui.dorios:scroll_guide.immune_poison=§f §8Blocks poison damage.
+ui.dorios:scroll_guide.immune_regen=§f §8Blocks Regeneration, including its healing.
+ui.dorios:scroll_guide.wither=§f §8Wither: damage over time.

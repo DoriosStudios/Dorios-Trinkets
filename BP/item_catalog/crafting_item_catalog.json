@@ -206,9 +206,7 @@
               "name": "dorios:itemGroup.name.scrolls"
             },
             "items": [
-              "dorios:scroll",
-              "dorios:stats_scroll",
-              "dorios:recover_scroll"
+              "dorios:scroll"
             ]
           }
         ]

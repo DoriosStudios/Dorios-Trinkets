@@ -9,7 +9,7 @@ function runtime(file, overrides = {}) {
   const signals = new Proxy({}, { get: (_, key) => ({ subscribe: fn => { (events[key] ??= []).push(fn); } }) });
   const context = vm.createContext({
     console, world: { afterEvents: signals, beforeEvents: signals },
-    system: { afterEvents: signals, run: fn => runs.push(fn), runInterval: fn => intervals.push(fn), runTimeout: fn => timeouts.push(fn), clearRun() {} },
+    system: { beforeEvents: signals, afterEvents: signals, run: fn => runs.push(fn), runInterval: fn => intervals.push(fn), runTimeout: fn => timeouts.push(fn), clearRun() {} },
     ...overrides,
   });
   const source = fs.readFileSync(path.join(__dirname, '../BP/scripts', file), 'utf8')
@@ -32,7 +32,7 @@ function inventoryFixture(contents, entries = { 'test:a': { trinket: 'head' }, '
     getEffects: () => [], getComponent: () => ({ container: inv }) };
   let consume = true;
   const r = runtime(core('trinketsInv'), { data: entries, slots: { head: 0, body: 1 },
-    getStatCategory: () => [], changeItemAmount: () => consume, stopPlayerTracking() {},
+    statDisplayItem: 'dorios:stat_display', getStatCategory: () => [], changeItemAmount: () => consume, stopPlayerTracking() {},
     ItemStack: class { constructor(typeId) { this.typeId = typeId; this.amount = 1; } } });
   return { ...r, cells, tags, returned, dropped, player, entity, held, inv, setConsume: value => { consume = value; } };
 }
@@ -50,14 +50,14 @@ test('invalid, missing and malformed stats have safe category-specific defaults'
   assert.equal(c.getStatCategory({ isValid: true, getDynamicProperty: () => '{"attack":4}' }, 'stats').attack, 4);
 });
 
-test('rejected accessory does not grant a tag or get recovered twice', () => {
+test('rejected accessory is returned once and valid equipment survives closing', () => {
   const f = inventoryFixture([item('test:a'), item('test:b')]);
   f.context.validateTrinketSlots(f.player, f.entity);
   assert.deepEqual([...f.tags], ['test:a']);
   assert.deepEqual(f.returned.map(x => x.typeId), ['test:b']);
-  f.context.unequipAllTrinkets(f.player);
-  assert.deepEqual(f.returned.map(x => x.typeId), ['test:b', 'test:a']);
-  assert.equal(f.tags.size, 0);
+  f.context.removeInvEntity(f.player);
+  assert.deepEqual(f.returned.map(x => x.typeId), ['test:b']);
+  assert.equal(f.tags.size, 1);
 });
 
 test('moving an accessory to an earlier slot preserves exactly one tag', () => {
@@ -68,9 +68,9 @@ test('moving an accessory to an earlier slot preserves exactly one tag', () => {
   assert.deepEqual([...f.tags], ['test:a']);
 });
 
-test('pending removal is reconciled before recovery', () => {
+test('pending removal is reconciled when the scroll closes', () => {
   const f = inventoryFixture([]); f.tags.add('test:a');
-  f.context.unequipAllTrinkets(f.player);
+  f.context.removeInvEntity(f.player);
   assert.equal(f.returned.length, 0);
   assert.equal(f.tags.size, 0);
 });
@@ -105,9 +105,9 @@ test('before hurt changes the original hit once and defers all side effects', ()
   const source = { cause: 'entityAttack', damagingEntity: attacker };
   const e = { hurtEntity: target, damage: 4, damageSource: source };
   r.events.entityHurt[0](e);
-  assert.equal(e.damage, 6.5); assert.equal(e.damageSource, source); assert.equal(e.cancel, undefined);
+  assert.equal(e.damage, 5.25); assert.equal(e.damageSource, source); assert.equal(e.cancel, undefined);
   assert.equal(effects, 0); assert.equal(healed, 0);
-  r.runs[0](); assert.equal(effects, 1); assert.equal(healed, 0.65);
+  r.runs[0](); assert.equal(effects, 1); assert.equal(healed, 0.525);
 });
 
 test('existing multipliers and falling bonus include the original damage exactly once', () => {
@@ -202,7 +202,7 @@ test('defense applies once after offense and reflected damage still gets defense
   const r = runtime(core('activeAbilities'), { getStatCategory: (who, category) => category !== 'stats' ? {} : who === attacker
     ? { attack: 1, critChance: 100, critMulti: 25 } : { damageReduction: 50 } });
   const e = { damage: 4, hurtEntity: target, damageSource: { cause: 'entityAttack', damagingEntity: attacker } };
-  r.events.entityHurt[0](e); assert.equal(e.damage, 3.25);
+  r.events.entityHurt[0](e); assert.equal(e.damage, 2.625);
   for (const cause of ['thorns', 'override']) {
     const reflected = { ...e, damage: 10, damageSource: { cause, damagingEntity: attacker } };
     r.events.entityHurt[0](reflected); assert.equal(reflected.damage, 5);
@@ -235,4 +235,297 @@ test('player initialization clears the old sensor before computing script stats'
     { remove: { component_groups: ['minecraft:damageReduction0'] } },
     { add: { component_groups: ['minecraft:damageReduction0'] } },
   ]);
+});
+
+
+test('two stat columns preserve row order, zero values and base attack', () => {
+  const r = runtime(core('statDisplay'));
+  const columns = r.context.formatStatColumns({
+    stats: { health: 30, attack: 0, speed: 120, waterSpeed: 150, lifeSteal: 2.125, thorns: 0, fireAspect: 3, extraJumps: 2 },
+  }).map(s => s.replace(/\u00a7./g, ''));
+  assert.deepEqual(Array.from(columns), ['15\n\n120%\n\n2.13%\n\n3s', '1\n\n150%\n\n0%\n\n2']);
+  assert.equal(r.context.formatStatColumns({ stats: { attack: 2 } })[1].replace(/\u00a7./g, '').split('\n')[0], '3');
+});
+
+test('effect lore lists only granted effects and deduplicates normalized immunities', () => {
+  const r = runtime(core('statDisplay'));
+  const result = r.context.formatEffectDisplay({
+    passives: { regeneration: 2, speed: 0, resistance: -1, custom_effect: 1 },
+    actives: { poison: 3 }, immunities: ['Poison', 'minecraft:poison', 'Wither'],
+  });
+  const clean = text => text.replace(/\u00a7./g, '');
+  assert.equal(clean(result.nameTag), 'Passive Effects');
+  assert.deepEqual(Array.from(result.lore, clean), [
+    '? I', '\uF50D II', '', 'Active Effects', '\uF54C III', '', 'Immunities', '\uF54C', '\uF54B',
+  ]);
+  assert.ok(result.lore.every(line => !line.includes('\n')));
+  const empty = r.context.formatEffectDisplay({});
+  assert.equal(empty.lore.filter(line => clean(line) === 'None').length, 3);
+  const many = Object.fromEntries(Array.from({ length: 120 }, (_, i) => ['effect_' + i, 1]));
+  assert.ok(r.context.formatEffectDisplay({ passives: many }).lore.length <= 100);
+});
+
+test('display writer uses two named stat items and one effect item with lore', () => {
+  const cells = Array.from({ length: 16 }, () => undefined);
+  cells[0] = item('test:a'); const writes = [];
+  const r = runtime(core('statDisplay'), {
+    ItemStack: class { constructor(typeId) { this.typeId = typeId; } setLore(lines) { this.lore = lines; } },
+  });
+  const entity = { isValid: true, getComponent: () => ({ container: {
+    size: 16, setItem: (i, v) => { cells[i] = v; writes.push(i); },
+  } }) };
+  r.context.writeStatDisplay(entity, { stats: { health: 20 }, passives: { regeneration: 1 } });
+  assert.deepEqual(writes, [13, 14, 15]);
+  assert.equal(cells[0].typeId, 'test:a');
+  for (const value of cells.slice(13)) assert.equal(value.typeId, 'dorios:stat_display');
+  assert.equal(cells[13].lore, undefined);
+  assert.ok(cells[15].nameTag.includes('Passive Effects'));
+  assert.equal(cells[15].lore[0].replace(/\u00a7./g, ''), '\uF50D I');
+  assert.doesNotThrow(() => r.context.writeStatDisplay({ isValid: false }, {}));
+  r.context.writeStatDisplay({ isValid: true, getComponent: () => ({ container: { size: 13 } }) }, {});
+});
+
+test('old scroll carriers are cleared without touching equipment or unrelated items', () => {
+  const cells = Array.from({ length: 25 }, () => item('dorios:stat_display'));
+  cells[0] = item('test:a'); cells[24] = item('test:other');
+  const r = runtime(core('statDisplay'), {
+    ItemStack: class { constructor(typeId) { this.typeId = typeId; } setLore(lines) { this.lore = lines; } },
+  });
+  r.context.writeStatDisplay({ isValid: true, getComponent: () => ({ container: {
+    size: 25, getItem: i => cells[i], setItem: (i, v) => { cells[i] = v; },
+  } }) }, {});
+  assert.equal(cells[0].typeId, 'test:a');
+  assert.ok(cells.slice(16, 24).every(value => value === undefined));
+  assert.equal(cells[24].typeId, 'test:other');
+});
+
+test('opening the owned scroll reconciles tags before one calculation and one display write', () => {
+  const f = inventoryFixture([item('test:a')]); const calls = [];
+  f.entity.typeId = 'dorios:trinkets_inv';
+  f.entity.getTags = () => ['p', 'dorios:trinket_loaded'];
+  f.context.updatePlayerStats = player => {
+    assert.deepEqual(player.getTags(), ['test:a']); calls.push('calculate'); return { stats: { health: 24 } };
+  };
+  f.context.writeStatDisplay = (entity, result) => {
+    assert.equal(entity, f.entity); assert.equal(result.stats.health, 24); calls.push('display');
+  };
+  assert.equal(f.events.entityContainerOpened, undefined);
+  f.events.worldLoad[0]();
+  const open = f.events.entityContainerOpened[0];
+  open({ entity: f.entity, openSource: { entity: f.player } });
+  assert.deepEqual(calls, ['calculate', 'display']);
+  assert.equal(f.intervals.length, 0);
+  calls.length = 0;
+  for (const event of [
+    { entity: { isValid: false }, openSource: { entity: f.player } },
+    { entity: { ...f.entity, typeId: 'minecraft:chest_minecart' }, openSource: { entity: f.player } },
+    { entity: f.entity, openSource: {} },
+    { entity: f.entity, openSource: { entity: { ...f.player, id: 'other' } } },
+  ]) open(event);
+  assert.deepEqual(calls, []);
+});
+
+test('opening before the first trinket tick loads existing tag equipment before reconciliation', () => {
+  const f = inventoryFixture([]); const entityTags = new Set(['p']);
+  f.tags.add('test:a'); f.entity.typeId = 'dorios:trinkets_inv';
+  f.entity.getTags = () => [...entityTags]; f.entity.addTag = tag => entityTags.add(tag);
+  let count = 0;
+  f.context.updatePlayerStats = () => { count++; assert.equal(f.cells[0].typeId, 'test:a'); return {}; };
+  f.context.writeStatDisplay = () => {};
+  f.context.refreshOpenedTrinketStats({ entity: f.entity, openSource: { entity: f.player } });
+  assert.equal(count, 1); assert.ok(f.tags.has('test:a')); assert.ok(entityTags.has('dorios:trinket_loaded'));
+});
+
+test('internal display items never become equipment tags or returned items', () => {
+  const f = inventoryFixture([item('dorios:stat_display')]);
+  f.cells[13] = item('dorios:stat_display');
+  f.context.validateTrinketSlots(f.player, f.entity);
+  assert.equal(f.cells[0], undefined); assert.equal(f.cells[13].typeId, 'dorios:stat_display');
+  assert.equal(f.tags.size, 0); assert.equal(f.returned.length, 0);
+  f.context.removeInvEntity(f.player);
+  assert.equal(f.returned.length, 0);
+});
+
+test('every legacy stat formatter remains callable, including damage reduction', () => {
+  const r = runtime(core('config'));
+  const result = vm.runInContext('Object.keys(statsConfig).every(key => typeof statTexts.formats[key] === "function")', r.context);
+  assert.equal(result, true);
+});
+
+test('sidebar indices belong to direct collection children, not nested value labels', () => {
+  const ui = JSON.parse(fs.readFileSync(path.join(__dirname, '../RP/ui/dorios_trinkets_menu.json'), 'utf8'));
+  const indices = [];
+  for (const child of ui.stats_content.controls) {
+    const [name, section] = Object.entries(child)[0];
+    if (!name.endsWith('_columns')) continue;
+    assert.equal(section.type, 'collection_panel');
+    assert.equal(section.collection_name, 'container_items');
+    for (const entry of section.controls) {
+      const column = Object.values(entry)[0];
+      indices.push(column.collection_index);
+      const values = column.controls.find(c => c['values@trinkets.dynamic_stat_label'])['values@trinkets.dynamic_stat_label'];
+      assert.equal(Object.hasOwn(values, 'collection_index'), false);
+    }
+  }
+  assert.deepEqual(indices, [13, 14]);
+  const effects = ui.stats_content.controls.find(c => c.effects_collection).effects_collection;
+  assert.equal(effects.type, 'collection_panel');
+  assert.equal(effects.controls[0]['effects@trinkets.dynamic_stat_label'].collection_index, 15);
+  assert.equal(effects.size[1], '100%cm');
+});
+
+
+test('effect levels display Roman numerals without changing stat number formatting', () => {
+  const r = runtime(core('statDisplay'));
+  for (const [level, roman] of [[1, 'I'], [2, 'II'], [3, 'III'], [4, 'IV'], [5, 'V'], [6, 'VI'], [9, 'IX'], [10, 'X'], [14, 'XIV'], [49, 'XLIX'], [256, 'CCLVI']]) {
+    const effect = r.context.formatEffectDisplay({ passives: { regeneration: level } });
+    assert.equal(effect.lore[0].replace(/\u00a7./g, ''), '\uF50D ' + roman);
+  }
+  assert.ok(r.context.formatStatColumns({ stats: { attack: 2 } })[1].includes('3'));
+});
+
+
+test('guide toggles share a group and the guide close does not close the container', () => {
+  const uiPath = name => path.join(__dirname, '../RP/ui', name);
+  const menu = JSON.parse(fs.readFileSync(uiPath('dorios_trinkets_menu.json'), 'utf8'));
+  const guide = JSON.parse(fs.readFileSync(uiPath('trinkets_guide.json'), 'utf8'));
+  const root = menu.trinket_panel.controls[4]['root_panel@common.root_panel'];
+  const open = root.controls.find(c => c['trinkets_help_open@trinkets_guide.guide_toggle'])['trinkets_help_open@trinkets_guide.guide_toggle'];
+  const close = guide.guide_panel.controls.find(c => c['trinkets_help_close@trinkets_guide.guide_toggle'])['trinkets_help_close@trinkets_guide.guide_toggle'];
+  assert.equal(open.$toggle_group_forced_index, 1);
+  assert.equal(close.$toggle_group_forced_index, 0);
+  assert.equal(guide['guide_toggle@common.toggle'].$radio_toggle_group, true);
+  assert.equal(guide['guide_toggle@common.toggle'].$toggle_group_default_selected, 0);
+  assert.equal(guide.guide_panel.bindings[0].source_control_name, 'trinkets_help_open');
+  assert.equal(guide.guide_panel.bindings[0].source_property_name, '#toggle_state');
+  for (const name of ['common_panel@common.common_panel', 'chest_panel', 'stats_sidebar@trinkets.stats_sidebar']) {
+    const entry = root.controls.find(c => c[name])[name];
+    assert.equal(entry.bindings[0].source_property_name, '(not #toggle_state)');
+  }
+  assert.ok(!JSON.stringify(guide).includes('button.menu_exit'));
+  const defs = JSON.parse(fs.readFileSync(uiPath('_ui_defs.json'), 'utf8'));
+  assert.ok(defs.ui_defs.includes('ui/trinkets_guide.json'));
+});
+
+
+test('zero attack bonuses preserve incoming melee and projectile damage', () => {
+  const r = runtime(core('activeAbilities'), { getStatCategory: () => ({}) });
+  const attacker = { isValid: true, typeId: 'minecraft:player', getComponent: () => undefined };
+  for (const cause of ['entityAttack', 'projectile']) {
+    for (const damage of [1, 4, 9]) {
+      const e = { damage, hurtEntity: { isValid: true, typeId: 'test:mob' }, damageSource: { cause, damagingEntity: attacker } };
+      r.events.entityHurt[0](e);
+      assert.equal(e.damage, damage);
+    }
+  }
+});
+
+test('structure scans defer unloaded areas and do not mark the chest as opened', () => {
+  const r = runtime(core('lootInjector'));
+  const injector = vm.runInContext('ChestLootInjector', r.context);
+  const dimension = { id: 'minecraft:overworld', heightRange: { min: -64, max: 320 },
+    getBiome: () => ({ id: 'minecraft:plains' }), isChunkLoaded: () => false,
+    getBlock() { assert.fail('must not read an unloaded chunk'); } };
+  const block = { location: { x: 0, y: 64, z: 0 }, dimension };
+  injector.canInjectChest = () => true;
+  injector.markChestOpened = () => assert.fail('incomplete scans must remain retryable');
+  assert.equal(injector.detectNearbyStructure(block), undefined);
+  injector.resolve(block);
+  dimension.isChunkLoaded = () => true;
+  dimension.getBlock = position => {
+    assert.ok(position.y >= -64 && position.y < 320);
+    return { typeId: 'minecraft:air' };
+  };
+  block.location.y = -64;
+  assert.equal(injector.detectNearbyStructure(block), 'default');
+});
+
+
+test('Lava Waders freeze only the nearby foot-level circle and refresh aging blocks', () => {
+  const cells = new Map();
+  const makeBlock = (typeId, depth) => ({ typeId, permutation: { getState: () => depth },
+    setPermutation(value) { this.typeId = value.typeId; this.depth = Object.values(value.states)[0]; } });
+  cells.set('0,64,0', makeBlock('minecraft:lava', 7));
+  cells.set('1,63,0', makeBlock('dorios:lava_solid_2', 0));
+  cells.set('0,63,1', makeBlock('minecraft:water', 0));
+  const r = runtime('system.js', { BlockPermutation: { resolve: (typeId, states) => ({ typeId, states }) } });
+  const dimension = { heightRange: { min: -64, max: 320 },
+    isChunkLoaded: position => position.x !== -2,
+    getBlock(position) {
+      assert.notEqual(position.x, -2);
+      assert.ok(position.x ** 2 + position.z ** 2 <= 4);
+      assert.ok([63, 64].includes(position.y));
+      return cells.get([position.x, position.y, position.z].join(','));
+    } };
+  r.context.handleLavaWaders({ dimension, location: { x: 0.3, y: 64, z: 0.5 } });
+  assert.equal(cells.get('0,64,0').typeId, 'dorios:lava_flow_0');
+  assert.equal(cells.get('0,64,0').depth, 7);
+  assert.equal(cells.get('1,63,0').typeId, 'dorios:lava_solid_0');
+  assert.equal(cells.get('0,63,1').typeId, 'minecraft:water');
+  dimension.heightRange.min = 65;
+  dimension.getBlock = () => assert.fail('out-of-bounds positions must be skipped');
+  r.context.handleLavaWaders({ dimension, location: { x: 0, y: 64, z: 0 } });
+});
+
+test('temporary lava preserves every liquid depth through melting and reloadable block states', () => {
+  const r = runtime('blockTick.js', { BlockPermutation: { resolve: (typeId, states) => ({ typeId, states }) } });
+  let component;
+  r.events.startup[0]({ blockComponentRegistry: { registerCustomComponent: (_, value) => { component = value; } } });
+  for (let depth = 0; depth < 16; depth++) {
+    const family = depth === 0 ? 'solid' : 'flow';
+    const block = { location: { x: 0, y: 63, z: 0 }, typeId: 'dorios:lava_' + family + '_0',
+      permutation: { getState: () => depth }, setPermutation(value) {
+        this.typeId = value.typeId;
+        assert.equal(Object.values(value.states)[0], depth);
+      } };
+    for (let stage = 0; stage < 3; stage++) {
+      const definition = JSON.parse(fs.readFileSync(path.join(__dirname, '../BP/blocks/lava_' + family + '_' + stage + '.json'), 'utf8'))['minecraft:block'];
+      assert.ok(definition.description.states['dorios:liquid_depth'].includes(depth));
+      component.onTick({ block, dimension: { getPlayers: () => [] } });
+    }
+    assert.equal(block.typeId, 'minecraft:lava');
+  }
+});
+
+
+test('lava blocks do not advance melting stages while a wearer supports them', () => {
+  const r = runtime('blockTick.js', { BlockPermutation: { resolve: (typeId, states) => ({ typeId, states }) } });
+  let component;
+  r.events.startup[0]({ blockComponentRegistry: { registerCustomComponent: (_, value) => { component = value; } } });
+  let changes = 0;
+  const block = { typeId: 'dorios:lava_solid_0', location: { x: 0, y: 63, z: 0 },
+    permutation: { getState: () => 0 }, setPermutation() { changes++; } };
+  const player = { isValid: true, hasTag: () => true, location: { x: 0.5, y: 64, z: 0.5 } };
+  const dimension = { getPlayers: () => [player] };
+  for (let i = 0; i < 20; i++) component.onTick({ block, dimension });
+  assert.equal(changes, 0);
+  player.location.x = 3;
+  component.onTick({ block, dimension });
+  assert.equal(changes, 1);
+  player.location.x = 0;
+  player.hasTag = () => false;
+  component.onTick({ block, dimension });
+  assert.equal(changes, 2);
+});
+
+test('scroll waits for a loaded chunk and tolerates a transient spawn failure', () => {
+  let loaded = false, attempts = 0, tracked = 0;
+  const entity = { isValid: true, addTag() {}, getComponent: () => ({ tame() {} }) };
+  const player = { isValid: true, id: 'p', location: { x: 0, y: 64, z: 0 },
+    dimension: { isChunkLoaded: () => loaded, spawnEntity() {
+      attempts++;
+      if (attempts === 1) throw Object.assign(new Error('not ticking'), { name: 'LocationInUnloadedChunkError' });
+      return entity;
+    } } };
+  const r = runtime(core('trinketsInv'), { getEquipment() { assert.fail('unloaded tick must wait'); },
+    startPlayerTracking() { tracked++; } });
+  r.context.trinketTick(player);
+  assert.equal(r.context.summonInvEntity(player), undefined);
+  assert.equal(attempts, 0);
+  loaded = true;
+  assert.equal(r.context.summonInvEntity(player), undefined);
+  assert.equal(r.context.summonInvEntity(player), entity);
+  assert.equal(tracked, 1);
+  player.dimension.spawnEntity = () => { throw new Error('unexpected failure'); };
+  assert.throws(() => r.context.summonInvEntity(player), /unexpected failure/);
 });

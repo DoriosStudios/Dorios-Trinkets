@@ -285,11 +285,15 @@ export class ChestLootInjector {
             for (let dy = -radius; dy <= radius; dy++) {
                 for (let dz = -radius; dz <= radius; dz++) {
 
-                    const b = dim.getBlock({
+                    const location = {
                         x: origin.x + dx,
                         y: origin.y + dy,
                         z: origin.z + dz
-                    });
+                    };
+                    if (location.y < dim.heightRange.min || location.y >= dim.heightRange.max) continue;
+                    // Retry on the next interaction rather than record a partial scan.
+                    if (!dim.isChunkLoaded(location)) return undefined;
+                    const b = dim.getBlock(location);
 
                     if (!b) continue;
 
@@ -478,10 +482,10 @@ export class ChestLootInjector {
 
         const dimension = block.dimension;
         const dimensionId = dimension.id;
-        // Biome is resolved from block position
-        const biomeId = dimension.getBiome(block.location).id;
-        // Structure detection (single scan)
+        // Structure detection also verifies that the scan area is loaded.
         const structureId = this.detectNearbyStructure(block);
+        if (structureId === undefined) return;
+        const biomeId = dimension.getBiome(block.location).id;
         // world.sendMessage(`${biomeId} ${structureId}`)
 
         // Obtain loot tables

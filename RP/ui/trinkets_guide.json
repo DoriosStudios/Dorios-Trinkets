@@ -1,0 +1,1292 @@
+{
+    "namespace": "trinkets_guide",
+    "help_default": {
+        "type": "image",
+        "texture": "textures/ui/how_to_play_button_default",
+        "size": [
+            "100%",
+            "100%"
+        ]
+    },
+    "help_hover": {
+        "type": "image",
+        "texture": "textures/ui/how_to_play_button_hover",
+        "size": [
+            "100%",
+            "100%"
+        ]
+    },
+    "help_pressed": {
+        "type": "image",
+        "texture": "textures/ui/how_to_play_button_pressed",
+        "size": [
+            "100%",
+            "100%"
+        ]
+    },
+    "close_default": {
+        "type": "image",
+        "texture": "textures/ui/close_button_default",
+        "size": [
+            "100%",
+            "100%"
+        ]
+    },
+    "close_hover": {
+        "type": "image",
+        "texture": "textures/ui/close_button_hover",
+        "size": [
+            "100%",
+            "100%"
+        ]
+    },
+    "close_pressed": {
+        "type": "image",
+        "texture": "textures/ui/close_button_pressed",
+        "size": [
+            "100%",
+            "100%"
+        ]
+    },
+    "guide_toggle@common.toggle": {
+        "size": [
+            16,
+            16
+        ],
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "$toggle_name": "dorios_trinkets_guide",
+        "$radio_toggle_group": true,
+        "$toggle_group_default_selected": 0,
+        "$toggle_default_state": false,
+        "$unchecked_control": "trinkets_guide.help_default",
+        "$checked_control": "trinkets_guide.help_pressed",
+        "$unchecked_hover_control": "trinkets_guide.help_hover",
+        "$checked_hover_control": "trinkets_guide.help_hover",
+        "$unchecked_locked_control": "trinkets_guide.help_default",
+        "$checked_locked_control": "trinkets_guide.help_pressed",
+        "$unchecked_locked_hover_control": "trinkets_guide.help_hover",
+        "$checked_locked_hover_control": "trinkets_guide.help_hover"
+    },
+    "guide_panel": {
+        "type": "panel",
+        "size": [
+            176,
+            166
+        ],
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "offset": [
+            48,
+            0
+        ],
+        "layer": 40,
+        "bindings": [
+            {
+                "binding_type": "view",
+                "source_control_name": "trinkets_help_open",
+                "source_property_name": "#toggle_state",
+                "target_property_name": "#visible",
+                "resolve_sibling_scope": false
+            }
+        ],
+        "controls": [
+            {
+                "background@common.dialog_background_opaque": {
+                    "layer": 0
+                }
+            },
+            {
+                "title": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.title",
+                    "localize": true,
+                    "size": [
+                        144,
+                        14
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 1,
+                    "shadow": false,
+                    "layer": 3,
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "offset": [
+                        8,
+                        6
+                    ]
+                }
+            },
+            {
+                "trinkets_help_close@trinkets_guide.guide_toggle": {
+                    "$toggle_group_forced_index": 0,
+                    "offset": [
+                        154,
+                        4
+                    ],
+                    "layer": 5,
+                    "$toggle_tts_name": "ui.dorios:scroll_guide.close",
+                    "$unchecked_control": "trinkets_guide.close_default",
+                    "$checked_control": "trinkets_guide.close_pressed",
+                    "$unchecked_hover_control": "trinkets_guide.close_hover",
+                    "$checked_hover_control": "trinkets_guide.close_hover",
+                    "$unchecked_locked_control": "trinkets_guide.close_default",
+                    "$checked_locked_control": "trinkets_guide.close_pressed",
+                    "$unchecked_locked_hover_control": "trinkets_guide.close_hover",
+                    "$checked_locked_hover_control": "trinkets_guide.close_hover"
+                }
+            },
+            {
+                "guide_scroll@common.scrolling_panel": {
+                    "size": [
+                        160,
+                        138
+                    ],
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "offset": [
+                        8,
+                        22
+                    ],
+                    "$scrolling_content": "trinkets_guide.guide_content",
+                    "$show_background": false,
+                    "$scroll_size": [
+                        4,
+                        "100% - 4px"
+                    ],
+                    "$scroll_size_touch": [
+                        4,
+                        "100% - 4px"
+                    ],
+                    "$scroll_bar_contained": false,
+                    "$scroll_bar_contained_touch": false,
+                    "$scroll_box_visible_touch": true
+                }
+            }
+        ]
+    },
+    "guide_content": {
+        "type": "stack_panel",
+        "orientation": "vertical",
+        "size": [
+            "100%",
+            "100%c"
+        ],
+        "controls": [
+            {
+                "use_top_gap": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        6
+                    ]
+                }
+            },
+            {
+                "use": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.use",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.85,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "use_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "equip": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.equip",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "equip_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "refresh": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.refresh",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "refresh_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "stats_top_gap": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        6
+                    ]
+                }
+            },
+            {
+                "stats": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.stats",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.85,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "stats_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "health": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.health",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "health_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "attack": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.attack",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "attack_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "speed": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.speed",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "speed_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "water": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.water",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "water_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "steal": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.steal",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "steal_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "thorns": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.thorns",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "thorns_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "fire": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.fire",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "fire_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "jumps": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.jumps",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "jumps_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "effects_top_gap": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        6
+                    ]
+                }
+            },
+            {
+                "effects": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.effects",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.85,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "effects_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "effect_use": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.effect_use",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "effect_use_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "levels": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.levels",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "levels_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "conduit": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.conduit",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "conduit_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "fire_res": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.fire_res",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "fire_res_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "haste": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.haste",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "haste_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "night": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.night",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "night_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "regen": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.regen",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "regen_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "resistance": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.resistance",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "resistance_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "falling": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.falling",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "falling_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "effect_speed": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.effect_speed",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "effect_speed_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "strength": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.strength",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "strength_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "hero": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.hero",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "hero_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "breathing": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.breathing",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "breathing_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "levitation": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.levitation",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "levitation_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "poison": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.poison",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "poison_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "slowness": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.slowness",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "slowness_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "immunities_top_gap": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        6
+                    ]
+                }
+            },
+            {
+                "immunities": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.immunities",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.85,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "immunities_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "immune_use": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.immune_use",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "immune_use_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "blindness": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.blindness",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "blindness_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "darkness": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.darkness",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "darkness_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "hunger": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.hunger",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "hunger_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "immune_poison": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.immune_poison",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "immune_poison_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "immune_regen": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.immune_regen",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "immune_regen_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            },
+            {
+                "wither": {
+                    "type": "label",
+                    "text": "ui.dorios:scroll_guide.wither",
+                    "localize": true,
+                    "size": [
+                        "100%",
+                        "default"
+                    ],
+                    "text_alignment": "left",
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "font_scale_factor": 0.75,
+                    "shadow": false,
+                    "layer": 3
+                }
+            },
+            {
+                "wither_spacing": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        5
+                    ]
+                }
+            }
+        ]
+    }
+}

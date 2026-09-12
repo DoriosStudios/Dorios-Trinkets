@@ -32,12 +32,6 @@ system.afterEvents.scriptEventReceive.subscribe(e => {
         const data = JSON.parse(e.message);
         if (data?.registered == true) {
             rpgCoreDetected = true;
-            system.runTimeout(() => {
-
-                world.sendMessage(
-                    "§a[Dorios Trinkets] Dorios RPG Core initialized successfully."
-                );
-            }, 300);
         }
     } catch { }
 });

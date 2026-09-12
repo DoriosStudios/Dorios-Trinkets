@@ -18,52 +18,52 @@ item.dorios:scroll=Pergamino \nEquipa o quita tus amuletos con esto
 item.dorios:empty_ring=Anillo Vacío \nMaterial de crafteo
 item.dorios:heavy_empty_ring=Anillo Vacío Pesado \nMaterial de crafteo
 
-item.dorios:purity_blossom=Flor de Pureza \n§6Ranura: §eAmuleto \n§6Nivel: §9Aprendiz \n§fUna flor mística que otorga inmunidad a las toxinas. \n Inmunidad
+item.dorios:purity_blossom=Flor de Pureza \n§6Ranura: §eAmuleto \n§6Nivel: §9Aprendiz \n§fUna flor mística que otorga inmunidad a las\n§ftoxinas.\n Inmunidad
 
-item.dorios:rotten_heart=Corazón Podrido \n§6Ranura: §eAmuleto de Vida \n§6Nivel: §fPrimitivo \n§fUn corazón descompuesto que aumenta ligeramente la salud. \n+1
-item.dorios:candy_heart=Corazón de Caramelo \n§6Ranura: §eAmuleto de Vida \n§6Nivel: §9Aprendiz \n§fUn caramelo en forma de corazón que refuerza tu vitalidad. \n+2
-item.dorios:immaculate_heart=Corazón Inmaculado \n§6Ranura: §eAmuleto de Vida \n§6Nivel: §bAscendente \n§fUn corazón puro y poderoso que aumenta la salud y el daño. \n+5 | +1
-item.dorios:black_heart=Corazón Negro \n§6Ranura: §eAmuleto de Vida \n§6Nivel: §eMaestro \n§fUna reliquia sombría del End que incrementa tu salud máxima. \n+3
-item.dorios:soul_heart=Corazón de Alma \n§6Ranura: §eAmuleto de Vida \n§6Nivel: §eMaestro \n§fUn corazón fantasmal otorgado por el Warden, usado para crear el Corazón del Warden. \n+4 \n Inmunidad
-item.dorios:sacred_heart=Corazón Sagrado \n§6Ranura: §eAmuleto de Vida \n§6Nivel: §bAscendente+ \n§fUna reliquia bendita del desierto que aumenta tu salud con poder divino. \n+10 \n+ I
-item.dorios:eternal_heart=Corazón Eterno \n§6Ranura: §eAmuleto de Vida \n§6Nivel: §bAscendente \n§fUn corazón eterno que mejora la salud y previene enfermedades. \n+4 \n |  |  Inmunidad
-item.dorios:warden_heart=Corazón del Warden \n§6Ranura: §eAmuleto de Vida \n§6Nivel: §bAscendente+ \n§fUn corazón infundido con el poder del Warden, aumentando tu vitalidad. \n+8 | +25% Magia  \n |  Inmunidad
-item.dorios:wither_heart=Corazón de Wither \n§6Ranura: §eAmuleto de Vida \n§6Nivel: §bAscendente+ \n§fLa esencia del Wither, aumentando la salud, regenerándote y protegiéndote del efecto Wither. \n+8 \n+ I \n Inmunidad
+item.dorios:rotten_heart=Corazón Podrido \n§6Ranura: §eAmuleto de Vida \n§6Nivel: §fPrimitivo \n§fUn corazón descompuesto que aumenta\n§fligeramente la salud.\n+1
+item.dorios:candy_heart=Corazón de Caramelo \n§6Ranura: §eAmuleto de Vida \n§6Nivel: §9Aprendiz \n§fUn caramelo en forma de corazón que refuerza\n§ftu vitalidad.\n+2
+item.dorios:immaculate_heart=Corazón Inmaculado \n§6Ranura: §eAmuleto de Vida \n§6Nivel: §bAscendente \n§fUn corazón puro y poderoso que aumenta la\n§fsalud y el daño.\n+5 | +1
+item.dorios:black_heart=Corazón Negro \n§6Ranura: §eAmuleto de Vida \n§6Nivel: §eMaestro \n§fUna reliquia sombría del End que incrementa\n§ftu salud máxima.\n+3
+item.dorios:soul_heart=Corazón de Alma \n§6Ranura: §eAmuleto de Vida \n§6Nivel: §eMaestro \n§fUn corazón fantasmal otorgado por el Warden,\n§fusado para crear el Corazón del Warden.\n+4 \n Inmunidad
+item.dorios:sacred_heart=Corazón Sagrado \n§6Ranura: §eAmuleto de Vida \n§6Nivel: §bAscendente+ \n§fUna reliquia bendita del desierto que\n§faumenta tu salud con poder divino.\n+10 \n+ I
+item.dorios:eternal_heart=Corazón Eterno \n§6Ranura: §eAmuleto de Vida \n§6Nivel: §bAscendente \n§fUn corazón eterno que mejora la salud y\n§fpreviene enfermedades.\n+4 \n |  |  Inmunidad
+item.dorios:warden_heart=Corazón del Warden \n§6Ranura: §eAmuleto de Vida \n§6Nivel: §bAscendente+ \n§fUn corazón infundido con el poder del\n§fWarden, aumentando tu vitalidad.\n+8 | +25% Magia  \n |  Inmunidad
+item.dorios:wither_heart=Corazón de Wither \n§6Ranura: §eAmuleto de Vida \n§6Nivel: §bAscendente+ \n§fLa esencia del Wither, aumentando la salud,\n§fregenerándote y protegiéndote del efecto\n§fWither.\n+8 \n+ I \n Inmunidad
 
-item.dorios:dead_abyssal_orb=Orbe Abisal Muerto \n§6Ranura: §eAmuleto \n§6Nivel: §fPrimitivo \n§fUn orbe descompuesto que mejora la respiración y la natación bajo el agua. \n+30%
-item.dorios:abyssal_clam_shell=Concha Abisal \n§6Ranura: §eTalismán \n§6Nivel: §9Aprendiz \n§fUna rara concha del abismo que brilla débilmente con un poder oculto. \n+50%
-item.dorios:abyssal_orb=Orbe Abisal \n§6Ranura: §eAmuleto \n§6Nivel: §eMaestro \n§fUn orbe encantado que mejora la respiración y la velocidad al nadar bajo el agua. \n+100% \n+ I
-item.dorios:abyssal_essence=Esencia Abisal \n§6Ranura: §eAmuleto Arcano \n§6Nivel: §bAscendente \n§fOtorga la Bendición del Océano, aumentando la fuerza y la velocidad en el agua. \n+200% \n+ I \n+ II en Agua
-item.dorios:abyssal_diver_helmet=Casco de Buceador Abisal \n§6Ranura: §eCabeza \n§6Nivel: §fPrimitivo \n§fUn casco para exploración submarina que otorga aire y visión clara bajo el agua. \n+20% \n+ I
+item.dorios:dead_abyssal_orb=Orbe Abisal Muerto \n§6Ranura: §eAmuleto \n§6Nivel: §fPrimitivo \n§fUn orbe descompuesto que mejora la\n§frespiración y la natación bajo el agua.\n+30%
+item.dorios:abyssal_clam_shell=Concha Abisal \n§6Ranura: §eTalismán \n§6Nivel: §9Aprendiz \n§fUna rara concha del abismo que brilla\n§fdébilmente con un poder oculto.\n+50%
+item.dorios:abyssal_orb=Orbe Abisal \n§6Ranura: §eAmuleto \n§6Nivel: §eMaestro \n§fUn orbe encantado que mejora la respiración\n§fy la velocidad al nadar bajo el agua.\n+100% \n+ I
+item.dorios:abyssal_essence=Esencia Abisal \n§6Ranura: §eAmuleto Arcano \n§6Nivel: §bAscendente \n§fOtorga la Bendición del Océano, aumentando\n§fla fuerza y la velocidad en el agua.\n+200% \n+ I \n+ II en Agua
+item.dorios:abyssal_diver_helmet=Casco de Buceador Abisal \n§6Ranura: §eCabeza \n§6Nivel: §fPrimitivo \n§fUn casco para exploración submarina que\n§fotorga aire y visión clara bajo el agua.\n+20% \n+ I
 
-item.dorios:venom_gauntlet=Guantelete Tóxico \n§6Ranura: §eGuante \n§6Nivel: §fPrimitivo \n§fUn guantelete que libera veneno mortal al impactar. \n+ al golpear
-item.dorios:fire_gauntlet=Guantelete Infernal \n§6Ranura: §eGuante \n§6Nivel: §fPrimitivo \n§fUn guantelete ardiente que enciende a los enemigos al contacto con su calor. \n+ al golpear
-item.dorios:ice_gauntlet=Guantelete Congelante \n§6Ranura: §eGuante \n§6Nivel: §fPrimitivo \n§fUn guantelete helado imbuido con poder gélido, que ralentiza a los enemigos con cada golpe. \n+ al golpear
-item.dorios:frost_quiver=Carcaj Congelante \n§6Ranura: §eCuerpo \n§6Nivel: §9Aprendiz \n§fFlechas imbuidas con poder gélido, que ralentizan a los enemigos al impactar. \n+ al golpear
-item.dorios:molten_quiver=Carcaj Fundido \n§6Ranura: §eCuerpo \n§6Nivel: §9Aprendiz \n§fDispara flechas que incendian a tus enemigos con ira ardiente. \n+ al golpear
-item.dorios:venom_quiver=Carcaj Tóxico \n§6Ranura: §eCuerpo \n§6Nivel: §9Aprendiz \n§fEnvenena las flechas para causar daño adicional con el tiempo. \n+ al golpear
+item.dorios:venom_gauntlet=Guantelete Tóxico \n§6Ranura: §eGuante \n§6Nivel: §fPrimitivo \n§fUn guantelete que libera veneno mortal al\n§fimpactar.\n+ al golpear
+item.dorios:fire_gauntlet=Guantelete Infernal \n§6Ranura: §eGuante \n§6Nivel: §fPrimitivo \n§fUn guantelete ardiente que enciende a los\n§fenemigos al contacto con su calor.\n+ al golpear
+item.dorios:ice_gauntlet=Guantelete Congelante \n§6Ranura: §eGuante \n§6Nivel: §fPrimitivo \n§fUn guantelete helado imbuido con poder\n§fgélido, que ralentiza a los enemigos con\n§fcada golpe.\n+ al golpear
+item.dorios:frost_quiver=Carcaj Congelante \n§6Ranura: §eCuerpo \n§6Nivel: §9Aprendiz \n§fFlechas imbuidas con poder gélido, que\n§fralentizan a los enemigos al impactar.\n+ al golpear
+item.dorios:molten_quiver=Carcaj Fundido \n§6Ranura: §eCuerpo \n§6Nivel: §9Aprendiz \n§fDispara flechas que incendian a tus enemigos\n§fcon ira ardiente.\n+ al golpear
+item.dorios:venom_quiver=Carcaj Tóxico \n§6Ranura: §eCuerpo \n§6Nivel: §9Aprendiz \n§fEnvenena las flechas para causar daño\n§fadicional con el tiempo.\n+ al golpear
 
-item.dorios:fire_claw=Garras Ardientes \n§6Ranura: §eGuante \n§6Nivel: §9Aprendiz \n§fGarras ígneas que causan mayor daño y queman a los enemigos al contacto. \n+2 \n+ al golpear
-item.dorios:venom_claw=Garras Venenosas \n§6Ranura: §eGuante \n§6Nivel: §9Aprendiz \n§fGarras venenosas que aumentan el daño y envenenan a los enemigos con el tiempo. \n+2 \n+ al golpear
-item.dorios:ice_claw=Garras Glaciantes \n§6Ranura: §eGuante \n§6Nivel: §9Aprendiz \n§fGarras heladas que aumentan el daño y congelan a los enemigos con cada golpe. \n+2 \n+ al golpear
+item.dorios:fire_claw=Garras Ardientes \n§6Ranura: §eGuante \n§6Nivel: §9Aprendiz \n§fGarras ígneas que causan mayor daño y queman\n§fa los enemigos al contacto.\n+2 \n+ al golpear
+item.dorios:venom_claw=Garras Venenosas \n§6Ranura: §eGuante \n§6Nivel: §9Aprendiz \n§fGarras venenosas que aumentan el daño y\n§fenvenenan a los enemigos con el tiempo.\n+2 \n+ al golpear
+item.dorios:ice_claw=Garras Glaciantes \n§6Ranura: §eGuante \n§6Nivel: §9Aprendiz \n§fGarras heladas que aumentan el daño y\n§fcongelan a los enemigos con cada golpe.\n+2 \n+ al golpear
 
-item.dorios:guardian_ring=Anillo del Guardián \n§6Ranura: §eAnillo \n§6Nivel: §bAscendente \n§fAumenta la defensa y reduce el daño recibido. \n+ I
-item.dorios:healer_ring=Anillo del Sanador \n§6Ranura: §eAnillo \n§6Nivel: §eMaestro \n§fMejora la sanación y restaura salud con el tiempo. \n+ I
-item.dorios:miner_ring=Anillo del Minero \n§6Ranura: §eAnillo \n§6Nivel: §fPrimitivo \n§fMejora la velocidad de minería y el rendimiento de los minerales. \n+ I
-item.dorios:warrior_ring=Anillo del Guerrero \n§6Ranura: §eAnillo \n§6Nivel: §eMaestro \n§fAumenta el poder de ataque y la fuerza en combate. \n+2
-item.dorios:runner_ring=Anillo del Corredor \n§6Ranura: §eAnillo \n§6Nivel: §fPrimitivo \n§fAumenta considerablemente la velocidad y la resistencia. \n+ I
+item.dorios:guardian_ring=Anillo del Guardián \n§6Ranura: §eAnillo \n§6Nivel: §bAscendente \n§fAumenta la defensa y reduce el daño\n§frecibido.\n+ I
+item.dorios:healer_ring=Anillo del Sanador \n§6Ranura: §eAnillo \n§6Nivel: §eMaestro \n§fMejora la sanación y restaura salud con el\n§ftiempo.\n+ I
+item.dorios:miner_ring=Anillo del Minero \n§6Ranura: §eAnillo \n§6Nivel: §fPrimitivo \n§fMejora la velocidad de minería y el\n§frendimiento de los minerales.\n+ I
+item.dorios:warrior_ring=Anillo del Guerrero \n§6Ranura: §eAnillo \n§6Nivel: §eMaestro \n§fAumenta el poder de ataque y la fuerza en\n§fcombate.\n+2
+item.dorios:runner_ring=Anillo del Corredor \n§6Ranura: §eAnillo \n§6Nivel: §fPrimitivo \n§fAumenta considerablemente la velocidad y la\n§fresistencia.\n+ I
 
 item.dorios:lava_waders=Botas de Lava \n§6Ranura: §ePies \n§6Nivel: §9Aprendiz \n§fOtorga la habilidad de caminar sobre lava. \n+20%
-item.dorios:idle_bloom=Flor Inmóvil \n§6Ranura: §eCuerpo \n§6Nivel: §bAscendente \n§fUna flor que otorga regeneración al estar quieto. \n+ II (Cuando estás quieto)
+item.dorios:idle_bloom=Flor Inmóvil \n§6Ranura: §eCuerpo \n§6Nivel: §bAscendente \n§fUna flor que otorga regeneración al estar\n§fquieto.\n+ II (Cuando estás quieto)
 
-item.dorios:mender_pendant=Colgante del Sanador \n§6Ranura: §eCollar \n§6Nivel: §bAscendente \n§fRestaura gradualmente la durabilidad de tus objetos equipados.
-item.dorios:repair_talis=Talismán de Reparación \n§6Ranura: §eCollar \n§6Nivel: §eMaestro \n§fRestaura lentamente la durabilidad del objeto que sostienes.
-item.dorios:rush_of_fear=Ráfaga de Miedo \n§6Ranura: §eCollar \n§6Nivel: §9Aprendiz \n§fLibera un estallido de velocidad cuando el peligro te acecha. \n+2 \n+100% después de recibir daño
-item.dorios:rabbit_rush=Ráfaga de Conejo \n§6Ranura: §eCollar \n§6Nivel: §fPrimitivo \n§fUn colgante de pata de conejo que aumenta la velocidad y agilidad. \n+20%
+item.dorios:mender_pendant=Colgante del Sanador \n§6Ranura: §eCollar \n§6Nivel: §bAscendente \n§fRestaura gradualmente la durabilidad de tus\n§fobjetos equipados.
+item.dorios:repair_talis=Talismán de Reparación \n§6Ranura: §eCollar \n§6Nivel: §eMaestro \n§fRestaura lentamente la durabilidad del\n§fobjeto que sostienes.
+item.dorios:rush_of_fear=Ráfaga de Miedo \n§6Ranura: §eCollar \n§6Nivel: §9Aprendiz \n§fLibera un estallido de velocidad cuando el\n§fpeligro te acecha.\n+2 \n+100% después de recibir daño
+item.dorios:rabbit_rush=Ráfaga de Conejo \n§6Ranura: §eCollar \n§6Nivel: §fPrimitivo \n§fUn colgante de pata de conejo que aumenta la\n§fvelocidad y agilidad.\n+20%
 
 item.dorios:night_vision_goggles=Gafas de Visión Nocturna \n§6Ranura: §eCabeza \n§6Nivel: §fPrimitivo \n§fVe a través de la oscuridad con facilidad. \n+ I
-item.dorios:night_vision_mask=Máscara de Visión Nocturna \n§6Ranura: §eCabeza \n§6Nivel: §9Aprendiz \n§fUna máscara que otorga visión nocturna, junto con inmunidad a la oscuridad y ceguera. \n+ I \n |  Inmunidad
-item.dorios:obsidian_skull=Cráneo de Obsidiana \n§6Ranura: §eAmuleto \n§6Nivel: §9Aprendiz \n§fOtorga inmunidad al fuego y breve resistencia a la lava. \n+ I (Dura 15s en lava)
+item.dorios:night_vision_mask=Máscara de Visión Nocturna \n§6Ranura: §eCabeza \n§6Nivel: §9Aprendiz \n§fUna máscara que otorga visión nocturna,\n§fjunto con inmunidad a la oscuridad y\n§fceguera.\n+ I \n |  Inmunidad
+item.dorios:obsidian_skull=Cráneo de Obsidiana \n§6Ranura: §eAmuleto \n§6Nivel: §9Aprendiz \n§fOtorga inmunidad al fuego y breve\n§fresistencia a la lava.\n+ I (Dura 15s en lava)
 
 
 tile.dorios:lava_solid_0.name=Lava Sólida
@@ -73,54 +73,95 @@ tile.dorios:lava_flow_0.name=Lava Fluida
 tile.dorios:lava_flow_1.name=Lava Fluida
 tile.dorios:lava_flow_2.name=Lava Fluida
 
-item.dorios:broken_paladin_helmet=Casco de Paladín Roto \n§6Ranura: §eCabeza \n§6Nivel: §fPrimitivo \n§fUna reliquia rota de un noble defensor. Aumenta ligeramente el daño. \n+1
-item.dorios:restored_paladin_helmet=Casco de Paladín Restaurado \n§6Ranura: §eCabeza \n§6Nivel: §eMaestro \n§fForjado de nuevo a su antigua gloria. Otorga mayor fuerza a su portador. \n+3
-item.dorios:holy_cross=Cruz Sagrada \n§6Ranura: §eTalismán \n§6Nivel: §bAscendente \n§fUna reliquia sagrada que potencia a su portador y aniquila a los muertos vivientes con poder divino. \n+50% a los Muertos Vivientes
+item.dorios:broken_paladin_helmet=Casco de Paladín Roto \n§6Ranura: §eCabeza \n§6Nivel: §fPrimitivo \n§fUna reliquia rota de un noble defensor.\n§fAumenta ligeramente el daño.\n+1
+item.dorios:restored_paladin_helmet=Casco de Paladín Restaurado \n§6Ranura: §eCabeza \n§6Nivel: §eMaestro \n§fForjado de nuevo a su antigua gloria. Otorga\n§fmayor fuerza a su portador.\n+3
+item.dorios:holy_cross=Cruz Sagrada \n§6Ranura: §eTalismán \n§6Nivel: §bAscendente \n§fUna reliquia sagrada que potencia a su\n§fportador y aniquila a los muertos vivientes\n§fcon poder divino.\n+50% a los Muertos Vivientes
 
 item.dorios:blood_pact=Pacto de Sangre \n§6Ranura: §eAmuleto Arcaico \n§6Nivel: §bAscendente+ \n§fHiciste un pacto con Satanás. \nPara sanar debes matar. \n-10 \n Inmunidad \n+12% Robo de Vida
-item.dorios:bloodbound_amulet=Amuleto Sangriento \n§6Ranura: §eAmuleto \n§6Nivel: §bAscendente \n§fUn artefacto poderoso ligado por sangre, extrayendo fuerza de los enemigos caídos. \n+3 \n+6% Robo de Vida
-item.dorios:blood_pendant=Colgante de Sangre \n§6Ranura: §eCollar \n§6Nivel: §eMaestro \n§fUna delicada reliquia que aprovecha la esencia de la sangre derramada para restaurar salud. \n+2 \n+2% Robo de Vida
+item.dorios:bloodbound_amulet=Amuleto Sangriento \n§6Ranura: §eAmuleto \n§6Nivel: §bAscendente \n§fUn artefacto poderoso ligado por sangre,\n§fextrayendo fuerza de los enemigos caídos.\n+3 \n+6% Robo de Vida
+item.dorios:blood_pendant=Colgante de Sangre \n§6Ranura: §eCollar \n§6Nivel: §eMaestro \n§fUna delicada reliquia que aprovecha la\n§fesencia de la sangre derramada para\n§frestaurar salud.\n+2 \n+2% Robo de Vida
 
-item.dorios:cloud_steps_boots=Botas de Nubes \n§6Ranura: §ePies \n§6Nivel: §9Aprendiz \n§fTan ligeras como una pluma, otorgando agilidad y un doble salto. \n+30% \n+ Doble salto
+item.dorios:cloud_steps_boots=Botas de Nubes \n§6Ranura: §ePies \n§6Nivel: §9Aprendiz \n§fTan ligeras como una pluma, otorgando\n§fagilidad y un doble salto.\n+30% \n+ Doble salto
 
-item.dorios:heavy_guardian_ring=Anillo Pesado del Guardián \n§6Ranura: §eAnillo Pesado \n§6Nivel: §bAscendente \n§fOtorga la bendición del Guardián, protegiendo al portador. \n+ I
-item.dorios:heavy_healer_ring=Anillo Pesado del Sanador \n§6Ranura: §eAnillo Pesado \n§6Nivel: §eMaestro \n§fOtorga la bendición del Sanador, mejorando la recuperación. \n+ I
-item.dorios:heavy_miner_ring=Anillo Pesado del Minero \n§6Ranura: §eAnillo Pesado \n§6Nivel: §eMaestro \n§fOtorga la bendición del Minero, otorgando velocidad de minería. \n+ II
+item.dorios:heavy_guardian_ring=Anillo Pesado del Guardián \n§6Ranura: §eAnillo Pesado \n§6Nivel: §bAscendente \n§fOtorga la bendición del Guardián,\n§fprotegiendo al portador.\n+ I
+item.dorios:heavy_healer_ring=Anillo Pesado del Sanador \n§6Ranura: §eAnillo Pesado \n§6Nivel: §eMaestro \n§fOtorga la bendición del Sanador, mejorando\n§fla recuperación.\n+ I
+item.dorios:heavy_miner_ring=Anillo Pesado del Minero \n§6Ranura: §eAnillo Pesado \n§6Nivel: §eMaestro \n§fOtorga la bendición del Minero, otorgando\n§fvelocidad de minería.\n+ II
 item.dorios:heavy_warrior_ring=Anillo Pesado del Guerrero \n§6Ranura: §eAnillo Pesado \n§6Nivel: §eMaestro \n§fPotencia al portador con fuerza aumentada. \n+ I
-item.dorios:heavy_runner_ring=Anillo Pesado del Corredor \n§6Ranura: §eAnillo Pesado \n§6Nivel: §9Aprendiz \n§fInfunde la bendición del Corredor, mejorando la agilidad. \n+ I
+item.dorios:heavy_runner_ring=Anillo Pesado del Corredor \n§6Ranura: §eAnillo Pesado \n§6Nivel: §9Aprendiz \n§fInfunde la bendición del Corredor, mejorando\n§fla agilidad.\n+ I
 
-item.dorios:bloodtide_chalice=Cáliz de Marea Sangrienta \n§6Ranura: §eAmuleto \n§6Tier: §bAscendente \n§fUn relicario maldito, sediento eternamente por la vida que una vez sostuvo. \n+10% Robo de Vida
-item.dorios:voodoo=Vudú \n§6Ranura: §eMuñeco \n§6Tier: §eMaestro \n§fAtado por ritos oscuros, este efigie maldito entrelaza el dolor entre almas. \nRefleja 10% del Daño
-item.dorios:bloodgem=Gema Sangrienta \n§6Ranura: §eTalismán \n§6Tier: §eMaestro \n§fUna gema que palpita con sangre antigua, ansiosa por compartir su poder... a un precio. \n+4% Robo de Vida
-item.dorios:bloodstained_heart=Corazón Manchado de Sangre \n§6Ranura: §eAmuleto de Vitalidad \n§6Tier: §eMaestro \n§fUn relicario con forma de corazón, empapado en antiguos rituales de sangre. \n+4
-item.dorios:bloodbound_emblem=Emblema Atado a la Sangre \n§6Ranura: §eCuerpo \n§6Tier: §eMaestro \n§fUn sigilo grabado en carmesí, palpitante con la esencia del sacrificio. \n+ I después de 
+item.dorios:bloodtide_chalice=Cáliz de Marea Sangrienta \n§6Ranura: §eAmuleto \n§6Tier: §bAscendente \n§fUn relicario maldito, sediento eternamente\n§fpor la vida que una vez sostuvo.\n+10% Robo de Vida
+item.dorios:voodoo=Vudú \n§6Ranura: §eMuñeco \n§6Tier: §eMaestro \n§fAtado por ritos oscuros, este efigie maldito\n§fentrelaza el dolor entre almas.\nRefleja 10% del Daño
+item.dorios:bloodgem=Gema Sangrienta \n§6Ranura: §eTalismán \n§6Tier: §eMaestro \n§fUna gema que palpita con sangre antigua,\n§fansiosa por compartir su poder... a un\n§fprecio.\n+4% Robo de Vida
+item.dorios:bloodstained_heart=Corazón Manchado de Sangre \n§6Ranura: §eAmuleto de Vitalidad \n§6Tier: §eMaestro \n§fUn relicario con forma de corazón, empapado\n§fen antiguos rituales de sangre.\n+4
+item.dorios:bloodbound_emblem=Emblema Atado a la Sangre \n§6Ranura: §eCuerpo \n§6Tier: §eMaestro \n§fUn sigilo grabado en carmesí, palpitante con\n§fla esencia del sacrificio.\n+ I después de 
 
 
-item.dorios:dragon_heart=Corazón de Dragón \n§6Ranura: §eAnillo Pesado \n§6Tier: §bAscendente++ \n§fUn corazón que palpita con el poder del gobernante del Fin. \n+10 | +2\n+ I
-item.dorios:strong_ancient_ring=Anillo Antiguo Fuerte \n§6Ranura: §eAnillo Pesado \n§6Tier: §eMaestro \n§fUn relicario que susurra conocimientos olvidados. \n+2 | +10% | +2
+item.dorios:dragon_heart=Corazón de Dragón \n§6Ranura: §eAnillo Pesado \n§6Tier: §bAscendente++ \n§fUn corazón que palpita con el poder del\n§fgobernante del Fin.\n+10 | +2\n+ I
+item.dorios:strong_ancient_ring=Anillo Antiguo Fuerte \n§6Ranura: §eAnillo Pesado \n§6Tier: §eMaestro \n§fUn relicario que susurra conocimientos\n§folvidados.\n+2 | +10% | +2
 item.dorios:strong_breeze_ring=Anillo de Brisa Fuerte \n§6Ranura: §eAnillo Pesado \n§6Tier: §eMaestro \n§fUn anillo que lleva la esencia del viento. \n+3
-item.dorios:strong_brute_ring=Anillo de Bruto Fuerte \n§6Ranura: §eAnillo Pesado \n§6Tier: §bAscendente \n§fEmpuña el poder puro de los guerreros más fuertes. \n+4 \n+ I
+item.dorios:strong_brute_ring=Anillo de Bruto Fuerte \n§6Ranura: §eAnillo Pesado \n§6Tier: §bAscendente \n§fEmpuña el poder puro de los guerreros más\n§ffuertes.\n+4 \n+ I
 item.dorios:strong_celestial_ring=Anillo Celestial Fuerte \n§6Ranura: §eAnillo Pesado \n§6Tier: §bAscendente \n§fForjado bajo la mirada de los cielos. \n+2 Saltos Extra \n+ al Agacharse
-item.dorios:strong_ender_ring=Anillo del Ender Fuerte \n§6Ranura: §eAnillo Pesado \n§6Tier: §eMaestro \n§fTejido con esencia del Ender, dobla la realidad para evitar el daño. \n+Evasión
-item.dorios:strong_echo_ring=Anillo del Eco Fuerte \n§6Ranura: §eAnillo Pesado \n§6Tier: §eMaestro \n§fLos golpes resuenan, golpeando dos veces por designio del destino.
-item.dorios:strong_fortress_ring=Anillo de Fortaleza Fuerte \n§6Ranura: §eAnillo Pesado \n§6Tier: §eMaestro \n§fForjado con la voluntad de una fortaleza inquebrantable. \n+2 \n+ I | + I
-item.dorios:strong_jade_ring=Anillo de Jade Fuerte \n§6Ranura: §eAnillo Pesado \n§6Tier: §eMaestro \n§fInfundido con la resistencia y fuerza de la naturaleza. \n+5 \n+ I \n Inmunidad
-item.dorios:strong_shulker_ring=Anillo de Shulker Fuerte \n§6Ranura: §eAnillo Pesado \n§6Tier: §eMaestro \n§fUn anillo infundido con la resistencia de los guardianes del End. \n+1 \n+ al Golpear
-item.dorios:strong_trader_ring=Anillo del Comerciante Fuerte \n§6Ranura: §eAnillo Pesado \n§6Tier: §eMaestro \n§fUn anillo que cambia el curso del comercio a tu favor. \n+ II
-item.dorios:strong_inferno_ring=Anillo del Infierno Fuerte \n§6Ranura: §eAnillo Pesado \n§6Tier: §bAscendente \n§fForjado en llamas eternas, este anillo alimenta una agresión implacable. \n+4 \n+ I \n+ al Golpear
-item.dorios:strong_abyssal_ring=Anillo Abismal Fuerte \n§6Ranura: §eAnillo Pesado \n§6Tier: §eMaestro \n§fForjado en las profundidades, su poder fluye como una marea infinita. \n+50% \n+ I
-item.dorios:strong_blood_ring=Anillo Sangriento Fuerte \n§6Ranura: §eAnillo Pesado \n§6Tier: §bAscendente \n§fUn anillo maldito que palpita con vitalidad oscura, alimentándose de la fuerza vital de los enemigos. \n+2
+item.dorios:strong_ender_ring=Anillo del Ender Fuerte \n§6Ranura: §eAnillo Pesado \n§6Tier: §eMaestro \n§fTejido con esencia del Ender, dobla la\n§frealidad para evitar el daño.\n+Evasión
+item.dorios:strong_echo_ring=Anillo del Eco Fuerte \n§6Ranura: §eAnillo Pesado \n§6Tier: §eMaestro \n§fLos golpes resuenan, golpeando dos veces por\n§fdesignio del destino.
+item.dorios:strong_fortress_ring=Anillo de Fortaleza Fuerte \n§6Ranura: §eAnillo Pesado \n§6Tier: §eMaestro \n§fForjado con la voluntad de una fortaleza\n§finquebrantable.\n+2 \n+ I | + I
+item.dorios:strong_jade_ring=Anillo de Jade Fuerte \n§6Ranura: §eAnillo Pesado \n§6Tier: §eMaestro \n§fInfundido con la resistencia y fuerza de la\n§fnaturaleza.\n+5 \n+ I \n Inmunidad
+item.dorios:strong_shulker_ring=Anillo de Shulker Fuerte \n§6Ranura: §eAnillo Pesado \n§6Tier: §eMaestro \n§fUn anillo infundido con la resistencia de\n§flos guardianes del End.\n+1 \n+ al Golpear
+item.dorios:strong_trader_ring=Anillo del Comerciante Fuerte \n§6Ranura: §eAnillo Pesado \n§6Tier: §eMaestro \n§fUn anillo que cambia el curso del comercio a\n§ftu favor.\n+ II
+item.dorios:strong_inferno_ring=Anillo del Infierno Fuerte \n§6Ranura: §eAnillo Pesado \n§6Tier: §bAscendente \n§fForjado en llamas eternas, este anillo\n§falimenta una agresión implacable.\n+4 \n+ I \n+ al Golpear
+item.dorios:strong_abyssal_ring=Anillo Abismal Fuerte \n§6Ranura: §eAnillo Pesado \n§6Tier: §eMaestro \n§fForjado en las profundidades, su poder fluye\n§fcomo una marea infinita.\n+50% \n+ I
+item.dorios:strong_blood_ring=Anillo Sangriento Fuerte \n§6Ranura: §eAnillo Pesado \n§6Tier: §bAscendente \n§fUn anillo maldito que palpita con vitalidad\n§foscura, alimentándose de la fuerza vital de\n§flos enemigos.\n+2
 
 
-item.dorios:tideforged_pendant=Colgante Forjado en Marea \n§6Ranura: §eCollar \n§6Tier: §fPrimitivo \n§fInvoca el poder del océano, llamando olas y corrientes para ayudar a su portador. \n+20%
-item.dorios:tideforged_carapace=Caparazón Forjado en Marea \n§6Ranura: §eCuerpo \n§6Tier: §9Aprendiz \n§fUn caparazón protector infundido con la resistencia de las profundidades oceánicas. \n+ I en Agua
-item.dorios:tideforged_heart=Corazón Forjado en Marea \n§6Ranura: §eAmuleto de Vitalidad \n§6Tier: §9Aprendiz \n§fUn núcleo de mareas imperecederas, palpitante con el ritmo del mar. \n+2
-item.dorios:tideforged_eye=Ojo Forjado en Marea \n§6Ranura: §eTalismán \n§6Tier: §fPrimitivo  \n§fUna gema vigilante infundida con las profundidades del océano, viendo más allá de la vista mortal. \n+ I
-item.dorios:tideforged_stars=Estrellas Forjadas en Marea \n§6Ranura: §eAmuleto \n§6Tier: §9Aprendiz \n§fForjadas en las profundidades, estas estrellas fluyen como las mareas, rápidas e implacables. \n+50%
-item.dorios:tideforged_ring=Anillo Forjado en Marea \n§6Ranura: §eAnillo \n§6Tier: §fPrimitivo \n§fUn anillo infundido con las corrientes inquietas, fluyendo siempre con la fuerza del océano. \n+30%
-item.dorios:tideforged_knuckles=Nudillos Forjados en Marea \n§6Ranura: §eGuantelete \n§6Tier: §fPrimitivo \n§fNudillos moldeados por la fuerza implacable del océano, golpeando como olas rompientes. \n+1
+item.dorios:tideforged_pendant=Colgante Forjado en Marea \n§6Ranura: §eCollar \n§6Tier: §fPrimitivo \n§fInvoca el poder del océano, llamando olas y\n§fcorrientes para ayudar a su portador.\n+20%
+item.dorios:tideforged_carapace=Caparazón Forjado en Marea \n§6Ranura: §eCuerpo \n§6Tier: §9Aprendiz \n§fUn caparazón protector infundido con la\n§fresistencia de las profundidades oceánicas.\n+ I en Agua
+item.dorios:tideforged_heart=Corazón Forjado en Marea \n§6Ranura: §eAmuleto de Vitalidad \n§6Tier: §9Aprendiz \n§fUn núcleo de mareas imperecederas,\n§fpalpitante con el ritmo del mar.\n+2
+item.dorios:tideforged_eye=Ojo Forjado en Marea \n§6Ranura: §eTalismán \n§6Tier: §fPrimitivo  \n§fUna gema vigilante infundida con las\n§fprofundidades del océano, viendo más allá de\n§fla vista mortal.\n+ I
+item.dorios:tideforged_stars=Estrellas Forjadas en Marea \n§6Ranura: §eAmuleto \n§6Tier: §9Aprendiz \n§fForjadas en las profundidades, estas\n§festrellas fluyen como las mareas, rápidas e\n§fimplacables.\n+50%
+item.dorios:tideforged_ring=Anillo Forjado en Marea \n§6Ranura: §eAnillo \n§6Tier: §fPrimitivo \n§fUn anillo infundido con las corrientes\n§finquietas, fluyendo siempre con la fuerza\n§fdel océano.\n+30%
+item.dorios:tideforged_knuckles=Nudillos Forjados en Marea \n§6Ranura: §eGuantelete \n§6Tier: §fPrimitivo \n§fNudillos moldeados por la fuerza implacable\n§fdel océano, golpeando como olas rompientes.\n+1
 
 
-item.dorios:blazing_amulet=Amuleto Llameante \n§6Ranura: §eAmuleto \n§6Tier: §9Aprendiz \n§fUn fragmento de fuego vivo, ardiendo eternamente pero nunca consumiéndose. \n+ al Golpear
-item.dorios:blazed_heart_necklace=Collar de Corazón Ardiente \n§6Ranura: §eCollar \n§6Tier: §eMaestro \n§fUn núcleo ardiente palpita dentro, irradiando calidez y voluntad inquebrantable. \n+4
-item.dorios:abyssal_sun_amulet=Amuleto del Sol Abismal \n§6Ranura: §eAmuleto \n§6Tier: §bAscendente \n§fForjado en la unión de fuego y marea, su resplandor guarda los secretos de las profundidades. \n+100% \n+ I en Agua
+item.dorios:blazing_amulet=Amuleto Llameante \n§6Ranura: §eAmuleto \n§6Tier: §9Aprendiz \n§fUn fragmento de fuego vivo, ardiendo\n§feternamente pero nunca consumiéndose.\n+ al Golpear
+item.dorios:blazed_heart_necklace=Collar de Corazón Ardiente \n§6Ranura: §eCollar \n§6Tier: §eMaestro \n§fUn núcleo ardiente palpita dentro,\n§firradiando calidez y voluntad\n§finquebrantable.\n+4
+item.dorios:abyssal_sun_amulet=Amuleto del Sol Abismal \n§6Ranura: §eAmuleto \n§6Tier: §bAscendente \n§fForjado en la unión de fuego y marea, su\n§fresplandor guarda los secretos de las\n§fprofundidades.\n+100% \n+ I en Agua
+
+## Trinket Scroll Guide
+ui.dorios:scroll_guide.title=§8§lGuía del scroll
+ui.dorios:scroll_guide.close=Cerrar guía
+ui.dorios:scroll_guide.use=§8§lCómo usarlo
+ui.dorios:scroll_guide.equip=§8Coloca los trinkets en sus ranuras. Retíralos para desequiparlos.
+ui.dorios:scroll_guide.refresh=§8Vuelve a abrir el scroll tras un cambio para actualizar los stats.
+ui.dorios:scroll_guide.stats=§8§lEstadísticas
+ui.dorios:scroll_guide.health=§f §8Vida máxima en corazones.
+ui.dorios:scroll_guide.attack=§f §8Daño de trinkets + 1 base. No incluye armas ni críticos.
+ui.dorios:scroll_guide.speed=§f §8Velocidad terrestre. 100% = normal.
+ui.dorios:scroll_guide.water=§f §8Velocidad en agua. 100% = normal.
+ui.dorios:scroll_guide.steal=§f §8Daño del golpe recuperado como vida (%).
+ui.dorios:scroll_guide.thorns=§f §8Daño recibido que devuelves al atacante (%).
+ui.dorios:scroll_guide.fire=§f §8Segundos que arde el enemigo tras tu golpe.
+ui.dorios:scroll_guide.jumps=§f §8Saltos extra antes de tocar el suelo.
+ui.dorios:scroll_guide.effects=§8§lEfectos
+ui.dorios:scroll_guide.effect_use=§8Pasivos: sobre ti. Activos: sobre los enemigos que golpeas.
+ui.dorios:scroll_guide.levels=§8I, II, III, IV, V = niveles 1-5. None = sin efectos de trinkets.
+ui.dorios:scroll_guide.conduit=§f §8Poder del conducto: respira, ve y mina bajo el agua.
+ui.dorios:scroll_guide.fire_res=§f §8Resistencia al fuego: protección contra fuego y lava.
+ui.dorios:scroll_guide.haste=§f §8Prisa: mina más rápido.
+ui.dorios:scroll_guide.night=§f §8Visión nocturna: ve en la oscuridad.
+ui.dorios:scroll_guide.regen=§f §8Regeneración: recupera vida.
+ui.dorios:scroll_guide.resistance=§f §8Resistencia: recibe menos daño.
+ui.dorios:scroll_guide.falling=§f §8Caída lenta: desciende más despacio.
+ui.dorios:scroll_guide.effect_speed=§f §8Velocidad: muévete más rápido.
+ui.dorios:scroll_guide.strength=§f §8Fuerza: más daño cuerpo a cuerpo.
+ui.dorios:scroll_guide.hero=§f §8Héroe de la aldea: mejores precios.
+ui.dorios:scroll_guide.breathing=§f §8Respiración acuática: respira bajo el agua.
+ui.dorios:scroll_guide.levitation=§f §8Levitación: flota hacia arriba.
+ui.dorios:scroll_guide.poison=§f §8Veneno: daño con el tiempo.
+ui.dorios:scroll_guide.slowness=§f §8Lentitud: muévete más despacio.
+ui.dorios:scroll_guide.immunities=§8§lInmunidades
+ui.dorios:scroll_guide.immune_use=§8Un icono aquí indica que bloqueas ese efecto. No tiene nivel.
+ui.dorios:scroll_guide.blindness=§f §8Ceguera: visión reducida.
+ui.dorios:scroll_guide.darkness=§f §8Oscuridad: oscurece la visión.
+ui.dorios:scroll_guide.hunger=§f §8Hambre: pierdes comida más rápido.
+ui.dorios:scroll_guide.immune_poison=§f §8Bloquea el daño de veneno.
+ui.dorios:scroll_guide.immune_regen=§f §8Bloquea Regeneración, incluida su curación.
+ui.dorios:scroll_guide.wither=§f §8Wither: daño con el tiempo.

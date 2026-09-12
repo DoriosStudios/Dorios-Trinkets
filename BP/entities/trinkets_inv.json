@@ -37,7 +37,7 @@
 			},
 			"minecraft:tameable": {},
 			"minecraft:inventory": {
-				"inventory_size": 13,
+				"inventory_size": 16,
 				"container_type": "container",
 				"can_be_siphoned_from": false,
 				"restrict_to_owner": true

@@ -1,5 +1,6 @@
 {
     "ui_defs": [
-        "ui/dorios_trinkets_menu.json"
+        "ui/dorios_trinkets_menu.json",
+        "ui/trinkets_guide.json"
     ]
 }
